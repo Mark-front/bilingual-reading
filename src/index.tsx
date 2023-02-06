@@ -1,3 +1,3 @@
-() => {
-    'hello world'
-}
+import { test } from "./test";
+
+test()
