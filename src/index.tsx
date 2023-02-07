@@ -1,3 +1,9 @@
-import { test } from "./test";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./app/App";
 
-test()
+
+ReactDOM.render(
+    <App/>,
+    document.querySelector('#root')
+)
