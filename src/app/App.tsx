@@ -1,19 +1,23 @@
 import React, {Suspense} from 'react';
-import {Link, Route, Routes} from "react-router-dom";
-import {MainPage} from 'pages/MainPage';
-import { useTheme } from 'shared/ThemeProvider/lib/hooks/useTheme';
+import { useTheme } from 'shared/ui/ThemeProvider';
+import {classNames} from "shared/lib/classNames/classNames";
+import {AppRoute} from "app/routes";
+import {Navbar} from "widgets/Navbar";
+import {Sidebar} from "widgets/Sidebar";
 
+import './styles/index.scss'
 const App = () => {
+    const {theme} = useTheme();
+
     return (
-        <div>
-            <Link to={'/'}>Главная</Link>
-            <Link to={'/about'}>О нас</Link>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path="/" element={<MainPage/>}/>
-                </Routes>
+        <div className={classNames('app', {}, [theme])}>
+            <Suspense fallback=''>
+                <Navbar/>
+                <div className={'content-page'}>
+                    <Sidebar/>
+                    <AppRoute/>
+                </div>
             </Suspense>
-            <button onClick={useTheme}>toogle</button>
         </div>
     );
 };

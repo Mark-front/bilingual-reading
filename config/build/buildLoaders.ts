@@ -4,6 +4,12 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     const { isDev } = options;
+
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack']
+    }
+
     const typescriptLoader = {
         test: /\.tsx?$/,
         use: 'ts-loader',
@@ -11,12 +17,12 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
     }
 
     const cssLoader = {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.s[ac]ss$/i,
         use: [
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
+                loader: "css-loader",
                 options: {
-                    loader: "css-loader",
                     modules: {
                         auto: (resPath: string) => Boolean(resPath.includes('.module.')),
                         localIdentName: isDev
@@ -27,11 +33,20 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
             },
             "sass-loader",
         ],
-
+    }
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader'
+            }
+        ]
     }
 
     return [
+        fileLoader,
+        svgLoader,
         typescriptLoader,
-        cssLoader
+        cssLoader,
     ]
 }
