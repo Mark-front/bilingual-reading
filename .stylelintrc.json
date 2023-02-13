@@ -1,0 +1,24 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "declaration-block-no-duplicate-properties": true,
+    "block-no-empty": [
+      true,
+      {
+        "ignore": [
+          "comments"
+        ]
+      }
+    ],
+    "function-calc-no-unspaced-operator": true,
+    "custom-property-no-missing-var-function": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "declaration-no-important": true,
+    "length-zero-no-unit": true,
+    "property-no-vendor-prefix": true,
+    "indentation": [
+      4
+    ],
+    "selector-class-pattern": null
+  }
+}
