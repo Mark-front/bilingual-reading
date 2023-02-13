@@ -1,14 +1,14 @@
-import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Navbar.module.scss';
-import {AppLink} from "shared/ui/AppLink";
-import {AppLinkTheme} from "shared/ui/AppLink/ui/AppLink";
-import {TranslateSwitcher} from "widgets/TranslateSwitcher";
+import React from 'react'
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './Navbar.module.scss'
+import { AppLink } from 'shared/ui/AppLink'
+import { AppLinkTheme } from 'shared/ui/AppLink/ui/AppLink'
+import { TranslateSwitcher } from 'widgets/TranslateSwitcher'
 
 interface NavbarProps {
-    className?: string;
+    className?: string
 }
-export const Navbar = ({className}: NavbarProps) => {
+export const Navbar = ({ className }: NavbarProps) => {
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <TranslateSwitcher/>
@@ -17,5 +17,5 @@ export const Navbar = ({className}: NavbarProps) => {
                 <AppLink theme={AppLinkTheme.SECONDARY} to={'/about'}>О нас</AppLink>
             </nav>
         </div>
-    );
-};
+    )
+}

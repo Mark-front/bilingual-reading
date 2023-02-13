@@ -1,16 +1,17 @@
-import React from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './TranslateSwitcher.module.scss';
-import {useTranslation} from "react-i18next";
-import {Button} from "shared/ui/Button";
+import React from 'react'
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './TranslateSwitcher.module.scss'
+import { useTranslation } from 'react-i18next'
+import { Button } from 'shared/ui/Button'
 
 interface TranslateSwitcherProps {
-    className?: string;
+    className?: string
 }
-export const TranslateSwitcher = ({className}: TranslateSwitcherProps) => {
-    const { t, i18n } = useTranslation(['translation', 'about', 'main']);
+
+export const TranslateSwitcher = ({ className }: TranslateSwitcherProps) => {
+    const { t, i18n } = useTranslation(['translation', 'about', 'main'])
     const toggle = () => {
-        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+        void i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
     }
 
     return (
@@ -18,7 +19,7 @@ export const TranslateSwitcher = ({className}: TranslateSwitcherProps) => {
             onClick={toggle}
             className={classNames(cls.TranslateSwitcher, {}, [className])}
         >
-            {t("Язык")}
+            {t('Язык')}
         </Button>
-    );
-};
+    )
+}

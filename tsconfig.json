@@ -9,7 +9,9 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "*": ["./src/*"]
+      "*": [
+        "./src/*"
+      ]
     },
     "moduleResolution": "node",
     "esModuleInterop": true,

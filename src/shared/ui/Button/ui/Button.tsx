@@ -1,24 +1,25 @@
-import React, {ButtonHTMLAttributes, FC} from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Button.module.scss';
+import React, { type ButtonHTMLAttributes, type FC } from 'react'
+import { classNames } from 'shared/lib/classNames/classNames'
+import cls from './Button.module.scss'
 
 export const ThemeButton = {
-    CLEAR: 'clear',
-} as const;
+    CLEAR: 'clear'
+} as const
 
-export type TThemeButton = (typeof ThemeButton)[keyof typeof ThemeButton];
+export type TThemeButton = (typeof ThemeButton)[keyof typeof ThemeButton]
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
-    className?: string;
-    theme?: TThemeButton;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    className?: string
+    theme?: TThemeButton
 }
+
 export const Button: FC<ButtonProps> = (props) => {
     const {
         className,
         children,
         theme = ThemeButton.CLEAR,
         ...otherProps
-    } = props;
+    } = props
 
     return (
         <button
@@ -27,5 +28,5 @@ export const Button: FC<ButtonProps> = (props) => {
         >
             {children}
         </button>
-    );
-};
+    )
+}
