@@ -1,6 +1,5 @@
 import React from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import cls from './TranslateSwitcher.module.scss'
 import { useTranslation } from 'react-i18next'
 import { Button } from 'shared/ui/Button'
 
@@ -17,7 +16,7 @@ export const TranslateSwitcher = ({ className }: TranslateSwitcherProps) => {
     return (
         <Button
             onClick={toggle}
-            className={classNames(cls.TranslateSwitcher, {}, [className])}
+            className={classNames('', {}, [className])}
         >
             {t('Язык')}
         </Button>
