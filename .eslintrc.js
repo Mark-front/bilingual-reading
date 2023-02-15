@@ -8,7 +8,6 @@ module.exports = {
         'plugin:react/recommended',
         'standard-with-typescript',
         'plugin:i18next/recommended'
-
     ],
     overrides: [],
     parser: '@typescript-eslint/parser',
@@ -38,6 +37,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
+        'max-len': ["error", { "ignoreComments": true }],
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',

@@ -6,5 +6,8 @@
   "Язык": "EN",
   "Свернуть": "Collapse",
   "Развернуть": "Expand",
-  "Страница не найдена": "Page not found"
+  "Страница не найдена": "Page not found",
+  "Произошла непредвиденная ошибка": "An unexpected error has occurred",
+  "Обновить страницу": "Refresh the page",
+  "Выдать ошибку": "Throw error"
 }
