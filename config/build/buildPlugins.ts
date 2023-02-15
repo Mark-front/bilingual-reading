@@ -1,11 +1,18 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
-import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, type WebpackPluginInstance } from 'webpack'
+import {
+    DefinePlugin,
+    HotModuleReplacementPlugin,
+    ProgressPlugin,
+    type WebpackPluginInstance
+} from 'webpack'
 import { type BuildOptions } from './types/config'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import { env } from 'eslint-config-standard-with-typescript'
 
 export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
-    const { paths, isDev } = options
+    const { paths, isDev, isAnalyze } = options
 
     return [
         new HtmlWebpackPlugin({
@@ -19,7 +26,16 @@ export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev)
         }),
-        isDev ? new HotModuleReplacementPlugin() : undefined,
-        isDev ? new ReactRefreshWebpackPlugin() : undefined
+        isDev
+            ? new HotModuleReplacementPlugin()
+            : () => {
+            },
+        isDev
+            ? new ReactRefreshWebpackPlugin()
+            : () => {
+            },
+        new BundleAnalyzerPlugin({
+            analyzerMode: isAnalyze ? 'server' : 'disabled'
+        })
     ]
 }

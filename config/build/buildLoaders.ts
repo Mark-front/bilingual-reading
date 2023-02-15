@@ -24,7 +24,8 @@ export function buildLoaders (options: BuildOptions): RuleSetRule[] {
                 loader: 'css-loader',
                 options: {
                     modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                        auto: (resPath: string) =>
+                            Boolean(resPath.includes('.module.')),
                         localIdentName: isDev
                             ? '[path][name]__[local]--[hash:base64:5]'
                             : '[hash:base64:8]'
@@ -34,6 +35,7 @@ export function buildLoaders (options: BuildOptions): RuleSetRule[] {
             'sass-loader'
         ]
     }
+
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
