@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Button } from 'shared/ui/Button'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { Button } from '@/shared/ui/Button'
 import { useTranslation } from 'react-i18next'
 
 interface IBugButton {
@@ -11,7 +10,9 @@ interface IBugButton {
 export const BugButton = ({ className }: IBugButton) => {
     const [error, setError] = useState(false)
     const { t } = useTranslation()
-    const onThrow = () => { setError(true) }
+    const onThrow = () => {
+        setError(true)
+    }
 
     useEffect(() => {
         if (error) {

@@ -1,3 +1,4 @@
+const path = require('path')
 module.exports = {
     env: {
         browser: true,
@@ -9,6 +10,13 @@ module.exports = {
         'standard-with-typescript',
         'plugin:i18next/recommended'
     ],
+    settings: {
+        'import/resolver': {
+            alias: {
+                map: [['@/*', path.resolve(__dirname, 'src')]]
+            }
+        }
+    },
     overrides: [],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -37,7 +45,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
-        'max-len': ["error", { "ignoreComments": true }],
+        'max-len': ['error', { ignoreComments: true }],
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',

@@ -9,7 +9,6 @@ import {
 } from 'webpack'
 import { type BuildOptions } from './types/config'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
-import { env } from 'eslint-config-standard-with-typescript'
 
 export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
     const { paths, isDev, isAnalyze } = options

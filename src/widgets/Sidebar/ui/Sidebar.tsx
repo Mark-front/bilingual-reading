@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
-import { Button } from 'shared/ui/Button'
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
+import { Button } from '@/shared/ui/Button'
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
 import { useTranslation } from 'react-i18next'
 
 interface SidebarProps {
