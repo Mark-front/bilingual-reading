@@ -1,5 +1,6 @@
-export default {
+import path from 'path'
 
+export default {
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
@@ -7,8 +8,6 @@ export default {
     ],
     moduleFileExtensions: [
         'js',
-        'mjs',
-        'cjs',
         'jsx',
         'ts',
         'tsx',
@@ -16,20 +15,19 @@ export default {
         'node'
     ],
     moduleDirectories: [
-        'node_modules',
-        'src'
+        'node_modules'
     ],
-    rootDir: '../../',
+    modulePaths: [
+        '<rootDir>src'
+    ],
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
     ],
-    setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
+    rootDir: '../../',
+    setupFilesAfterEnv: ['<rootDir>config/jest/jestSetup.ts'],
     moduleNameMapper: {
-        '^.+\\.s?css$': 'identity-obj-proxy',
-        '^~(.*)$': '<rootDir>/src/$1'
-    },
-    transform: {
-        '^.+\\.ts?$': 'ts-jest',
-        '^.+\\.tsx?$': 'ts-jest'
+        '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '^@/(.*)$': '<rootDir>src/$1'
     }
 }
