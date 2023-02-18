@@ -2,7 +2,7 @@ import { createContext } from 'react'
 
 export const Theme = {
     LIGHT: 'light',
-    DARK: 'dark'
+    DARK: 'dark',
 } as const
 
 export type TTheme = (typeof Theme)[keyof typeof Theme]

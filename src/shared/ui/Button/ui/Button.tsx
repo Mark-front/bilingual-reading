@@ -3,7 +3,7 @@ import React, { type ButtonHTMLAttributes, type FC } from 'react'
 import cls from './Button.module.scss'
 
 export const ThemeButton = {
-    CLEAR: 'clear'
+    CLEAR: 'clear',
 } as const
 
 export type TThemeButton = (typeof ThemeButton)[keyof typeof ThemeButton]

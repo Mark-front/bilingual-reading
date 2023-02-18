@@ -5,7 +5,7 @@ import {
     DefinePlugin,
     HotModuleReplacementPlugin,
     ProgressPlugin,
-    type WebpackPluginInstance
+    type WebpackPluginInstance,
 } from 'webpack'
 import { type BuildOptions } from './types/config'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
@@ -15,15 +15,15 @@ export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
 
     return [
         new HtmlWebpackPlugin({
-            template: paths.html
+            template: paths.html,
         }),
         new ProgressPlugin(),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css'
+            chunkFilename: 'css/[name].[contenthash:8].css',
         }),
         new DefinePlugin({
-            __IS_DEV__: JSON.stringify(isDev)
+            __IS_DEV__: JSON.stringify(isDev),
         }),
         isDev
             ? new HotModuleReplacementPlugin()
@@ -34,7 +34,7 @@ export function buildPlugins (options: BuildOptions): WebpackPluginInstance[] {
             : () => {
             },
         new BundleAnalyzerPlugin({
-            analyzerMode: isAnalyze ? 'server' : 'disabled'
-        })
+            analyzerMode: isAnalyze ? 'server' : 'disabled',
+        }),
     ]
 }

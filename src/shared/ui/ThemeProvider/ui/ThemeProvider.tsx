@@ -3,7 +3,7 @@ import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,
     ThemeContext,
-    type TTheme
+    type TTheme,
 } from '../lib/context/themeContext'
 
 const defaultTheme =
@@ -13,7 +13,7 @@ const ThemeProvider: FC = ({ children }) => {
     const [theme, setTheme] = useState(defaultTheme)
     const defaultProps = useMemo(() => ({
         theme,
-        setTheme
+        setTheme,
     }), [theme])
     return (
         <ThemeContext.Provider value={defaultProps}>

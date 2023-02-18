@@ -5,7 +5,7 @@ import cls from './AppLink.module.scss'
 
 export const AppLinkTheme = {
     PRIMARY: 'primary',
-    SECONDARY: 'secondary'
+    SECONDARY: 'secondary',
 } as const
 
 export type TAppLinkTheme = (typeof AppLinkTheme)[keyof typeof AppLinkTheme]
