@@ -9,6 +9,7 @@ module.exports = {
         'plugin:react/recommended',
         'standard-with-typescript',
         'plugin:i18next/recommended',
+        'plugin:storybook/recommended',
     ],
     settings: {
         'import/resolver': {
@@ -28,16 +29,14 @@ module.exports = {
         project: ['./tsconfig.eslint.json'],
         tsconfigRootDir: __dirname,
     },
-    plugins: [
-        'react',
-        '@typescript-eslint',
-        'i18next',
-    ],
+    plugins: ['react', '@typescript-eslint', 'i18next'],
     rules: {
         indent: ['error', 4],
         '@typescript-eslint/indent': ['error', 4],
         'react/jsx-indent': [2, 4],
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+        'react/jsx-filename-extension': [2, {
+            extensions: ['.js', '.jsx', '.tsx'],
+        }],
         'import/no-unresolved': 'off',
         'no-unused-vars': 'warn',
         'react/require-default-props': 'off',
@@ -45,7 +44,10 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
-        'max-len': ['error', { ignoreComments: true, code: 100 }],
+        'max-len': ['error', {
+            ignoreComments: true,
+            code: 100,
+        }],
         'comma-dangle': ['error', {
             arrays: 'always-multiline',
             objects: 'always-multiline',
@@ -70,7 +72,10 @@ module.exports = {
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/promise-function-async': 'off',
         '@typescript-eslint/naming-convention': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        '@typescript-eslint/prefer-includes': 'off',
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+        }],
     },
     globals: {
         __IS_DEV__: true,

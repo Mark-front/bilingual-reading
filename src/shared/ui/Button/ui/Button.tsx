@@ -4,6 +4,7 @@ import cls from './Button.module.scss'
 
 export const ThemeButton = {
     CLEAR: 'clear',
+    OUTLINE: 'outline',
 } as const
 
 export type TThemeButton = (typeof ThemeButton)[keyof typeof ThemeButton]
