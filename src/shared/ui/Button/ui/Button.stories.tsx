@@ -1,9 +1,9 @@
 import React from 'react';
-import { type ComponentStory, type ComponentMeta } from '@storybook/react';
+import {type ComponentStory, type ComponentMeta} from '@storybook/react';
 
-import { Button, ThemeButton } from '@/shared/ui/Button';
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/ui/ThemeProvider';
+import {Button, ThemeButton} from '@/shared/ui/Button';
+import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import {Theme} from '@/shared/ui/ThemeProvider';
 
 export default {
     title: 'shared/Button',
@@ -11,7 +11,7 @@ export default {
     argTypes: {},
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} >test</Button>;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} >12342345</Button>;
 
 export const Clear = Template.bind({});
 

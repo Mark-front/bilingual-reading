@@ -7,7 +7,8 @@ module.exports = {
     },
     extends: [
         'plugin:react/recommended',
-        'standard-with-typescript',
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
     ],
@@ -57,6 +58,7 @@ module.exports = {
         }],
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
+        'react/display-name': 'off',
         'no-underscore-dangle': 'off',
         '@typescript-eslint/comma-dangle': ['error', {
             arrays: 'always-multiline',
