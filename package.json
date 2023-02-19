@@ -11,11 +11,13 @@
     "lint:ts:fix": "eslint **/*.{ts,tsx} --fix",
     "lint:scss": "stylelint **/*.{scss,css}",
     "lint:scss:fix": "stylelint **/*.{scss,css} --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts",
+    "test:unit": "jest --config ./config/jest/jest.config.ts",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approve",
     "analyze:dev": "npm run build:dev --env analyze=true",
     "analyze:prod": "npm run build:prod --env analyze=true",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook"
   },
   "repository": {
     "type": "git",
