@@ -7,11 +7,11 @@ import {
     ProgressPlugin,
     type WebpackPluginInstance,
 } from 'webpack'
-import { type BuildOptions } from './types/config'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import {type BuildOptions} from './types/config'
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer'
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
-    const { paths, isDev, isAnalyze } = options
+    const {paths, isDev, isAnalyze} = options
 
     const plugins = [
         new HtmlWebpackPlugin({
@@ -25,8 +25,7 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
         new DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-    ]
-
+    ];
     if (isDev) {
         plugins.push(new HotModuleReplacementPlugin());
         plugins.push(new ReactRefreshWebpackPlugin());
