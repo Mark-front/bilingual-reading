@@ -6,9 +6,11 @@
     "src",
     "tests",
     "config",
+    "scripts",
     // add all files in which you see
     // the "parserOptions.project" error
     ".eslintrc.js",
-    "webpack.config.ts"
+    "webpack.config.ts",
+    "generate-visual-json-report.js"
   ]
 }
