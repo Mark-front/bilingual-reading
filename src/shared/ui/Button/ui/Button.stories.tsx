@@ -26,6 +26,12 @@ Clear.args = {
     theme: ThemeButton.CLEAR,
 };
 
+export const ClearInverted = Template.bind({});
+
+ClearInverted.args = {
+    theme: ThemeButton.CLEAR_INVERTED,
+};
+
 export const ClearDark = Template.bind({});
 
 ClearDark.args = {

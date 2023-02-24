@@ -4,6 +4,7 @@ import cls from './Button.module.scss'
 
 export const ThemeButton = {
     CLEAR: 'clear',
+    CLEAR_INVERTED: 'clearInverted',
     OUTLINE: 'outline',
     BACKGROUND: 'background',
     BACKGROUND_INVERTED: 'backgroundInverted',
@@ -28,10 +29,10 @@ export type TButtonSize = (typeof ButtonSize)[keyof typeof ButtonSize];
 
 export const Button: FC<ButtonProps> = (props) => {
     const {
-        className,
+        className = '',
         children,
         theme = ThemeButton.CLEAR,
-        square,
+        square = false,
         size = ButtonSize.M,
         ...otherProps
     } = props

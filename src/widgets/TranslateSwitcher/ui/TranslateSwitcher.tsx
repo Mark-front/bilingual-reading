@@ -8,7 +8,7 @@ interface TranslateSwitcherProps {
     short?: boolean
 }
 
-export const TranslateSwitcher = ({className, short = false}: TranslateSwitcherProps) => {
+export const TranslateSwitcher = ({className = '', short = false}: TranslateSwitcherProps) => {
     const {t, i18n} = useTranslation(['translation', 'about', 'main'])
     const toggle = () => {
         void i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')

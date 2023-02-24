@@ -11,6 +11,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
+        "plugin:react-hooks/recommended",
     ],
     settings: {
         'import/resolver': {
@@ -19,7 +20,13 @@ module.exports = {
             },
         },
     },
-    overrides: [],
+    overrides: [{
+        files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
+            'max-len': 'off',
+        },
+    }],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -30,7 +37,7 @@ module.exports = {
         project: ['./tsconfig.eslint.json'],
         tsconfigRootDir: __dirname,
     },
-    plugins: ['react', '@typescript-eslint', 'i18next'],
+    plugins: ['react', '@typescript-eslint', 'i18next', "react-hooks"],
     rules: {
         indent: ['error', 4],
         '@typescript-eslint/indent': ['error', 4],
@@ -78,6 +85,8 @@ module.exports = {
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
         }],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
     },
     globals: {
         __IS_DEV__: true,
