@@ -4,10 +4,10 @@ import cls from './Sidebar.module.scss'
 import {Button, ButtonSize, ThemeButton} from '@/shared/ui/Button'
 import {ThemeSwitcher} from '@/widgets/ThemeSwitcher'
 import {useTranslation} from 'react-i18next'
-import {TranslateSwitcher} from "@/widgets/TranslateSwitcher";
-import {AppLink} from "@/shared/ui/AppLink";
-import {AppLinkTheme} from "@/shared/ui/AppLink/ui/AppLink";
-import {RoutePath} from "@/shared/config/routeConfig/routeConfig";
+import {TranslateSwitcher} from '@/widgets/TranslateSwitcher';
+import {AppLink} from '@/shared/ui/AppLink';
+import {AppLinkTheme} from '@/shared/ui/AppLink/ui/AppLink';
+import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icons/about.svg'
 import HomeIcon from 'shared/assets/icons/home.svg'
 
@@ -15,7 +15,7 @@ interface SidebarProps {
     className?: string
 }
 
-export const Sidebar = ({className = ""}: SidebarProps) => {
+export const Sidebar = ({className = ''}: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false)
     const {t} = useTranslation()
     const onToggle = () => {
@@ -48,7 +48,7 @@ export const Sidebar = ({className = ""}: SidebarProps) => {
                     className={classNames(cls.link)}
                 >
                     <HomeIcon className={cls.linkIcon}/>
-                    <span className={cls.linkText}>{t("Главная")}</span>
+                    <span className={cls.linkText}>{t('Главная')}</span>
                 </AppLink>
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
@@ -56,7 +56,7 @@ export const Sidebar = ({className = ""}: SidebarProps) => {
                     className={classNames(cls.link)}
                 >
                     <AboutIcon className={cls.linkIcon}/>
-                    <span className={cls.linkText}>{t("О нас")}</span>
+                    <span className={cls.linkText}>{t('О нас')}</span>
                 </AppLink>
             </div>
             <div className={cls.switchers}>

@@ -5,6 +5,7 @@ import {
     ThemeContext,
     type TTheme,
 } from '../lib/context/themeContext'
+import {useTheme} from '@/shared/ui/ThemeProvider';
 
 const defaultTheme =
     localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as TTheme ||
@@ -19,6 +20,7 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
         children,
         initialTheme = Theme.LIGHT,
     } = props;
+
     const [theme, setTheme] = useState(initialTheme || defaultTheme)
     const defaultProps = useMemo(() => ({
         theme,

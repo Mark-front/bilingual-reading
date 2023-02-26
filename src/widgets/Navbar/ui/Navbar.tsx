@@ -1,17 +1,15 @@
 import React, {useCallback, useState} from 'react'
 import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
-import {AppLink} from '@/shared/ui/AppLink'
-import {AppLinkTheme} from '@/shared/ui/AppLink/ui/AppLink'
-import {useTranslation} from "react-i18next";
-import {Modal} from "@/shared/ui/Modal";
-import {Button, ThemeButton} from "@/shared/ui/Button";
+import {useTranslation} from 'react-i18next';
+import {Modal} from '@/shared/ui/Modal';
+import {Button, ThemeButton} from '@/shared/ui/Button';
 
 interface NavbarProps {
     className?: string
 }
 
-export const Navbar = ({className = ""}: NavbarProps) => {
+export const Navbar = ({className = ''}: NavbarProps) => {
     const {t} = useTranslation()
     const [isAuthModal, setIsAuthModal] = useState(false)
 
@@ -32,7 +30,7 @@ export const Navbar = ({className = ""}: NavbarProps) => {
                 onClose={onToggleModal}
                 isOpen={isAuthModal}
             >
-                {"12345"}
+                {'12345'}
             </Modal>
         </div>
     )

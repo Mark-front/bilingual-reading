@@ -7,11 +7,11 @@ module.exports = {
     },
     extends: [
         'plugin:react/recommended',
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
         'plugin:i18next/recommended',
         'plugin:storybook/recommended',
-        "plugin:react-hooks/recommended",
+        'plugin:react-hooks/recommended',
     ],
     settings: {
         'import/resolver': {
@@ -37,7 +37,7 @@ module.exports = {
         project: ['./tsconfig.eslint.json'],
         tsconfigRootDir: __dirname,
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', "react-hooks"],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
     rules: {
         indent: ['error', 4],
         '@typescript-eslint/indent': ['error', 4],
@@ -52,6 +52,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
+        'quotes': ['error', 'single'],
         'max-len': ['error', {
             ignoreComments: true,
             code: 100,
@@ -75,6 +76,7 @@ module.exports = {
             functions: 'never',
         }],
         '@typescript-eslint/semi': 'off',
+        '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         '@typescript-eslint/space-before-function-paren': 'off',
@@ -85,8 +87,8 @@ module.exports = {
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
         }],
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "error",
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals: {
         __IS_DEV__: true,

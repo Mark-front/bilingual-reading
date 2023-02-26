@@ -6,7 +6,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorato
 import {Theme} from '@/shared/ui/ThemeProvider';
 import {
     MemoryRouterDecorator,
-} from "@/shared/config/storybook/decorators/MemoryRouterDecorator/MemoryRouterDecorator";
+} from '@/shared/config/storybook/decorators/MemoryRouterDecorator/MemoryRouterDecorator';
 
 export default {
     title: 'widgets/Sidebar',
