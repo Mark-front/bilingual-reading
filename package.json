@@ -22,7 +22,8 @@
     "analyze:dev": "npm run build:dev --env analyze=true",
     "analyze:prod": "npm run build:prod --env analyze=true",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "storybook:build": "build-storybook -c ./config/storybook"
+    "storybook:build": "build-storybook -c ./config/storybook",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -75,6 +76,7 @@
     "eslint-plugin-storybook": "^0.6.10",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.4.2",
     "jest-environment-jsdom": "^29.4.2",
