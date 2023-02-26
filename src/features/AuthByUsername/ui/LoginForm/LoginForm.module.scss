@@ -1,0 +1,17 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 400px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    width: 100%;
+    border: none;
+    background: var(--inverted-bg-color);
+    color: var(--inverted-primary-color);
+    margin-bottom: 12px;
+}

@@ -15,6 +15,7 @@ export const StoreProvider = (props: StoreProviderProps) => {
             counter: {
                 value: 0,
             },
+            user: {},
         },
     } = props;
     const store = createReduxStore(initialState)
