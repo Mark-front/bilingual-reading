@@ -30,4 +30,7 @@ export default {
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
         '^@/(.*)$': '<rootDir>src/$1',
     },
+    globals: {
+        '__IS_DEV__': true,
+    },
 }

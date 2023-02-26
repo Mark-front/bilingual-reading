@@ -1,5 +1,5 @@
 import path from 'path';
-import {type Configuration, type RuleSetRule} from 'webpack';
+import {type Configuration, DefinePlugin, type RuleSetRule} from 'webpack';
 import {type BuildPaths} from '../build/types/config';
 import buildCssLoader from '../build/loaders/buildCssLoader';
 
@@ -31,6 +31,13 @@ export default ({config}: { config: Configuration }) => {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     })
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+
+    config.plugins.push(
+        new DefinePlugin({
+            __IS_DEV__: false,
+        }))
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
 
