@@ -55,7 +55,7 @@ module.exports = {
         'quotes': ['error', 'single'],
         'max-len': ['error', {
             ignoreComments: true,
-            code: 100,
+            code: 120,
         }],
         'comma-dangle': ['error', {
             arrays: 'always-multiline',

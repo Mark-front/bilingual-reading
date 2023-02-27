@@ -11,14 +11,10 @@ interface StoreProviderProps {
 export const StoreProvider = (props: StoreProviderProps) => {
     const {
         children,
-        initialState = {
-            counter: {
-                value: 0,
-            },
-            user: {},
-        },
+        initialState,
     } = props;
-    const store = createReduxStore(initialState)
+
+    const store = createReduxStore(initialState as StateSchema)
 
     return (
         <Provider store={store}>
