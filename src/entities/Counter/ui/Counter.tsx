@@ -19,8 +19,8 @@ export const Counter = () => {
             <Button
                 square={true}
                 theme={ThemeButton.BACKGROUND_INVERTED}
-                onClick={decrement}
-                data-testid="btn-decrement"
+                onClick={increment}
+                data-testid="btn-increment"
             >
                 {'+'}
             </Button>
@@ -28,8 +28,8 @@ export const Counter = () => {
             <Button
                 square={true}
                 theme={ThemeButton.BACKGROUND_INVERTED}
-                onClick={increment}
-                data-testid="btn-increment"
+                onClick={decrement}
+                data-testid="btn-decrement"
             >
                 {'-'}
             </Button>

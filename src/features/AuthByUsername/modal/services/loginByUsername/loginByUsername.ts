@@ -16,7 +16,6 @@ export const loginByUsername = createAsyncThunk<IUser, LoginByUsernameProps, { r
                 'http://localhost:8000/login',
                 authData
             )
-            console.log(response.data)
             if (!response.data) {
                 throw new Error()
             }

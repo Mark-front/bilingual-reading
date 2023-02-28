@@ -13,6 +13,6 @@ describe('getCounter', () => {
             },
         }
 
-        expect(getUserAuthData(state as StateSchema)).toEqual({user: {username: 'user', id: '1'}})
+        expect(getUserAuthData(state as StateSchema)).toEqual({id: '1', username: 'user'})
     })
 })
