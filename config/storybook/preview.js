@@ -6,6 +6,7 @@ import {
     ThemeDecorator,
 } from '../../src/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator'
 import { Theme } from '../../src/shared/ui/ThemeProvider'
+import {TranslateDecorator} from '../../src/shared/config/storybook/decorators/TranslateDecorator/TranslateDecorator';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -18,3 +19,4 @@ export const parameters = {
 
 addDecorator(StyleDecorator)
 addDecorator(ThemeDecorator(Theme.LIGHT))
+addDecorator(TranslateDecorator)

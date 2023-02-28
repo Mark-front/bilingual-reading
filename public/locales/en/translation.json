@@ -11,5 +11,6 @@
   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Refresh the page",
   "Выдать ошибку": "Throw error",
-  "Войти": "Login"
+  "Войти": "Login",
+  "Выйти": "Logout"
 }
