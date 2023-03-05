@@ -28,7 +28,7 @@ export const ButtonSize = {
 
 export type TButtonSize = (typeof ButtonSize)[keyof typeof ButtonSize];
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC = ((props: ButtonProps) => {
     const {
         className = '',
         children,
@@ -50,4 +50,4 @@ export const Button: FC<ButtonProps> = (props) => {
             {children}
         </button>
     )
-}
+})

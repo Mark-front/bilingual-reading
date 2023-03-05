@@ -25,27 +25,6 @@
     gap: 10px;
 }
 
-.link {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--inverted-primary-color);
-}
-
-.linkIcon {
-    display: block;
-    flex-shrink: 0;
-    width: var(--font-line-m);
-    height: var(--font-line-m);
-    fill: var(--inverted-primary-color);
-}
-
-.linkText {
-    white-space: nowrap;
-    opacity: 1;
-    transform-origin: left;
-    transition: opacity .3s ease, transform .3s ease, width .3s ease;
-}
 
 .btnCollapse {
     position: absolute;
@@ -56,11 +35,6 @@
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
-
-    .linkText {
-        width: 0;
-        opacity: 0;
-    }
 
     .switchers {
         flex-direction: column;

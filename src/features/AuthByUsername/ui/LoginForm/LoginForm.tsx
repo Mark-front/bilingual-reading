@@ -4,7 +4,7 @@ import cls from './LoginForm.module.scss';
 import {useTranslation} from 'react-i18next';
 import {Button, ThemeButton} from '@/shared/ui/Button';
 import {Input} from '@/shared/ui/Input';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {loginActions, loginReducers} from '../../model/slice/loginSlice';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
 import {Text} from '@/shared/ui/Text';
@@ -14,17 +14,20 @@ import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginU
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
 import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 export interface LoginFormProps {
     className?: string;
+    onSuccess: () => void;
 }
+
 const initialReducers: ReducersList = {
     loginForm: loginReducers,
 }
 
-const LoginForm = memo(({className = ''}: LoginFormProps) => {
+const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
     const {t} = useTranslation();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     const password = useSelector(getLoginPassword);
     const username = useSelector(getLoginUsername);
@@ -39,11 +42,12 @@ const LoginForm = memo(({className = ''}: LoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch])
 
-    const onLoginClick = useCallback(() => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        dispatch(loginByUsername({password, username}))
-    }, [dispatch, username, password])
+    const onLoginClick = useCallback(async () => {
+        const result = await dispatch(loginByUsername({password, username}));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess()
+        }
+    }, [onSuccess, dispatch, username, password])
 
     return (
         <DynamicModuleLoader key={'loginForm'} reducers={initialReducers}>

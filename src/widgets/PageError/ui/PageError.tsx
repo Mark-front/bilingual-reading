@@ -1,11 +1,11 @@
-import React, { type FC } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
+import React, {type FC, memo} from 'react'
+import {classNames} from '@/shared/lib/classNames/classNames'
 import cls from './PageError.module.scss'
-import { useTranslation } from 'react-i18next'
-import { Button } from '@/shared/ui/Button'
+import {useTranslation} from 'react-i18next'
+import {Button} from '@/shared/ui/Button'
 
-export const PageError: FC = (props) => {
-    const { t } = useTranslation()
+export const PageError: FC = memo((props) => {
+    const {t} = useTranslation()
 
     const reloadPage = () => {
         location.reload()
@@ -22,3 +22,4 @@ export const PageError: FC = (props) => {
         </div>
     )
 }
+)
