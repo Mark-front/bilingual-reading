@@ -9,14 +9,14 @@ import {ThemeProvider} from '@/shared/ui/ThemeProvider'
 import {StoreProvider} from './app/providers/StoreProvider';
 
 ReactDOM.render(
-    <StoreProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
             <ErrorBoundary>
                 <ThemeProvider>
                     <App/>
                 </ThemeProvider>
             </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>,
+        </StoreProvider>
+    </BrowserRouter>,
     document.querySelector('#root')
 )

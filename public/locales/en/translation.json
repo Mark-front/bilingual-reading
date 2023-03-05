@@ -12,5 +12,9 @@
   "Обновить страницу": "Refresh the page",
   "Выдать ошибку": "Throw error",
   "Войти": "Login",
-  "Выйти": "Logout"
+  "Выйти": "Logout",
+  "Проофиль пользователя": "User profile",
+  "Редактировать": "Edit",
+  "Ваше фамилия": "Your lastname",
+  "Ваше имя": "Your firstname"
 }
