@@ -1,4 +1,4 @@
-import {ILoginSchema} from './modal/types/loginSchema';
+import {ILoginSchema} from './model/types/loginSchema';
 import {LoginModal} from './ui/LoginModal/LoginModal';
 
 export {

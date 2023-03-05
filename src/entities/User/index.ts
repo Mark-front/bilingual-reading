@@ -1,3 +1,3 @@
-export {userReduser, userActions} from './modal/slice/userSlise';
-export {IUser, IUserSchema} from './modal/types/user';
-export {getUserAuthData} from './modal/selectors/getAuthData/getAuthData';
+export {userReduser, userActions} from './model/slice/userSlise';
+export {IUser, IUserSchema} from './model/types/user';
+export {getUserAuthData} from './model/selectors/getAuthData/getAuthData';

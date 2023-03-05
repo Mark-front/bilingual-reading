@@ -1,7 +1,7 @@
 import {StateSchema, StoreProvider} from '@/app/providers/StoreProvider';
 import {Story} from '@storybook/react';
 import {DeepPartial, ReducersMapObject} from '@reduxjs/toolkit';
-import {loginReducers} from '@/features/AuthByUsername/modal/slice/loginSlice';
+import {loginReducers} from '@/features/AuthByUsername/model/slice/loginSlice';
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
