@@ -1,5 +1,5 @@
 import {classNames} from '@/shared/lib/classNames/classNames'
-import React, {type ButtonHTMLAttributes, type FC} from 'react'
+import React, {type ButtonHTMLAttributes, memo, ReactNode} from 'react'
 import cls from './Button.module.scss'
 
 export const ThemeButton = {
@@ -18,6 +18,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean
     disabled?: boolean
     size?: TButtonSize
+    children?: ReactNode
 }
 
 export const ButtonSize = {
@@ -28,7 +29,7 @@ export const ButtonSize = {
 
 export type TButtonSize = (typeof ButtonSize)[keyof typeof ButtonSize];
 
-export const Button: FC = ((props: ButtonProps) => {
+export const Button = memo((props: ButtonProps) => {
     const {
         className = '',
         children,
