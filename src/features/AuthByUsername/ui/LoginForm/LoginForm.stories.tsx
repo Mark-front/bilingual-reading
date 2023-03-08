@@ -1,5 +1,5 @@
 import React from 'react';
-import {type ComponentStory, type ComponentMeta} from '@storybook/react';
+import {type ComponentMeta, type ComponentStory} from '@storybook/react';
 
 import LoginForm from './LoginForm';
 import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
@@ -14,11 +14,13 @@ export default {
     decorators: [],
 } as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof LoginForm> = () => <LoginForm/>;
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const Template: ComponentStory<typeof LoginForm> = () => <LoginForm onSuccess={() => {
+}}/>;
 
 export const LoginFormDefault = Template.bind({});
-LoginFormDefault.decorators = [StoreDecorator({loginForm: {password:'', username:'', isLoading: false}})]
+LoginFormDefault.decorators = [StoreDecorator({loginForm: {password: '', username: '', isLoading: false}})]
 export const LoginFormDark = Template.bind({});
 
 LoginFormDark.decorators = [ThemeDecorator(Theme.DARK)]
-LoginFormDark.decorators = [StoreDecorator({loginForm: {password:'', username:'', isLoading: false}})]
+LoginFormDark.decorators = [StoreDecorator({loginForm: {password: '', username: '', isLoading: false}})]

@@ -52,6 +52,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 'warn',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
+        'no-undef': 'off',
         'quotes': ['error', 'single'],
         'max-len': ['error', {
             ignoreComments: true,

@@ -35,4 +35,4 @@ export const loginSlice = createSlice({
 })
 
 export const {actions: loginActions} = loginSlice
-export const {reducer: loginReducers} = loginSlice
+export const {reducer: loginReducer} = loginSlice

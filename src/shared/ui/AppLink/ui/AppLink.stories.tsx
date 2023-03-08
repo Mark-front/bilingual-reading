@@ -1,12 +1,10 @@
 import React from 'react';
-import {type ComponentStory, type ComponentMeta} from '@storybook/react';
+import {type ComponentMeta, type ComponentStory} from '@storybook/react';
 
 import {AppLink} from '@/shared/ui/AppLink';
 import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import {Theme} from '@/shared/ui/ThemeProvider';
-import {
-    MemoryRouterDecorator,
-} from '@/shared/config/storybook/decorators/MemoryRouterDecorator/MemoryRouterDecorator';
+import {MemoryRouterDecorator} from '@/shared/config/storybook/decorators/MemoryRouterDecorator/MemoryRouterDecorator';
 
 export default {
     title: 'shared/AppLink',

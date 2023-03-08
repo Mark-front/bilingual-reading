@@ -1,6 +1,5 @@
-import {DeepPartial} from '@reduxjs/toolkit';
 import {ILoginSchema} from '../types/loginSchema';
-import {loginActions, loginReducers} from './loginSlice';
+import {loginActions, loginReducer} from './loginSlice';
 
 describe('loginSlice.test', () => {
     test('test set username', () => {
@@ -8,7 +7,7 @@ describe('loginSlice.test', () => {
             username: 'admin',
         }
 
-        expect(loginReducers(
+        expect(loginReducer(
             state as ILoginSchema,
             loginActions.setUsername('123')
         )).toEqual({username: '123'})
@@ -19,7 +18,7 @@ describe('loginSlice.test', () => {
             password: '123',
         }
 
-        expect(loginReducers(
+        expect(loginReducer(
             state as ILoginSchema,
             loginActions.setPassword('321')
         )).toEqual({password: '321'})

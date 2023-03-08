@@ -8,7 +8,11 @@ interface LoginByUsernameProps {
     password: string;
 }
 
-export const loginByUsername = createAsyncThunk<IUser, LoginByUsernameProps, ThunkConfig<string>>(
+export const loginByUsername = createAsyncThunk<
+IUser,
+LoginByUsernameProps,
+ThunkConfig<string>
+>(
     'login/loginByUsername',
     async (authData, thunkAPI) => {
         const {
@@ -28,7 +32,6 @@ export const loginByUsername = createAsyncThunk<IUser, LoginByUsernameProps, Thu
 
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
             dispatch(userActions.setAuthData(response.data))
-            extra.navigate('/profile')
             return response.data
         } catch (e) {
             console.log(e)

@@ -5,7 +5,7 @@ import {useTranslation} from 'react-i18next';
 import {Button, ThemeButton} from '@/shared/ui/Button';
 import {Input} from '@/shared/ui/Input';
 import {useSelector} from 'react-redux';
-import {loginActions, loginReducers} from '../../model/slice/loginSlice';
+import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
 import {Text} from '@/shared/ui/Text';
 import {ThemeText} from '@/shared/ui/Text/ui/Text';
@@ -22,7 +22,7 @@ export interface LoginFormProps {
 }
 
 const initialReducers: ReducersList = {
-    loginForm: loginReducers,
+    loginForm: loginReducer,
 }
 
 const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
@@ -43,6 +43,8 @@ const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
     }, [dispatch])
 
     const onLoginClick = useCallback(async () => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         const result = await dispatch(loginByUsername({password, username}));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess()

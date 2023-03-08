@@ -1,5 +1,5 @@
 import React from 'react';
-import {type ComponentStory, type ComponentMeta} from '@storybook/react';
+import {type ComponentMeta, type ComponentStory} from '@storybook/react';
 
 import {Modal} from '@/shared/ui/Modal';
 import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';

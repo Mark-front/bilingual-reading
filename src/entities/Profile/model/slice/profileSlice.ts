@@ -30,4 +30,4 @@ export const profileSlice = createSlice({
 })
 
 export const {actions: profileActions} = profileSlice
-export const {reducer: profileReducers} = profileSlice
+export const {reducer: profileReducer} = profileSlice

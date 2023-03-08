@@ -2,11 +2,6 @@ import {createAsyncThunk} from '@reduxjs/toolkit';
 import {ThunkConfig} from '@/app/providers/StoreProvider';
 import {IProfile} from '../../types/profile';
 
-interface LoginByUsernameProps {
-    username: string;
-    password: string;
-}
-
 export const fetchProfileData = createAsyncThunk<IProfile, void, ThunkConfig<string>>(
     'profile/fetchProfileData',
     async (_, thunkAPI) => {
@@ -14,6 +9,7 @@ export const fetchProfileData = createAsyncThunk<IProfile, void, ThunkConfig<str
             extra,
             rejectWithValue,
         } = thunkAPI;
+
         try {
             const response = await extra.api.get<IProfile>(
                 '/profile'
