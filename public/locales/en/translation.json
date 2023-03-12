@@ -16,5 +16,13 @@
   "Проофиль пользователя": "User profile",
   "Редактировать": "Edit",
   "Ваше фамилия": "Your lastname",
-  "Ваше имя": "Your firstname"
+  "Ваше имя": "Your firstname",
+  "Сохранить": "Save",
+  "Отменить": "Reject",
+  "Никнейм": "Nickname",
+  "Страна": "Country",
+  "Город": "City",
+  "Валюта": "Currency",
+  "Фото": "Photo",
+  "Возраст": "Age"
 }

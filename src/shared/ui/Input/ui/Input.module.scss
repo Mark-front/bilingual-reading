@@ -1,8 +1,30 @@
 .InputWrapper {
+    display: block;
     width: 100%;
+    padding: 10px 20px;
 }
 
 .input {
     display: block;
     width: 100%;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.outline {
+    border: 2px solid var(--inverted-bg-color);
+
+    .input {
+        color: var(--primary-color);
+    }
+
+}
+
+.readonly {
+    opacity: .7;
+
+    .input {
+        color: var(--secondary-color);
+    }
 }

@@ -9,11 +9,21 @@ export const ThemeText = {
 
 export type TThemeText = (typeof ThemeText)[keyof typeof ThemeText]
 
+export const TextAlign = {
+    CENTER: 'center',
+    LEFT: 'left',
+    RIGHT: 'right',
+} as const
+
+export type TTextAlign = (typeof TextAlign)[keyof typeof TextAlign]
+
+
 interface TextProps {
     className?: string;
     title?: string;
     text?: string;
     theme?: TThemeText;
+    align?: TTextAlign;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -22,12 +32,13 @@ export const Text = memo((props: TextProps) => {
         text,
         className = '',
         theme = '',
+        align = TextAlign.LEFT,
     } = props;
 
     const {t} = useTranslation();
 
     return (
-        <div className={classNames(cls.Text, {}, [className, cls[theme]])}>
+        <div className={classNames(cls.Text, {}, [className, cls[theme], cls[align]])}>
             {title && <p className={cls.title}>{title}</p>}
             {text && <p className={cls.text}>{text}</p>}
         </div>

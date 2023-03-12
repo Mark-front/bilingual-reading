@@ -1,14 +1,24 @@
 import React, {ChangeEvent, InputHTMLAttributes, memo} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
+import {classNames, Mods} from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+
+export const ThemeInput = {
+    OUTLINE: 'outline',
+    READONLY: 'readonly',
+} as const
+
+export type TThemeInput = (typeof ThemeInput)[keyof typeof ThemeInput]
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
-    onChange?: (value: string) => void;
+    value?: string | number;
+    onChange?: (value?: string) => void;
+    theme?: TThemeInput;
+    readOnly?: boolean;
 }
+
 
 export const Input = memo((props: InputProps) => {
     const {
@@ -16,21 +26,28 @@ export const Input = memo((props: InputProps) => {
         value,
         onChange,
         type = 'text',
+        theme = ThemeInput.OUTLINE,
+        readOnly = false,
     } = props;
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value)
     }
 
+    const mods: Mods = {
+        [cls.readonly]: readOnly,
+    }
+
     return (
-        <div className={classNames(cls.InputWrapper, {}, [className])}>
+        <label className={classNames(cls.InputWrapper, mods, [className, cls[theme]])}>
             <input
                 className={cls.input}
                 type={type}
                 value={value}
                 onChange={onChangeHandler}
+                readOnly={readOnly}
             />
-        </div>
+        </label>
     );
 });
 
