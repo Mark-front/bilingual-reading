@@ -1,7 +1,6 @@
 import React, {useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import cls from './CurrencySelect.module.scss';
 import {Select} from '@/shared/ui/Select';
 import {Currency, TCurrency} from '../../modal/types/currency';
 
@@ -34,7 +33,7 @@ export const CurrencySelect = (props: ICurrencySelectProps) => {
 
     return (
         <Select
-            className={classNames(cls.CurrencySelect, {}, [className])}
+            className={classNames('', {}, [className])}
             label={t('Укажите валюту') || 'Укажите валюту'}
             options={options}
             value={value}

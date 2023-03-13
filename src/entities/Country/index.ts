@@ -1,5 +1,6 @@
 export {
     TCountry,
+    Country,
 } from './modal/types/country'
 export {
     CountrySelect,

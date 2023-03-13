@@ -14,9 +14,10 @@ import {
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useSelector} from 'react-redux';
 import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';
-import {profileActions} from '../../../entities/Profile';
+import {getProfileValidateErrors, profileActions, ValidateProfileError} from '../../../entities/Profile';
 import {TCurrency} from '@/entities/Currency';
 import {TCountry} from '@/entities/Country';
+import {Text, ThemeText} from '@/shared/ui/Text';
 
 // import cls from './ProfilePage.module.scss';
 
@@ -38,7 +39,16 @@ const ProfilePage = memo((props: IProfilePageProps) => {
     const form = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
+    const validateErrors = useSelector(getProfileValidateErrors);
     const readonly = useSelector(getProfileReadonly);
+
+    const validateErrorsTranslate = {
+        [ValidateProfileError.SERVER_NOT_RESPONSE]: t('Сервер не отвечает'),
+        [ValidateProfileError.DATA_NOT_FOUND]: t('Нет данных о пользователе'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('Страна указана неверно'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('Неверные данные о пользователе'),
+        [ValidateProfileError.INCORRECT_AGE]: t('Возраст указан неверно'),
+    }
 
     useEffect(() => {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -83,6 +93,15 @@ const ProfilePage = memo((props: IProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('cls.ProfilePage', {}, [className])}>
                 <ProfilePageHeader/>
+                {validateErrors?.length &&
+                    validateErrors.map(err =>
+                        <Text
+                            key={err}
+                            theme={ThemeText.ERROR}
+                            text={validateErrorsTranslate[err]}
+                        />
+                    )
+                }
                 <ProfileCard
                     data={form}
                     error={error}

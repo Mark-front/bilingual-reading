@@ -4,7 +4,7 @@ import {type ComponentMeta, type ComponentStory} from '@storybook/react';
 import {Avatar} from '@/shared/ui/Avatar';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import AvatarImg from './avatar.png';
+import AvatarImg from '../../../assets/test/avatar.png';
 
 export default {
     title: 'shared/Avatar',

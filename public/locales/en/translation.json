@@ -24,5 +24,10 @@
   "Город": "City",
   "Валюта": "Currency",
   "Фото": "Photo",
-  "Возраст": "Age"
+  "Возраст": "Age",
+  "Сервер не отвечает": "Server is not response",
+  "Нет данных о пользователе": "There is no data about the user",
+  "Страна указана неверно": "The country is specified incorrectly",
+  "Неверные данные о пользователе": "Incorrect user data",
+  "Возраст указан неверно": "The age is incorrect"
 }

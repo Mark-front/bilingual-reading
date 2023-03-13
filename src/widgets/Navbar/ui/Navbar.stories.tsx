@@ -4,13 +4,12 @@ import {type ComponentMeta, type ComponentStory} from '@storybook/react';
 import {Navbar} from '@/widgets/Navbar';
 import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import {Theme} from '@/shared/ui/ThemeProvider';
-import {MemoryRouterDecorator} from '@/shared/config/storybook/decorators/MemoryRouterDecorator/MemoryRouterDecorator';
 
 export default {
     title: 'widgets/Navbar',
     component: Navbar,
     argTypes: {},
-    decorators: [MemoryRouterDecorator],
+    decorators: [],
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;

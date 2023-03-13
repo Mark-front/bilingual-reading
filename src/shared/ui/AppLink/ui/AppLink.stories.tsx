@@ -4,7 +4,6 @@ import {type ComponentMeta, type ComponentStory} from '@storybook/react';
 import {AppLink} from '@/shared/ui/AppLink';
 import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import {Theme} from '@/shared/ui/ThemeProvider';
-import {MemoryRouterDecorator} from '@/shared/config/storybook/decorators/MemoryRouterDecorator/MemoryRouterDecorator';
 
 export default {
     title: 'shared/AppLink',
@@ -13,7 +12,7 @@ export default {
     args: {
         to: '/',
     },
-    decorators: [MemoryRouterDecorator],
+    decorators: [],
 } as ComponentMeta<typeof AppLink>;
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} >12342345</AppLink>;

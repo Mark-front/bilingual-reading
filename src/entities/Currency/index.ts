@@ -1,5 +1,6 @@
 export {
     TCurrency,
+    Currency,
 } from './modal/types/currency'
 export {
     CurrencySelect,

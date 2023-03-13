@@ -4,13 +4,12 @@ import {type ComponentMeta, type ComponentStory} from '@storybook/react';
 import {Sidebar} from '@/widgets/Sidebar';
 import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import {Theme} from '@/shared/ui/ThemeProvider';
-import {MemoryRouterDecorator} from '@/shared/config/storybook/decorators/MemoryRouterDecorator/MemoryRouterDecorator';
 
 export default {
     title: 'widgets/Sidebar',
     component: Sidebar,
     argTypes: {},
-    decorators: [MemoryRouterDecorator],
+    decorators: [],
 } as ComponentMeta<typeof Sidebar>;
 
 const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;

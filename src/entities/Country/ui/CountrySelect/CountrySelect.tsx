@@ -1,7 +1,6 @@
 import React, {useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import cls from './CountrySelect.module.scss';
 import {Select} from '@/shared/ui/Select';
 import {Country, TCountry} from '../../modal/types/country';
 
@@ -36,7 +35,7 @@ export const CountrySelect = (props: ICountrySelectProps) => {
 
     return (
         <Select
-            className={classNames(cls.CountrySelect, {}, [className])}
+            className={classNames('', {}, [className])}
             label={t('Укажите страну') || 'Укажите страну'}
             options={options}
             value={value}
