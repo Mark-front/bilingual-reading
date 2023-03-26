@@ -1,7 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {ThunkConfig} from '@/app/providers/StoreProvider';
 import {IProfile, TValidateProfileError, ValidateProfileError} from '../../types/profile';
-import {getProfileData} from '@/entities/Profile';
+import {getProfileForm} from '@/entities/Profile';
 import {validateProfileData} from '../validateProfileData/validateProfileData';
 
 export const updateProfileData = createAsyncThunk<IProfile, void, ThunkConfig<TValidateProfileError[]>>(
@@ -13,7 +13,7 @@ export const updateProfileData = createAsyncThunk<IProfile, void, ThunkConfig<TV
             getState,
         } = thunkAPI;
 
-        const formData = getProfileData(getState());
+        const formData = getProfileForm(getState());
 
         const errors = validateProfileData(formData);
 

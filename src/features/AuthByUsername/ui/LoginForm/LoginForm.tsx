@@ -15,6 +15,7 @@ import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
 import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {Loader} from '@/shared/ui/Loader';
 
 export interface LoginFormProps {
     className?: string;
@@ -53,7 +54,13 @@ const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
 
     return (
         <DynamicModuleLoader key={'loginForm'} reducers={initialReducers}>
+
             <div className={classNames(cls.LoginForm, {}, [className])}>
+                {isLoading &&
+                    <div className={cls.loaderContainer}>
+                        <Loader className={cls.LoginLoader}/>
+                    </div>
+                }
                 <Text title={'Форма авторизации'}/>
                 {error && <Text theme={ThemeText.ERROR} text={error}/>}
                 <Input

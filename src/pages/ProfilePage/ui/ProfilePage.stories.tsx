@@ -13,9 +13,37 @@ export default {
     title: 'pages/ProfilePage',
     component: ProfilePage,
     argTypes: {},
-    decorators: [StoreDecorator({
+    decorators: [],
+} as ComponentMeta<typeof ProfilePage>;
+
+const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage/>;
+
+export const Default = Template.bind({});
+
+Default.args = {};
+Default.decorators = [StoreDecorator({
+    profile: {
+        form: {
+            age: 22,
+            country: 'Armenia',
+            username: 'admin',
+            first: 'John',
+            lastname: 'Doe',
+            currency: 'RUB',
+            avatar: AvatarImg,
+            city: 'Москва',
+        },
+        isLoading: false,
+    },
+})]
+export const Dark = Template.bind({});
+
+Dark.args = {};
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
         profile: {
-            data: {
+            form: {
                 age: 22,
                 country: 'Armenia',
                 username: 'admin',
@@ -25,17 +53,6 @@ export default {
                 avatar: AvatarImg,
                 city: 'Москва',
             },
+            isLoading: false,
         },
-    })],
-} as ComponentMeta<typeof ProfilePage>;
-
-const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage/>;
-
-export const ProfilePageDefault = Template.bind({});
-
-ProfilePageDefault.args = {};
-
-export const ProfilePageDark = Template.bind({});
-
-ProfilePageDark.args = {};
-ProfilePageDark.decorators = [ThemeDecorator(Theme.DARK)]
+    })]

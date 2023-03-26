@@ -8,7 +8,7 @@ interface LoaderProps {
 
 export const Loader = memo(({className}: LoaderProps) => {
     return (
-        <div className={classNames(cls.Loader, {}, [cls.ldsRoller])}>
+        <div className={classNames(cls.Loader, {}, [cls.ldsRoller, className])}>
             <div></div>
             <div></div>
             <div></div>

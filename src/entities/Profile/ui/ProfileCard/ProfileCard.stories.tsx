@@ -5,9 +5,8 @@ import {type ComponentMeta, type ComponentStory} from '@storybook/react';
 import AvatarImg from '@/shared/assets/test/avatar.png';
 import {ProfileCard} from './ProfileCard';
 import {ValidateProfileError} from '../../model/types/profile';
-import {StoreDecorator} from '@/shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
-import {Country} from '@/entities/Country';
-import {Currency} from '@/entities/Currency';
+import {Country} from '../../../Country';
+import {Currency} from '../../../Currency';
 
 export default {
     title: 'entities/ProfileCard',
@@ -21,20 +20,18 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...
 export const Default = Template.bind({});
 Default.args = {
     isLoading: false,
-}
-Default.decorators = [StoreDecorator({
-    profile: {
-        form: {
-            username: 'admin',
-            age: 22,
-            country: Country.Ukraine,
-            lastname: 'ulbi tv',
-            first: 'asd',
-            city: 'asf',
-            currency: Currency.USD,
-        },
+    data: {
+        username: 'admin',
+        age: 22,
+        country: Country.Ukraine,
+        lastname: 'ulbi tv',
+        first: 'asd',
+        city: 'asf',
+        currency: Currency.USD,
+        avatar: AvatarImg,
     },
-})]
+}
+
 
 export const Loading = Template.bind({});
 Loading.args = {
@@ -43,6 +40,7 @@ Loading.args = {
 
 export const withError = Template.bind({});
 withError.args = {
+    isLoading: false,
     error: ValidateProfileError.SERVER_NOT_RESPONSE,
 }
 

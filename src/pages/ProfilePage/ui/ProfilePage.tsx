@@ -8,13 +8,15 @@ import {
     getProfileForm,
     getProfileIsLoading,
     getProfileReadonly,
+    getProfileValidateErrors,
+    profileActions,
     ProfileCard,
     profileReducer,
+    ValidateProfileError,
 } from '@/entities/Profile';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {useSelector} from 'react-redux';
 import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';
-import {getProfileValidateErrors, profileActions, ValidateProfileError} from '../../../entities/Profile';
 import {TCurrency} from '@/entities/Currency';
 import {TCountry} from '@/entities/Country';
 import {Text, ThemeText} from '@/shared/ui/Text';
@@ -33,6 +35,7 @@ const ProfilePage = memo((props: IProfilePageProps) => {
     const {
         className = '',
     } = props;
+
     const dispatch = useAppDispatch()
     const {t} = useTranslation()
 
@@ -51,9 +54,11 @@ const ProfilePage = memo((props: IProfilePageProps) => {
     }
 
     useEffect(() => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            dispatch(fetchProfileData());
+        }
     }, [dispatch])
 
     const onChangeFirstName = useCallback((value?: string) => {
