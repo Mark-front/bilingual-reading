@@ -2,13 +2,50 @@
     display: block;
 }
 
+.fz {
+    &-m {
+        font-size: var(--font-size-m);
+
+        .title {
+            font-size: var(--font-size-l);
+        }
+
+        .text {
+            font-size: var(--font-size-m);
+        }
+
+    }
+
+    &-l {
+        .title {
+            font-size: var(--font-size-xl);
+        }
+
+        .text {
+            font-size: var(--font-size-l);
+        }
+
+    }
+
+    &-xl {
+        font-size: var(--font-size-xl);
+
+        .title {
+            font-size: var(--font-size-xl);
+        }
+
+        .text {
+            font-size: var(--font-size-xl);
+        }
+
+    }
+}
+
 .title {
-    font-size: var(--font-size-l);
     color: var(--primary-color);
 }
 
 .text {
-    font-size: var(--font-size-m);
     color: var(--secondary-color);
 }
 
