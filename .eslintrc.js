@@ -40,7 +40,7 @@ module.exports = {
     },
     plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
     rules: {
-        indent: ['error', 4],
+        indent: ['error', 4, {'SwitchCase': 1}],
         '@typescript-eslint/indent': ['error', 4],
         'react/jsx-indent': [2, 4],
         'react/jsx-filename-extension': [2, {

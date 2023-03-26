@@ -3,6 +3,7 @@ import {createContext} from 'react'
 export const Theme = {
     LIGHT: 'app_light_theme',
     DARK: 'app_dark_theme',
+    GREEN: 'app_green_theme',
 } as const
 
 export type TTheme = (typeof Theme)[keyof typeof Theme]
