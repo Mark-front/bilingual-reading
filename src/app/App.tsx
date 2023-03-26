@@ -1,18 +1,18 @@
 import React, {memo, Suspense, useEffect} from 'react'
 import {useTheme} from '@/shared/ui/ThemeProvider'
 import {classNames} from '@/shared/lib/classNames/classNames'
-import {AppRoute} from '@/app/routes'
+import {AppRouter} from '@/app/routes'
 import {Navbar} from '@/widgets/Navbar'
 import {Sidebar} from '@/widgets/Sidebar'
 
 import './styles/index.scss'
-import {useDispatch} from 'react-redux';
-import {userActions} from '../entities/User';
+import {useDispatch, useSelector} from 'react-redux';
+import {getUserMounted, userActions} from '@/entities/User';
 
 const App = memo(() => {
     useTheme()
     const dispatch = useDispatch();
-
+    const mounted = useSelector(getUserMounted)
     useEffect(() => {
         dispatch(userActions.initAuthData())
     }, [dispatch])
@@ -22,7 +22,7 @@ const App = memo(() => {
                 <Navbar/>
                 <div className={'content-page'}>
                     <Sidebar/>
-                    <AppRoute/>
+                    {mounted && <AppRouter/>}
                 </div>
             </Suspense>
         </div>
