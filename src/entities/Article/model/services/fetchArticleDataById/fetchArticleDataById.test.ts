@@ -1,7 +1,6 @@
+import {TestAsyncThunk} from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import {fetchArticleDataById} from './fetchArticleDataById';
 import {ArticleType, TypeBlock} from '@/entities/Article/model/types/article';
-import {IArticleSchema} from '@/entities/Article';
-import {fetchArticleDataById} from '@/entities/Article/model/services/fetchArticleDataById/fetchArticleDataById';
-import {articleReducer} from '@/entities/Article/model/slice/articleSlise';
 
 const data = {
     'id': '1',
@@ -24,47 +23,24 @@ const data = {
         },
     ],
 }
-describe('articleSlice.test', () => {
-    test('test get data pending', () => {
-        const state: DeepPartial<IArticleSchema> = {
-            isLoading: false,
-        }
 
-        expect(articleReducer(
-            state as IArticleSchema,
-            fetchArticleDataById.pending
-        )).toEqual({
-            isLoading: true,
-            error: undefined,
-        })
+describe('fetchProfileData.test', () => {
+    test('success get data', async () => {
+        const thunk = new TestAsyncThunk(fetchArticleDataById);
+        thunk.api.get.mockReturnValue(Promise.resolve({data: data}));
+
+        const result = await thunk.callThunk('1')
+
+        expect(thunk.api.get).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe('fulfilled');
+        expect(result.payload).toEqual(data);
     });
 
-    test('test get data fulfilled', () => {
-        const state: DeepPartial<IArticleSchema> = {
-            data: undefined,
-        }
+    test('error get data', async () => {
+        const thunk = new TestAsyncThunk(fetchArticleDataById);
+        thunk.api.get.mockReturnValue(Promise.resolve({status: 403}));
+        const result = await thunk.callThunk('0')
 
-        expect(articleReducer(
-            state as IArticleSchema,
-            fetchArticleDataById.fulfilled
-        )).toEqual({
-            data,
-            isLoading: false,
-        })
-    });
-
-    test('test get data rejected', () => {
-        const state: DeepPartial<IArticleSchema> = {
-            isLoading: true,
-            error: 'error',
-        }
-
-        expect(articleReducer(
-            state as IArticleSchema,
-            fetchArticleDataById.rejected
-        )).toEqual({
-            isLoading: false,
-            error: 'error',
-        })
+        expect(result.meta.requestStatus).toBe('rejected');
     });
 })
