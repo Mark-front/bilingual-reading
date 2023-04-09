@@ -7,14 +7,20 @@ import {AxiosInstance} from 'axios';
 import {NavigateOptions} from 'react-router/dist/lib/context';
 import {To} from '@remix-run/router';
 import {IArticleSchema} from '@/entities/Article';
+import {IArticleDetailCommentsSchema} from '@/pages/ArticleDetailPage';
+import {IAddCommentSchema} from '@/features/AddComment/model/types/addCommentSchema';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: IUserSchema;
     profile: ProfileSchema
+
     // Ассинхронные редюсеры
     loginForm?: ILoginSchema;
     article?: IArticleSchema;
+    articleComments?: IArticleDetailCommentsSchema;
+    addComment?: IAddCommentSchema;
+
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -7,7 +7,7 @@ import {Theme} from '@/shared/ui/ThemeProvider';
 import {TypeBlock} from '../../model/types/article';
 
 export default {
-    title: 'entities/ArticleBlockImage',
+    title: 'entities/Article/ArticleBlockImage',
     component: ArticleBlockImage,
     argTypes: {},
     decorators: [],

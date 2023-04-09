@@ -64,33 +64,33 @@ export const ProfileCard = (props: IProfileCartProps) => {
             {
                 data?.avatar &&
                 <div className={cls.avatarWrapper}>
-                    <Avatar src={data?.avatar} alt="аватар"/>
+                    <Avatar src={data?.avatar} alt={t('аватар') || 'аватар'}/>
                 </div>
             }
             <Input
                 placeholder={t('Ваше имя') || 'Ваше имя'}
-                value={data?.first}
+                value={data?.first || ''}
                 className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeFirstName}
             />
             <Input
                 placeholder={t('Ваше фамилия') || 'Ваше фамилия'}
-                value={data?.lastname}
+                value={data?.lastname || ''}
                 className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeLastName}
             />
             <Input
                 placeholder={t('Возраст') || 'Возраст'}
-                value={data?.age}
+                value={data?.age || ''}
                 className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeAge}
             />
             <Input
                 placeholder={t('Никнейм') || 'Никнейм'}
-                value={data?.username}
+                value={data?.username || ''}
                 className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeNickname}
@@ -103,7 +103,7 @@ export const ProfileCard = (props: IProfileCartProps) => {
             />
             <Input
                 placeholder={t('Город') || 'Город'}
-                value={data?.city}
+                value={data?.city || ''}
                 className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeCity}
@@ -116,7 +116,7 @@ export const ProfileCard = (props: IProfileCartProps) => {
             />
             <Input
                 placeholder={t('Фото') || 'Фото'}
-                value={data?.avatar}
+                value={data?.avatar || ''}
                 className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeAvatar}

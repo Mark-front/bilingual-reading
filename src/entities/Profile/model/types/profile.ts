@@ -10,6 +10,7 @@ export interface IProfile {
     'city'?: string;
     'username'?: string;
     'avatar'?: string;
+    id?: string;
 }
 
 export interface ProfileSchema {
@@ -19,6 +20,7 @@ export interface ProfileSchema {
     error?: string;
     readonly?: boolean;
     validateErrors?: TValidateProfileError[];
+
 }
 
 export const ValidateProfileError = {

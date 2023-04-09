@@ -20,6 +20,7 @@ import {ProfilePageHeader} from './ProfilePageHeader/ProfilePageHeader';
 import {TCurrency} from '@/entities/Currency';
 import {TCountry} from '@/entities/Country';
 import {Text, ThemeText} from '@/shared/ui/Text';
+import {useParams} from 'react-router-dom';
 
 // import cls from './ProfilePage.module.scss';
 
@@ -45,6 +46,8 @@ const ProfilePage = memo((props: IProfilePageProps) => {
     const validateErrors = useSelector(getProfileValidateErrors);
     const readonly = useSelector(getProfileReadonly);
 
+    const {id} = useParams();
+    console.log(id)
     const validateErrorsTranslate = {
         [ValidateProfileError.SERVER_NOT_RESPONSE]: t('Сервер не отвечает'),
         [ValidateProfileError.DATA_NOT_FOUND]: t('Нет данных о пользователе'),
@@ -55,11 +58,11 @@ const ProfilePage = memo((props: IProfilePageProps) => {
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            dispatch(fetchProfileData());
+            if (id) {
+                dispatch(fetchProfileData(id));
+            }
         }
-    }, [dispatch])
+    }, [dispatch, id])
 
     const onChangeFirstName = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({first: value || ''}))

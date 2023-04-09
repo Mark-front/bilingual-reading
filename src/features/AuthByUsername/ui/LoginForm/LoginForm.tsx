@@ -30,7 +30,7 @@ const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
     const {t} = useTranslation();
     const dispatch = useAppDispatch();
 
-    const password = useSelector(getLoginPassword);
+    const password = useSelector(getLoginPassword) || '';
     const username = useSelector(getLoginUsername);
     const error = useSelector(getLoginError);
     const isLoading = useSelector(getLoginIsLoading);
@@ -44,8 +44,6 @@ const LoginForm = memo(({className = '', onSuccess}: LoginFormProps) => {
     }, [dispatch])
 
     const onLoginClick = useCallback(async () => {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         const result = await dispatch(loginByUsername({password, username}));
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess()

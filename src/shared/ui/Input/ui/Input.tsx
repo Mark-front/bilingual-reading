@@ -13,8 +13,8 @@ export type TThemeInput = (typeof ThemeInput)[keyof typeof ThemeInput]
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string | number;
-    onChange?: (value?: string) => void;
+    value: string | number;
+    onChange?: (value: string) => void;
     theme?: TThemeInput;
     readOnly?: boolean;
 }
@@ -28,6 +28,7 @@ export const Input = memo((props: InputProps) => {
         type = 'text',
         theme = ThemeInput.OUTLINE,
         readOnly = false,
+        ...otherProps
     } = props;
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -46,6 +47,7 @@ export const Input = memo((props: InputProps) => {
                 value={value}
                 onChange={onChangeHandler}
                 readOnly={readOnly}
+                {...otherProps}
             />
         </label>
     );

@@ -4,6 +4,7 @@ import {Country} from '@/entities/Country';
 import {ValidateProfileError} from '@/entities/Profile';
 
 const data = {
+    id: '1',
     age: 22,
     country: Country.Russia,
     username: 'admin',

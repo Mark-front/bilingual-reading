@@ -7,7 +7,8 @@ import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {getProfileReadonly, profileActions} from '@/entities/Profile';
 import {useSelector} from 'react-redux';
 import cls from './ProfilePageHeader.module.scss';
-import {updateProfileData} from '../../../../entities/Profile';
+import {getProfileData, updateProfileData} from '../../../../entities/Profile';
+import {getUserAuthData} from '../../../../entities/User';
 
 interface IProfilePageHeaderProps {
     className?: string;
@@ -22,6 +23,10 @@ export const ProfilePageHeader = memo((props: IProfilePageHeaderProps) => {
 
     const dispatch = useAppDispatch();
     const readonly = useSelector(getProfileReadonly);
+    const authData = useSelector(getUserAuthData)
+    const profileData = useSelector(getProfileData)
+
+    const canEdit = authData?.id === profileData?.id
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false))
@@ -33,14 +38,18 @@ export const ProfilePageHeader = memo((props: IProfilePageHeaderProps) => {
 
     const onSaveEdit = useCallback(() => {
         dispatch(profileActions.saveProfile())
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         dispatch(updateProfileData())
     }, [dispatch]);
 
+    if (!canEdit) return (
+        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+            <Text className={cls.title} title={t('Профиль пользователя') || 'Профиль пользователя'}/>
+        </div>
+    )
+
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
-            <Text className={cls.title} title={t('Проофиль пользователя') || 'Проофиль пользователя'}/>
+            <Text className={cls.title} title={t('Профиль пользователя') || 'Профиль пользователя'}/>
 
             {
                 readonly ?

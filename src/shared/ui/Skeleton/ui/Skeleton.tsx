@@ -13,7 +13,7 @@ export type TTypeSkeleton = (typeof ThemeSkeleton)[keyof typeof ThemeSkeleton];
 
 interface ISkeletonProps {
     className?: string;
-    theme: TTypeSkeleton;
+    theme?: TTypeSkeleton;
     height?: string | number
     width?: string | number
     radius?: string

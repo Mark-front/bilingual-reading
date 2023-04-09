@@ -23,7 +23,7 @@ export const updateProfileData = createAsyncThunk<IProfile, void, ThunkConfig<TV
 
         try {
             const response = await extra.api.put<IProfile>(
-                '/profile',
+                '/profile/' + formData?.id,
                 formData
             );
 

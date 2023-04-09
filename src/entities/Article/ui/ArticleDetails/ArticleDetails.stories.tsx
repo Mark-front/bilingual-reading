@@ -79,7 +79,7 @@ const article: IArticle = {
 }
 
 export default {
-    title: 'entities/ArticleDetail',
+    title: 'entities/Article/ArticleDetail',
     component: ArticleDetails,
     argTypes: {},
     args: {},

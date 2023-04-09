@@ -13,7 +13,6 @@ const AppRouter = () => {
                 </div>
             </Suspense>
         );
-        console.log(element)
         return (
             <Route
                 key={route.path}

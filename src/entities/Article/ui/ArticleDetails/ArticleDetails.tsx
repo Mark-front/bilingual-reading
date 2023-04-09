@@ -74,8 +74,6 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
 
     useEffect(() => {
         if (__PROJECT__ === 'storybook') return;
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
         dispatch(fetchArticleDataById(id))
     }, [id, dispatch])
 

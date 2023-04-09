@@ -86,6 +86,7 @@ export default {
         StoreDecorator({
             article: {
                 data: article,
+                isLoading: false,
             },
         }),
     ],
