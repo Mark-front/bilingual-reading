@@ -17,7 +17,7 @@ import { AddCommentForm } from '@/features/AddComment';
 import { CommentList } from '@/entities/Comment';
 import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
-import { Page } from '@/shared/ui/Page';
+import { Page } from '@/widgets/Page';
 
 interface IArticleDetailPageProps {
     className?: string;

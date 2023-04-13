@@ -1,4 +1,4 @@
-import { Page } from '@/shared/ui/Page'
+import { Page } from '@/widgets/Page'
 import React, { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 

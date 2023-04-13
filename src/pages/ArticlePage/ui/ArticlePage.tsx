@@ -14,7 +14,7 @@ import {
     getArticlesPageView,
 } from '../model/selectors/getArticlesPage/getArticlesPage';
 import { Text, ThemeText } from '@/shared/ui/Text';
-import { Page } from '@/shared/ui/Page';
+import { Page } from '@/widgets/Page';
 import { fetchNextArticlePage } from '../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlePage } from '../model/services/initArticlePage/initArticlePage';
 

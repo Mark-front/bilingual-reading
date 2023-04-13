@@ -1,6 +1,7 @@
 import { AxiosInstance } from 'axios';
 import { To } from '@remix-run/router';
 import { IUserSchema } from '@/entities/User';
+import { SaveScrollSchema } from '@/widgets/Page';
 import { CounterSchema } from '@/entities/Counter';
 import { ProfileSchema } from '@/entities/Profile';
 import { IArticleSchema } from '@/entities/Article';
@@ -14,7 +15,8 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 export interface StateSchema {
     counter: CounterSchema;
     user: IUserSchema;
-    profile: ProfileSchema
+    profile: ProfileSchema;
+    saveScroll: SaveScrollSchema;
 
     // Ассинхронные редюсеры
     loginForm?: ILoginSchema;

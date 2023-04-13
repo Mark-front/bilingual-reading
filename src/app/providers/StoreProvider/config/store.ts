@@ -1,12 +1,13 @@
-import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { StateSchema, ThunkExtraArg } from './StateSchema';
-import { counterReducer } from '@/entities/Counter';
-import { userReducer } from '@/entities/User';
-import { createReducerManager } from './reducerManager';
-import { $api } from '@/shared/api/api';
 import { To } from '@remix-run/router';
+import { $api } from '@/shared/api/api';
+import { userReducer } from '@/entities/User';
+import { scrollSaveReducer } from '@/widgets/Page';
+import { counterReducer } from '@/entities/Counter';
+import { createReducerManager } from './reducerManager';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { NavigateOptions } from 'react-router/dist/lib/context';
 import { profileReducer } from '@/entities/Profile/model/slice/profileSlice';
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 
 
 export function createReduxStore(
@@ -19,6 +20,7 @@ export function createReduxStore(
         user: userReducer,
         counter: counterReducer,
         profile: profileReducer,
+        saveScroll: scrollSaveReducer,
     }
 
     const reducerManager = createReducerManager(rootReducers);

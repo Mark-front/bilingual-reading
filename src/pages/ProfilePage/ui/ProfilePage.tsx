@@ -21,7 +21,7 @@ import { TCurrency } from '@/entities/Currency';
 import { TCountry } from '@/entities/Country';
 import { Text, ThemeText } from '@/shared/ui/Text';
 import { useParams } from 'react-router-dom';
-import { Page } from '@/shared/ui/Page';
+import { Page } from '@/widgets/Page';
 
 // import cls from './ProfilePage.module.scss';
 
