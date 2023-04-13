@@ -1,4 +1,4 @@
-import {SVGProps, VFC} from 'react';
+import { SVGProps, VFC } from 'react';
 
 export interface SidebarItemType {
     path: string;

@@ -1,5 +1,5 @@
-import {TCountry} from '@/entities/Country';
-import {TCurrency} from '@/entities/Currency';
+import { TCountry } from '@/entities/Country';
+import { TCurrency } from '@/entities/Currency';
 
 export interface IProfile {
     'first'?: string;

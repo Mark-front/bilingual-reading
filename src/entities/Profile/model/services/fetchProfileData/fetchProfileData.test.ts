@@ -1,6 +1,6 @@
-import {TestAsyncThunk} from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import {fetchProfileData} from './fetchProfileData';
-import {Currency} from '@/entities/Currency';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { fetchProfileData } from './fetchProfileData';
+import { Currency } from '@/entities/Currency';
 
 const data = {
     age: 22,
@@ -15,7 +15,7 @@ const data = {
 describe('fetchProfileData.test', () => {
     test('success get data', async () => {
         const thunk = new TestAsyncThunk(fetchProfileData);
-        thunk.api.get.mockReturnValue(Promise.resolve({data: data}));
+        thunk.api.get.mockReturnValue(Promise.resolve({ data: data }));
 
         const result = await thunk.callThunk(data.id)
 
@@ -26,7 +26,7 @@ describe('fetchProfileData.test', () => {
 
     test('error get data', async () => {
         const thunk = new TestAsyncThunk(fetchProfileData);
-        thunk.api.get.mockReturnValue(Promise.resolve({status: 403}));
+        thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk(data.id)
 
         expect(result.meta.requestStatus).toBe('rejected');

@@ -1,6 +1,6 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {ILoginSchema} from '../types/loginSchema';
-import {loginByUsername} from '../services/loginByUsername/loginByUsername';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { ILoginSchema } from '../types/loginSchema';
+import { loginByUsername } from '../services/loginByUsername/loginByUsername';
 
 const initialState: ILoginSchema = {
     username: '',
@@ -34,5 +34,5 @@ export const loginSlice = createSlice({
     },
 })
 
-export const {actions: loginActions} = loginSlice
-export const {reducer: loginReducer} = loginSlice
+export const { actions: loginActions } = loginSlice
+export const { reducer: loginReducer } = loginSlice

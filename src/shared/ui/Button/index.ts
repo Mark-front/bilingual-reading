@@ -1,4 +1,4 @@
-import {Button, ButtonSize, TButtonSize, ThemeButton, type TThemeButton} from './ui/Button'
+import { Button, ButtonSize, TButtonSize, ThemeButton, type TThemeButton } from './ui/Button'
 
 export {
     Button,

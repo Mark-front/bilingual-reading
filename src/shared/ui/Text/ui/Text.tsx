@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
+import React, { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
-import {useTranslation} from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 export const ThemeText = {
     ERROR: 'error',
@@ -45,10 +45,10 @@ export const Text = memo((props: TextProps) => {
         size = TextSize.M,
     } = props;
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
-        <div className={classNames(cls.Text, {}, [className, cls[theme], cls[align], cls[size]])}>
+        <div className={classNames(cls.Text, {}, [ className, cls[theme], cls[align], cls[size] ])}>
             {title && <p className={cls.title}>{title}</p>}
             {text && <p className={cls.text}>{text}</p>}
         </div>

@@ -1,22 +1,22 @@
-import React, {memo, useCallback, useState} from 'react'
-import {classNames} from '@/shared/lib/classNames/classNames'
+import React, { memo, useCallback, useState } from 'react'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
-import {useTranslation} from 'react-i18next';
-import {Button, ThemeButton} from '@/shared/ui/Button';
-import {LoginModal} from '@/features/AuthByUsername';
-import {useDispatch, useSelector} from 'react-redux';
-import {getUserAuthData, userActions} from '@/entities/User';
-import {Text} from '@/shared/ui/Text';
+import { useTranslation } from 'react-i18next';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { LoginModal } from '@/features/AuthByUsername';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserAuthData, userActions } from '@/entities/User';
+import { Text } from '@/shared/ui/Text';
 
 interface NavbarProps {
     className?: string
 }
 
-export const Navbar = memo(({className = ''}: NavbarProps) => {
-    const {t} = useTranslation()
+export const Navbar = memo(({ className = '' }: NavbarProps) => {
+    const { t } = useTranslation()
     const authUserData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
-    const [isAuthModal, setIsAuthModal] = useState(false)
+    const [ isAuthModal, setIsAuthModal ] = useState(false)
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false)
@@ -28,11 +28,11 @@ export const Navbar = memo(({className = ''}: NavbarProps) => {
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout())
-    }, [dispatch]);
+    }, [ dispatch ]);
 
     if (authUserData) {
         return (
-            <div className={classNames(cls.navbar, {}, [className])}>
+            <div className={classNames(cls.navbar, {}, [ className ])}>
                 <div className={cls.userLogin}>
                     <Text text={authUserData.username}/>
                     <Button
@@ -48,7 +48,7 @@ export const Navbar = memo(({className = ''}: NavbarProps) => {
     }
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <div className={classNames(cls.navbar, {}, [ className ])}>
             <Button
                 theme={ThemeButton.CLEAR}
                 className={cls.links}

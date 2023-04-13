@@ -1,14 +1,14 @@
 import React from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
 import cls from './ProfileCard.module.scss';
-import {Text, ThemeText} from '@/shared/ui/Text';
-import {Input} from '@/shared/ui/Input';
-import {IProfile} from '../../model/types/profile';
-import {Loader} from '@/shared/ui/Loader';
-import {Avatar} from '@/shared/ui/Avatar';
-import {CurrencySelect, TCurrency} from '@/entities/Currency';
-import {CountrySelect, TCountry} from '@/entities/Country';
+import { Text, ThemeText } from '@/shared/ui/Text';
+import { Input } from '@/shared/ui/Input';
+import { IProfile } from '../../model/types/profile';
+import { Loader } from '@/shared/ui/Loader';
+import { Avatar } from '@/shared/ui/Avatar';
+import { CurrencySelect, TCurrency } from '@/entities/Currency';
+import { CountrySelect, TCountry } from '@/entities/Country';
 
 interface IProfileCartProps {
     className?: string;
@@ -43,24 +43,24 @@ export const ProfileCard = (props: IProfileCartProps) => {
         onChangeAge,
     } = props;
 
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [cls.isLoading])}>
+            <div className={classNames(cls.ProfileCard, {}, [ cls.isLoading ])}>
                 <Loader/>
             </div>
         )
     }
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [cls.isError])}>
+            <div className={classNames(cls.ProfileCard, {}, [ cls.isError ])}>
                 <Text text={error} theme={ThemeText.ERROR}/>
             </div>
         )
     }
     return (
-        <div className={classNames(cls.ProfileCard, {}, [className])}>
+        <div className={classNames(cls.ProfileCard, {}, [ className ])}>
             {
                 data?.avatar &&
                 <div className={cls.avatarWrapper}>

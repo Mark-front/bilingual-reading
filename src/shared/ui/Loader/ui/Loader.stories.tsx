@@ -1,9 +1,9 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {Loader} from '@/shared/ui/Loader';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
+import { Loader } from '@/shared/ui/Loader';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
 
 export default {
     title: 'shared/Loader',
@@ -20,4 +20,4 @@ LoaderDefault.args = {};
 export const LoaderDark = Template.bind({});
 
 LoaderDark.args = {};
-LoaderDark.decorators = [ThemeDecorator(Theme.DARK)]
+LoaderDark.decorators = [ ThemeDecorator(Theme.DARK) ]

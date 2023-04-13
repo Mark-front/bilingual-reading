@@ -7,7 +7,7 @@ export function buildLoaders(options: BuildOptions): RuleSetRule[] {
 
     const svgLoader = {
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: [ '@svgr/webpack' ],
     }
 
     const typescriptLoader = {

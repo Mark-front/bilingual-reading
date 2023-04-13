@@ -1,3 +1,5 @@
+import { IUser } from '@/entities/User';
+
 export const TypeBlock = {
     TEXT: 'TEXT',
     CODE: 'CODE',
@@ -40,8 +42,16 @@ export const ArticleType = {
 
 export type TArticleType = (typeof ArticleType)[keyof typeof ArticleType];
 
+export const ArticleView = {
+    BIG: 'BIG',
+    SMALL: 'SMALL',
+} as const;
+
+export type TArticleView = (typeof ArticleView)[keyof typeof ArticleView];
+
 export interface IArticle {
     id: string;
+    user: IUser;
     title: string;
     subtitle: string;
     img: string;

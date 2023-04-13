@@ -17,6 +17,7 @@
     "length-zero-no-unit": true,
     "property-no-vendor-prefix": true,
     "block-closing-brace-newline-after": null,
+    "no-descending-specificity": null,
     "indentation": [
       4
     ],

@@ -1,10 +1,10 @@
-import {type RouteProps} from 'react-router-dom'
-import {MainPage} from '@/pages/MainPage'
-import {AboutPage} from '@/pages/AboutPage'
-import {NotFoundPage} from '@/pages/NotFoundPage'
-import {ProfilePage} from '@/pages/ProfilePage';
-import {ArticlePage} from '@/pages/ArticlePage';
-import {ArticleDetailPage} from '@/pages/ArticleDetailPage';
+import { type RouteProps } from 'react-router-dom'
+import { MainPage } from '@/pages/MainPage'
+import { AboutPage } from '@/pages/AboutPage'
+import { NotFoundPage } from '@/pages/NotFoundPage'
+import { ProfilePage } from '@/pages/ProfilePage';
+import { ArticlePage } from '@/pages/ArticlePage';
+import { ArticleDetailPage } from '@/pages/ArticleDetailPage';
 
 
 export type AppRouteProps = RouteProps & {

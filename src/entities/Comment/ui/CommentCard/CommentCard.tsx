@@ -1,12 +1,12 @@
-import React, {memo} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
+import React, { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './CommentCard.module.scss';
-import {Avatar} from '@/shared/ui/Avatar';
-import {Text} from '@/shared/ui/Text';
-import {IComment} from '../../model/types/comment';
-import {Skeleton, ThemeSkeleton} from '@/shared/ui/Skeleton';
-import {AppLink} from '@/shared/ui/AppLink';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Text } from '@/shared/ui/Text';
+import { IComment } from '../../model/types/comment';
+import { Skeleton, ThemeSkeleton } from '@/shared/ui/Skeleton';
+import { AppLink } from '@/shared/ui/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 interface ICommentCardProps {
     className?: string;
@@ -23,7 +23,7 @@ export const CommentCard = memo((props: ICommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.CommentCard, {}, [className])}>
+            <div className={classNames(cls.CommentCard, {}, [ className ])}>
                 <div className={cls.header}>
                     <Skeleton theme={ThemeSkeleton.AVATAR} height={30} width={30}/>
                     <Skeleton className={cls.username} height={20} width={200}/>
@@ -34,7 +34,7 @@ export const CommentCard = memo((props: ICommentCardProps) => {
     }
 
     return (
-        <div className={classNames(cls.CommentCard, {}, [className])}>
+        <div className={classNames(cls.CommentCard, {}, [ className ])}>
             <AppLink to={RoutePath.profile + '/' + comment.userId} className={cls.header}>
                 <Avatar src={comment.user.avatar || ''} size={30}/>
                 <Text className={cls.username} title={comment.user.username}/>

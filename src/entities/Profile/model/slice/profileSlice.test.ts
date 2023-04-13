@@ -1,8 +1,8 @@
-import {profileActions, profileReducer} from './profileSlice';
-import {ProfileSchema, ValidateProfileError} from '../types/profile';
-import {Country} from '@/entities/Country';
-import {Currency} from '@/entities/Currency';
-import {updateProfileData} from '@/entities/Profile';
+import { profileActions, profileReducer } from './profileSlice';
+import { ProfileSchema, ValidateProfileError } from '../types/profile';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { updateProfileData } from '@/entities/Profile';
 
 const data = {
     username: 'admin',
@@ -22,13 +22,13 @@ describe('profileSlice.test', () => {
         expect(profileReducer(
             state as ProfileSchema,
             profileActions.setReadonly(true)
-        )).toEqual({readonly: true})
+        )).toEqual({ readonly: true })
     });
 
     test('test cancel edit', () => {
         const state: DeepPartial<ProfileSchema> = {
             data,
-            form: {username: ''},
+            form: { username: '' },
         };
 
 
@@ -50,9 +50,9 @@ describe('profileSlice.test', () => {
 
         expect(profileReducer(
             state as ProfileSchema,
-            profileActions.updateProfile({username: 'newUsername'})
+            profileActions.updateProfile({ username: 'newUsername' })
         )).toEqual({
-            form: {...data, username: 'newUsername'},
+            form: { ...data, username: 'newUsername' },
         })
     });
 

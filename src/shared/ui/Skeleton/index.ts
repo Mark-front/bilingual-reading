@@ -1,4 +1,4 @@
-import {Skeleton, ThemeSkeleton} from './ui/Skeleton'
+import { Skeleton, ThemeSkeleton } from './ui/Skeleton'
 
 export {
     Skeleton,

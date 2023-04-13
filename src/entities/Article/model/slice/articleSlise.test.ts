@@ -1,7 +1,7 @@
-import {ArticleType, TypeBlock} from '@/entities/Article/model/types/article';
-import {IArticleSchema} from '@/entities/Article';
-import {fetchArticleDataById} from '@/entities/Article/model/services/fetchArticleDataById/fetchArticleDataById';
-import {articleReducer} from '@/entities/Article/model/slice/articleSlise';
+import { ArticleType, TypeBlock } from '@/entities/Article/model/types/article';
+import { IArticleSchema } from '@/entities/Article';
+import { fetchArticleDataById } from '@/entities/Article/model/services/fetchArticleDataById/fetchArticleDataById';
+import { articleReducer } from '@/entities/Article/model/slice/articleSlise';
 
 const data = {
     'id': '1',
@@ -10,7 +10,7 @@ const data = {
     'img': 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     'views': 1022,
     'createdAt': '26.02.2022',
-    'type': [ArticleType.IT],
+    'type': [ ArticleType.IT ],
     'blocks': [
         {
             'id': '1',

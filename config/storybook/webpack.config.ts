@@ -1,9 +1,9 @@
 import path from 'path';
-import {type Configuration, DefinePlugin, type RuleSetRule} from 'webpack';
-import {type BuildPaths} from '../build/types/config';
+import { type Configuration, DefinePlugin, type RuleSetRule } from 'webpack';
+import { type BuildPaths } from '../build/types/config';
 import buildCssLoader from '../build/loaders/buildCssLoader';
 
-export default ({config}: { config: Configuration }) => {
+export default ({ config }: { config: Configuration }) => {
     const paths: BuildPaths = {
         entry: '',
         build: '',
@@ -18,14 +18,14 @@ export default ({config}: { config: Configuration }) => {
     // @ts-ignore
     config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
-            return {...rule, exclude: /\.svg$/i}
+            return { ...rule, exclude: /\.svg$/i }
         }
         return rule
     })
 
     config!.module!.rules!.push({
         test: /\.svg$/,
-        use: ['@svgr/webpack'],
+        use: [ '@svgr/webpack' ],
     })
 
     config!.plugins!.push(
@@ -39,7 +39,7 @@ export default ({config}: { config: Configuration }) => {
 
     config!.resolve!.extensions!.push('.tsx', '.ts', '.js')
 
-    config!.resolve!.alias = {'@': paths.src}
+    config!.resolve!.alias = { '@': paths.src }
 
     return config;
 }

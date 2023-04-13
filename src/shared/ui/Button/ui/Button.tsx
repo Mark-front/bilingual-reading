@@ -1,5 +1,5 @@
-import {classNames} from '@/shared/lib/classNames/classNames'
-import React, {type ButtonHTMLAttributes, memo, ReactNode} from 'react'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import React, { type ButtonHTMLAttributes, memo, ReactNode } from 'react'
 import cls from './Button.module.scss'
 
 export const ThemeButton = {
@@ -45,7 +45,7 @@ export const Button = memo((props: ButtonProps) => {
     }
     return (
         <button
-            className={classNames(cls.Button, mods, [className, cls[theme], cls[size]])}
+            className={classNames(cls.Button, mods, [ className, cls[theme], cls[size] ])}
             {...otherProps}
         >
             {children}

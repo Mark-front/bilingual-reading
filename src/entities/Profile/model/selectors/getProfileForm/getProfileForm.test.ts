@@ -1,6 +1,6 @@
-import {StateSchema} from '@/app/providers/StoreProvider';
-import {getProfileForm} from './getProfileForm';
-import {Currency} from '@/entities/Currency';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getProfileForm } from './getProfileForm';
+import { Currency } from '@/entities/Currency';
 
 describe('getProfileForm.test', () => {
     test('should return isLoading', () => {

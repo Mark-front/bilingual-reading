@@ -1,9 +1,9 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {CommentList} from './CommentList';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
+import { CommentList } from './CommentList';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
 
 
 const comments = [
@@ -40,7 +40,7 @@ export default {
     title: 'entities/Comment/CommentList',
     component: CommentList,
     argTypes: {},
-    args: {comments},
+    args: { comments },
     decorators: [],
 } as ComponentMeta<typeof CommentList>;
 
@@ -49,14 +49,14 @@ const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...
 export const Default = Template.bind({});
 
 export const Dark = Template.bind({});
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ ThemeDecorator(Theme.DARK) ]
 
 export const Loading = Template.bind({});
 
-Loading.args = {isLoading: true};
-Loading.decorators = [ThemeDecorator(Theme.DARK)]
+Loading.args = { isLoading: true };
+Loading.decorators = [ ThemeDecorator(Theme.DARK) ]
 
 export const Empty = Template.bind({});
 
-Empty.args = {comments: undefined};
-Empty.decorators = [ThemeDecorator(Theme.DARK)]
+Empty.args = { comments: undefined };
+Empty.decorators = [ ThemeDecorator(Theme.DARK) ]

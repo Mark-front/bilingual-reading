@@ -1,10 +1,10 @@
-import React, {memo} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
+import React, { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './CommentList.module.scss';
-import {IComment} from '../../model/types/comment';
-import {useTranslation} from 'react-i18next';
-import {CommentCard} from '@/entities/Comment';
-import {Text} from '@/shared/ui/Text';
+import { IComment } from '../../model/types/comment';
+import { useTranslation } from 'react-i18next';
+import { CommentCard } from '@/entities/Comment';
+import { Text } from '@/shared/ui/Text';
 
 
 interface ICommentListProps {
@@ -20,11 +20,11 @@ export const CommentList = memo((props: ICommentListProps) => {
         isLoading,
     } = props;
 
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
 
     return (
-        <div className={classNames(cls.CommentList, {}, [className])}>
+        <div className={classNames(cls.CommentList, {}, [ className ])}>
             {comments?.length
                 ? comments.map((comment, index) => (
                     <CommentCard

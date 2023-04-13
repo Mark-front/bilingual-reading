@@ -1,12 +1,12 @@
-import {CombinedState, configureStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit'
-import {StateSchema, ThunkExtraArg} from './StateSchema';
-import {counterReducer} from '@/entities/Counter';
-import {userReducer} from '@/entities/User';
-import {createReducerManager} from './reducerManager';
-import {$api} from '@/shared/api/api';
-import {To} from '@remix-run/router';
-import {NavigateOptions} from 'react-router/dist/lib/context';
-import {profileReducer} from '@/entities/Profile/model/slice/profileSlice';
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
+import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { counterReducer } from '@/entities/Counter';
+import { userReducer } from '@/entities/User';
+import { createReducerManager } from './reducerManager';
+import { $api } from '@/shared/api/api';
+import { To } from '@remix-run/router';
+import { NavigateOptions } from 'react-router/dist/lib/context';
+import { profileReducer } from '@/entities/Profile/model/slice/profileSlice';
 
 
 export function createReduxStore(

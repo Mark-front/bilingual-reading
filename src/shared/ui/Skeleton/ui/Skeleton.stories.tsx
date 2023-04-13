@@ -1,9 +1,9 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {Skeleton, ThemeSkeleton} from './Skeleton';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
+import { Skeleton, ThemeSkeleton } from './Skeleton';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
 
 export default {
     title: 'shared/Skeleton',
@@ -21,7 +21,7 @@ Default.args = {};
 export const Dark = Template.bind({});
 
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ ThemeDecorator(Theme.DARK) ]
 
 export const Circle = Template.bind({});
 

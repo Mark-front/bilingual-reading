@@ -1,7 +1,7 @@
-import {DeepPartial} from '@reduxjs/toolkit';
-import {StateSchema} from '@/app/providers/StoreProvider';
-import {ArticleType, IArticle, TypeBlock} from '../types/article';
-import {getArticleData, getArticleError, getArticleIsLoading} from '../selectors/articleDetails';
+import { DeepPartial } from '@reduxjs/toolkit';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { ArticleType, IArticle, TypeBlock } from '../types/article';
+import { getArticleData, getArticleError, getArticleIsLoading } from '../selectors/articleDetails';
 
 const article: IArticle = {
     'id': '1',
@@ -10,7 +10,12 @@ const article: IArticle = {
     'img': 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     'views': 1022,
     'createdAt': '26.02.2022',
-    'type': [ArticleType.IT],
+    'type': [ ArticleType.IT ],
+    user: {
+        id: '1',
+        username: 'asdfasdf',
+        avatar: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+    },
     'blocks': [
         {
             'id': '1',

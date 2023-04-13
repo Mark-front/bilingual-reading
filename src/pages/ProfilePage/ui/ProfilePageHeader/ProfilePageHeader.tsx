@@ -1,14 +1,14 @@
-import React, {memo, useCallback} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
-import {Text} from '@/shared/ui/Text';
-import {Button, ThemeButton} from '@/shared/ui/Button';
-import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {getProfileReadonly, profileActions} from '@/entities/Profile';
-import {useSelector} from 'react-redux';
+import React, { memo, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { Text } from '@/shared/ui/Text';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { getProfileReadonly, profileActions } from '@/entities/Profile';
+import { useSelector } from 'react-redux';
 import cls from './ProfilePageHeader.module.scss';
-import {getProfileData, updateProfileData} from '../../../../entities/Profile';
-import {getUserAuthData} from '../../../../entities/User';
+import { getProfileData, updateProfileData } from '../../../../entities/Profile';
+import { getUserAuthData } from '../../../../entities/User';
 
 interface IProfilePageHeaderProps {
     className?: string;
@@ -19,7 +19,7 @@ export const ProfilePageHeader = memo((props: IProfilePageHeaderProps) => {
         className = '',
     } = props;
 
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
     const readonly = useSelector(getProfileReadonly);
@@ -30,25 +30,25 @@ export const ProfilePageHeader = memo((props: IProfilePageHeaderProps) => {
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false))
-    }, [dispatch]);
+    }, [ dispatch ]);
 
     const onCancelEdit = useCallback(() => {
         dispatch(profileActions.cancelEdit())
-    }, [dispatch]);
+    }, [ dispatch ]);
 
     const onSaveEdit = useCallback(() => {
         dispatch(profileActions.saveProfile())
         dispatch(updateProfileData())
-    }, [dispatch]);
+    }, [ dispatch ]);
 
     if (!canEdit) return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <div className={classNames(cls.ProfilePageHeader, {}, [ className ])}>
             <Text className={cls.title} title={t('Профиль пользователя') || 'Профиль пользователя'}/>
         </div>
     )
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <div className={classNames(cls.ProfilePageHeader, {}, [ className ])}>
             <Text className={cls.title} title={t('Профиль пользователя') || 'Профиль пользователя'}/>
 
             {

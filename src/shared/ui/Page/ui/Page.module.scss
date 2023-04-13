@@ -1,0 +1,8 @@
+.Page {
+    height: 100%;
+    max-height: calc(100vh - var(--navbar-height));
+    overflow: auto;
+    padding: 20px 20px 20px 45px;
+    flex-grow: 1;
+    width: 100%;
+}

@@ -1,9 +1,9 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {CommentCard} from './CommentCard';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
+import { CommentCard } from './CommentCard';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
 
 export default {
     title: 'entities/Comment/CommentCard',
@@ -41,9 +41,9 @@ Dark.args = {
         },
     },
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ ThemeDecorator(Theme.DARK) ]
 
 
 export const Loading = Template.bind({});
 
-Loading.args = {isLoading: true};
+Loading.args = { isLoading: true };

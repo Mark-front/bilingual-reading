@@ -1,11 +1,11 @@
-import React, {type FC, useMemo, useState} from 'react'
+import React, { type FC, useMemo, useState } from 'react'
 import {
     LOCAL_STORAGE_THEME_KEY,
     Theme,
     ThemeContext,
     type TTheme,
 } from '../lib/context/themeContext'
-import {useTheme} from '@/shared/ui/ThemeProvider';
+import { useTheme } from '@/shared/ui/ThemeProvider';
 
 const defaultTheme =
     localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as TTheme ||
@@ -21,11 +21,11 @@ const ThemeProvider: FC<ThemeProviderProps> = (props) => {
         initialTheme = Theme.LIGHT,
     } = props;
 
-    const [theme, setTheme] = useState(initialTheme || defaultTheme)
+    const [ theme, setTheme ] = useState(initialTheme || defaultTheme)
     const defaultProps = useMemo(() => ({
         theme,
         setTheme,
-    }), [theme])
+    }), [ theme ])
     return (
         <ThemeContext.Provider value={defaultProps}>
             {children}

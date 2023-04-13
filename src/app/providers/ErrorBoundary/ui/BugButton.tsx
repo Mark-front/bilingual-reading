@@ -8,7 +8,7 @@ interface IBugButton {
 
 // Компонент для тестирования
 export const BugButton = ({ className }: IBugButton) => {
-    const [error, setError] = useState(false)
+    const [ error, setError ] = useState(false)
     const { t } = useTranslation()
     const onThrow = () => {
         setError(true)
@@ -18,7 +18,7 @@ export const BugButton = ({ className }: IBugButton) => {
         if (error) {
             throw undefined
         }
-    }, [error])
+    }, [ error ])
 
     return (
         <Button

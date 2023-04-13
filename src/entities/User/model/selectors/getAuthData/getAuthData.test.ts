@@ -1,6 +1,6 @@
-import {DeepPartial} from '@reduxjs/toolkit';
-import {getUserAuthData} from './getAuthData';
-import {StateSchema} from '@/app/providers/StoreProvider';
+import { DeepPartial } from '@reduxjs/toolkit';
+import { getUserAuthData } from './getAuthData';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 describe('getCounter', () => {
     test('should return counter value', () => {
@@ -13,6 +13,6 @@ describe('getCounter', () => {
             },
         }
 
-        expect(getUserAuthData(state as StateSchema)).toEqual({id: '1', username: 'user'})
+        expect(getUserAuthData(state as StateSchema)).toEqual({ id: '1', username: 'user' })
     })
 })

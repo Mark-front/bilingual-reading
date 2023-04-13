@@ -1,13 +1,13 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
-import {ThunkConfig} from '@/app/providers/StoreProvider';
-import {IComment} from '@/entities/Comment';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { IComment } from '@/entities/Comment';
 
 export const fetchCommentsByArticleId = createAsyncThunk<
 IComment[],
 string,
 ThunkConfig<string>
 >(
-    'article/fetchCommentsByArticleId',
+    'ArticleDetailPage/fetchCommentsByArticleId',
     async (articleId, thunkAPI) => {
         const {
             extra,

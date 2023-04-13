@@ -1,10 +1,10 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {ArticleBlockImage} from './ArticleBlockImage';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
-import {TypeBlock} from '../../model/types/article';
+import { ArticleBlockImage } from './ArticleBlockImage';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
+import { TypeBlock } from '../../model/types/article';
 
 export default {
     title: 'entities/Article/ArticleBlockImage',
@@ -30,4 +30,4 @@ Default.args = {};
 export const Dark = Template.bind({});
 
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ ThemeDecorator(Theme.DARK) ]

@@ -1,12 +1,12 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import ArticleDetailPage from './ArticleDetailPage';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
-import {IArticle} from '@/entities/Article';
-import {ArticleType, TypeBlock} from '@/entities/Article/model/types/article';
-import {StoreDecorator} from '@/shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
+import { IArticle } from '@/entities/Article';
+import { ArticleType, TypeBlock } from '@/entities/Article/model/types/article';
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
 
 const article: IArticle = {
     'id': '1',
@@ -15,7 +15,7 @@ const article: IArticle = {
     'img': 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     'views': 1022,
     'createdAt': '26.02.2022',
-    'type': [ArticleType.IT],
+    'type': [ ArticleType.IT ],
     'blocks': [
         {
             'id': '1',
@@ -101,4 +101,4 @@ Default.args = {};
 export const Dark = Template.bind({});
 
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ ThemeDecorator(Theme.DARK) ]

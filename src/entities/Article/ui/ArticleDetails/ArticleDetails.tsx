@@ -1,27 +1,27 @@
-import React, {memo, useCallback, useEffect} from 'react';
-import {useTranslation} from 'react-i18next';
-import {useSelector} from 'react-redux';
+import React, { memo, useCallback, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 
 //import from module
-import {getArticleData, getArticleError, getArticleIsLoading} from '../../model/selectors/articleDetails';
-import {fetchArticleDataById} from '../../model/services/fetchArticleDataById/fetchArticleDataById';
-import {ArticleBlockImage} from '../ArticleBlockImage/ArticleBlockImage';
-import {ArticleBlockText} from '../ArticleBlockText/ArticleBlockText';
-import {ArticleBlockCode} from '../ArticleBlockCode/ArticleBlockCode';
-import {TArticleBlock, TypeBlock} from '../../model/types/article';
-import {articleReducer} from '../../model/slice/articleSlise';
+import { getArticleData, getArticleError, getArticleIsLoading } from '../../model/selectors/articleDetails';
+import { fetchArticleDataById } from '../../model/services/fetchArticleDataById/fetchArticleDataById';
+import { ArticleBlockImage } from '../ArticleBlockImage/ArticleBlockImage';
+import { ArticleBlockText } from '../ArticleBlockText/ArticleBlockText';
+import { ArticleBlockCode } from '../ArticleBlockCode/ArticleBlockCode';
+import { TArticleBlock, TypeBlock } from '../../model/types/article';
+import { articleReducer } from '../../model/slice/articleSlise';
 import cls from './ArticleDetails.module.scss';
 
 //import outside module
-import {DynamicModuleLoader, ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {classNames} from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg'
-import {Skeleton, ThemeSkeleton} from '@/shared/ui/Skeleton';
-import {Text, TextSize, ThemeText} from '@/shared/ui/Text';
+import { Skeleton, ThemeSkeleton } from '@/shared/ui/Skeleton';
+import { Text, TextSize, ThemeText } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/eye.svg'
-import {Avatar} from '@/shared/ui/Avatar';
-import {Icon} from '@/shared/ui/Icon';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Icon } from '@/shared/ui/Icon';
 
 interface IArticleDetailsProps {
     className?: string;
@@ -37,7 +37,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
         id,
     } = props;
 
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const dispatch = useAppDispatch();
 
     const data = useSelector(getArticleData)
@@ -75,7 +75,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
     useEffect(() => {
         if (__PROJECT__ === 'storybook') return;
         dispatch(fetchArticleDataById(id))
-    }, [id, dispatch])
+    }, [ id, dispatch ])
 
 
     let content;
@@ -96,7 +96,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
     if (error) {
         content = (
             <Text
-                className={classNames(cls.Error, {}, [className])}
+                className={classNames(cls.Error, {}, [ className ])}
                 theme={ThemeText.ERROR}
                 text={t('Произошла ошиюка при загрузке статьи') || 'Произошла ошиюка при загрузке статьи'}
             />
@@ -113,21 +113,21 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
                 />
                 <Text
                     size={TextSize.L}
-                    className={classNames(cls.Error, {}, [className])}
+                    className={classNames(cls.Error, {}, [ className ])}
                     title={data.title}
                     text={data.subtitle}
                 />
                 <div className={cls.articleInfo}>
                     <Icon Svg={EyeIcon}/>
                     <Text
-                        className={classNames(cls.Error, {}, [className])}
+                        className={classNames(cls.Error, {}, [ className ])}
                         text={`${data.views}`}
                     />
                 </div>
                 <div className={cls.articleInfo}>
                     <Icon Svg={CalendarIcon}/>
                     <Text
-                        className={classNames(cls.Error, {}, [className])}
+                        className={classNames(cls.Error, {}, [ className ])}
                         text={`${data.createdAt}`}
                     />
                 </div>
@@ -140,7 +140,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <div className={classNames(cls.ArticleDetails, {}, [className])}>
+            <div className={classNames(cls.ArticleDetails, {}, [ className ])}>
                 {content}
             </div>
         </DynamicModuleLoader>

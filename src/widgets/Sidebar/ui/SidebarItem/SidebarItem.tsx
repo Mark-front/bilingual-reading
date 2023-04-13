@@ -1,11 +1,11 @@
-import React, {memo} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
+import React, { memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
 import cls from './SidebarItem.module.scss';
-import {AppLink, AppLinkTheme} from '@/shared/ui/AppLink/ui/AppLink';
-import {useSelector} from 'react-redux';
-import {getUserAuthData} from '@/entities/User';
-import {SidebarItemType} from '@/widgets/Sidebar/model/types/items';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/ui/AppLink';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from '@/entities/User';
+import { SidebarItemType } from '@/widgets/Sidebar/model/types/items';
 
 interface ISidebarItemProps {
     item: SidebarItemType;
@@ -18,7 +18,7 @@ export const SidebarItem = memo((props: ISidebarItemProps) => {
         collapsed,
     } = props;
     const isAuth = useSelector(getUserAuthData)
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     const Icon = item.Icon;
     if (item.authOnly && !isAuth) {
         return null;
@@ -28,7 +28,7 @@ export const SidebarItem = memo((props: ISidebarItemProps) => {
         <AppLink
             theme={AppLinkTheme.SECONDARY}
             to={item.path}
-            className={classNames(cls.link, {[cls.collapsed]: collapsed})}
+            className={classNames(cls.link, { [cls.collapsed]: collapsed })}
         >
             <Icon className={cls.linkIcon}/>
             <span className={cls.linkText}>{t(item.text)}</span>

@@ -1,7 +1,7 @@
-import React, {CSSProperties, useMemo} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
-import {Mods} from '../../../lib/classNames/classNames';
+import React, { CSSProperties, useMemo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
+import { Mods } from '../../../lib/classNames/classNames';
 import cls from './Avatar.module.scss';
 
 interface IAvatarProps {
@@ -19,14 +19,14 @@ export const Avatar = (props: IAvatarProps) => {
         alt,
     } = props;
 
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const styles = useMemo<CSSProperties>(() => {
         return {
             width: size || 100,
             height: size || 100,
         }
-    }, [size])
+    }, [ size ])
     const mods: Mods = {}
 
     return (
@@ -34,6 +34,6 @@ export const Avatar = (props: IAvatarProps) => {
             style={styles}
             src={src}
             alt={alt}
-            className={classNames(cls.Avatar, mods, [className])}/>
+            className={classNames(cls.Avatar, mods, [ className ])}/>
     );
 }

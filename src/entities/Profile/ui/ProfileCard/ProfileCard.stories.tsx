@@ -1,12 +1,12 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import AvatarImg from '@/shared/assets/test/avatar.png';
-import {ProfileCard} from './ProfileCard';
-import {ValidateProfileError} from '../../model/types/profile';
-import {Country} from '../../../Country';
-import {Currency} from '../../../Currency';
+import { ProfileCard } from './ProfileCard';
+import { ValidateProfileError } from '../../model/types/profile';
+import { Country } from '../../../Country';
+import { Currency } from '../../../Currency';
 
 export default {
     title: 'entities/ProfileCard',

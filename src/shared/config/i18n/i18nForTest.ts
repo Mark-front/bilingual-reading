@@ -1,5 +1,5 @@
 import i18n from 'i18next';
-import {initReactI18next} from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 
 void i18n
     .use(initReactI18next)
@@ -8,7 +8,7 @@ void i18n
         fallbackLng: 'ru',
 
         // have a common namespace used around the full app
-        ns: ['translationsNS'],
+        ns: [ 'translationsNS' ],
         defaultNS: 'translationsNS',
 
         debug: true,
@@ -17,7 +17,7 @@ void i18n
             escapeValue: false, // not needed for react!!
         },
 
-        resources: {en: {translationsNS: {}}},
+        resources: { en: { translationsNS: {} } },
     });
 
 export default i18n;

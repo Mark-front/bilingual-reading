@@ -1,5 +1,5 @@
-import {createSlice} from '@reduxjs/toolkit';
-import {CounterSchema} from '../types/counterShema';
+import { createSlice } from '@reduxjs/toolkit';
+import { CounterSchema } from '../types/counterShema';
 
 const initialState: CounterSchema = {
     value: 0,
@@ -17,5 +17,5 @@ export const counterSlice = createSlice({
     },
 })
 
-export const {actions: counterActions} = counterSlice
-export const {reducer: counterReducer} = counterSlice
+export const { actions: counterActions } = counterSlice
+export const { reducer: counterReducer } = counterSlice

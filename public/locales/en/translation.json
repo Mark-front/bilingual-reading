@@ -38,5 +38,8 @@
   "Укажите валюту": "Specify currency",
   "Укажите страну": "Specify country",
   "Комментариев к посту пока нет": "There are no comments for this post yet",
-  "Отправить": "Send"
+  "Отправить": "Send",
+  "Читать далее": "Read more",
+  "Назад к списку": "Back to list",
+  "Произошла ошиюка при загрузке списка статей": "An error occurred while loading the list of articles"
 }

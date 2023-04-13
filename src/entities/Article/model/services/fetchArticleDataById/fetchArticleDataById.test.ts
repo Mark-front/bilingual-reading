@@ -1,6 +1,6 @@
-import {TestAsyncThunk} from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import {fetchArticleDataById} from './fetchArticleDataById';
-import {ArticleType, TypeBlock} from '@/entities/Article/model/types/article';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { fetchArticleDataById } from './fetchArticleDataById';
+import { ArticleType, TypeBlock } from '@/entities/Article/model/types/article';
 
 const data = {
     'id': '1',
@@ -9,7 +9,7 @@ const data = {
     'img': 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     'views': 1022,
     'createdAt': '26.02.2022',
-    'type': [ArticleType.IT],
+    'type': [ ArticleType.IT ],
     'blocks': [
         {
             'id': '1',
@@ -27,7 +27,7 @@ const data = {
 describe('fetchProfileData.test', () => {
     test('success get data', async () => {
         const thunk = new TestAsyncThunk(fetchArticleDataById);
-        thunk.api.get.mockReturnValue(Promise.resolve({data: data}));
+        thunk.api.get.mockReturnValue(Promise.resolve({ data: data }));
 
         const result = await thunk.callThunk('1')
 
@@ -38,7 +38,7 @@ describe('fetchProfileData.test', () => {
 
     test('error get data', async () => {
         const thunk = new TestAsyncThunk(fetchArticleDataById);
-        thunk.api.get.mockReturnValue(Promise.resolve({status: 403}));
+        thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
         const result = await thunk.callThunk('0')
 
         expect(result.meta.requestStatus).toBe('rejected');

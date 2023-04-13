@@ -1,7 +1,7 @@
-import {type Story} from '@storybook/react';
-import {I18nextProvider} from 'react-i18next';
+import { type Story } from '@storybook/react';
+import { I18nextProvider } from 'react-i18next';
 import i18n from 'i18next';
-import {Suspense, useEffect} from 'react';
+import { Suspense, useEffect } from 'react';
 import '../../../i18n/i18n'
 
 export const globalTypes = {
@@ -11,8 +11,8 @@ export const globalTypes = {
         toolbar: {
             icon: 'globe',
             items: [
-                {value: 'en', right: '🇺🇸', title: 'English'},
-                {value: 'ru', right: 'ru', title: 'Russian'},
+                { value: 'en', right: '🇺🇸', title: 'English' },
+                { value: 'ru', right: 'ru', title: 'Russian' },
             ],
             showName: true,
         },

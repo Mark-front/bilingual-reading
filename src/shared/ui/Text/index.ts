@@ -1,4 +1,4 @@
-import {Text, TextAlign, TextSize, ThemeText} from './ui/Text'
+import { Text, TextAlign, TextSize, ThemeText } from './ui/Text'
 
 export {
     Text,

@@ -1,5 +1,5 @@
-import React, {ChangeEvent, InputHTMLAttributes, memo} from 'react';
-import {classNames, Mods} from '@/shared/lib/classNames/classNames';
+import React, { ChangeEvent, InputHTMLAttributes, memo } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
@@ -40,7 +40,7 @@ export const Input = memo((props: InputProps) => {
     }
 
     return (
-        <label className={classNames(cls.InputWrapper, mods, [className, cls[theme]])}>
+        <label className={classNames(cls.InputWrapper, mods, [ className, cls[theme] ])}>
             <input
                 className={cls.input}
                 type={type}

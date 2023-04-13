@@ -1,11 +1,11 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {ArticleDetails} from './ArticleDetails';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
-import {ArticleType, IArticle, TypeBlock} from '../../model/types/article';
-import {StoreDecorator} from '@/shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
+import { ArticleDetails } from './ArticleDetails';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
+import { ArticleType, IArticle, TypeBlock } from '../../model/types/article';
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
 
 
 const article: IArticle = {
@@ -14,8 +14,13 @@ const article: IArticle = {
     'subtitle': 'Что нового в JS за 2022 год?',
     'img': 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     'views': 1022,
+    user: {
+        id: '1',
+        username: 'asdfasdf',
+        avatar: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+    },
     'createdAt': '26.02.2022',
-    'type': [ArticleType.IT],
+    'type': [ ArticleType.IT ],
     'blocks': [
         {
             'id': '1',
@@ -101,22 +106,22 @@ Default.args = {};
 export const Dark = Template.bind({});
 
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ ThemeDecorator(Theme.DARK) ]
 
 export const Loading = Template.bind({});
 
 Loading.args = {};
-Loading.decorators = [StoreDecorator({
+Loading.decorators = [ StoreDecorator({
     article: {
         isLoading: true,
     },
-}), ThemeDecorator(Theme.DARK)]
+}), ThemeDecorator(Theme.DARK) ]
 
 export const Error = Template.bind({});
 
 Error.args = {};
-Error.decorators = [StoreDecorator({
+Error.decorators = [ StoreDecorator({
     article: {
         error: 'Error',
     },
-}), ThemeDecorator(Theme.DARK)]
+}), ThemeDecorator(Theme.DARK) ]

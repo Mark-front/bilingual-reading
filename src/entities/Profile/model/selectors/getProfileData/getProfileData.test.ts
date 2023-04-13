@@ -1,6 +1,6 @@
-import {StateSchema} from '@/app/providers/StoreProvider';
-import {getProfileData} from './getProfileData';
-import {Currency} from '@/entities/Currency';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { getProfileData } from './getProfileData';
+import { Currency } from '@/entities/Currency';
 
 describe('getProfileData.test', () => {
     test('should return isLoading', () => {

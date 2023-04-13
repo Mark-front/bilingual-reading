@@ -1,10 +1,10 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {Button, ThemeButton} from '@/shared/ui/Button';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
-import {ButtonSize} from './Button';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
+import { ButtonSize } from './Button';
 
 export default {
     title: 'shared/Button',
@@ -37,7 +37,7 @@ export const ClearDark = Template.bind({});
 ClearDark.args = {
     theme: ThemeButton.CLEAR,
 };
-ClearDark.decorators = [ThemeDecorator(Theme.DARK)]
+ClearDark.decorators = [ ThemeDecorator(Theme.DARK) ]
 
 export const BackgroundTheme =
     Template.bind({});
@@ -78,7 +78,7 @@ OutlineDark.args = {
     theme: ThemeButton.OUTLINE,
 };
 
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
+OutlineDark.decorators = [ ThemeDecorator(Theme.DARK) ]
 
 export const Square = Template.bind({});
 

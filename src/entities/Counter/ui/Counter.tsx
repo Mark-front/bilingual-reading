@@ -1,8 +1,8 @@
-import React, {memo} from 'react';
-import {Button, ThemeButton} from '@/shared/ui/Button';
-import {useDispatch, useSelector} from 'react-redux';
-import {counterActions} from '../model/slice/counterSlice';
-import {getCounterValue} from '@/entities/Counter/model/selectors/getCounterValue/getCounterValue';
+import React, { memo } from 'react';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { useDispatch, useSelector } from 'react-redux';
+import { counterActions } from '../model/slice/counterSlice';
+import { getCounterValue } from '@/entities/Counter/model/selectors/getCounterValue/getCounterValue';
 
 export const Counter = memo(() => {
 

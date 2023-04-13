@@ -1,7 +1,7 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {CountrySelect} from './CountrySelect';
+import { CountrySelect } from './CountrySelect';
 
 export default {
     title: 'entities/CountrySelect',

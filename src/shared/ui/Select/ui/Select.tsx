@@ -1,6 +1,6 @@
-import React, {ChangeEvent, useMemo} from 'react';
-import {classNames, Mods} from '@/shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
+import React, { ChangeEvent, useMemo } from 'react';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { useTranslation } from 'react-i18next';
 import cls from './Select.module.scss';
 
 export interface SelectOption {
@@ -29,7 +29,7 @@ export const Select = (props: ISelectProps) => {
         readonly,
     } = props;
 
-    const {t} = useTranslation()
+    const { t } = useTranslation()
 
     const mods: Mods = {}
 
@@ -43,14 +43,14 @@ export const Select = (props: ISelectProps) => {
                 {opt.content}
             </option>
         )
-    }, [options])
+    }, [ options ])
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         onChange?.(e.target.value)
     }
 
     return (
-        <div className={classNames(cls.wrapper, mods, [className])}>
+        <div className={classNames(cls.wrapper, mods, [ className ])}>
             {
                 label &&
                 <span className={cls.label}>

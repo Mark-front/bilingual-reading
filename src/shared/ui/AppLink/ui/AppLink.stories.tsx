@@ -1,9 +1,9 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {AppLink} from '@/shared/ui/AppLink';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
+import { AppLink } from '@/shared/ui/AppLink';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
 
 export default {
     title: 'shared/AppLink',
@@ -20,4 +20,4 @@ const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} >1
 export const AppLinkDefault = Template.bind({});
 export const AppLinkDark = Template.bind({});
 
-AppLinkDark.decorators = [ThemeDecorator(Theme.DARK)]
+AppLinkDark.decorators = [ ThemeDecorator(Theme.DARK) ]

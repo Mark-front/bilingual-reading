@@ -1,9 +1,9 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {ThemeSwitcher} from '@/widgets/ThemeSwitcher';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/ui/ThemeProvider';
 
 export default {
     title: 'widgets/ThemeSwitcher',
@@ -20,4 +20,4 @@ ThemeSwitcherDefault.args = {};
 export const ThemeSwitcherDark = Template.bind({});
 
 ThemeSwitcherDark.args = {};
-ThemeSwitcherDark.decorators = [ThemeDecorator(Theme.DARK)]
+ThemeSwitcherDark.decorators = [ ThemeDecorator(Theme.DARK) ]

@@ -5,13 +5,13 @@ describe('classNames', () => {
     })
     test('with additional params', () => {
         const expected = 'someClass lols'
-        expect(classNames('someClass', {}, ['lols'])).toBe(expected)
+        expect(classNames('someClass', {}, [ 'lols' ])).toBe(expected)
     })
     test('with mods', () => {
         const expected = 'someClass lols is-hovered'
         expect(classNames(
             'someClass',
             { 'is-hovered': true, 'visually-hidden': false },
-            ['lols'])).toBe(expected)
+            [ 'lols' ])).toBe(expected)
     })
 })
