@@ -26,6 +26,9 @@
   "Город": "City",
   "Валюта": "Currency",
   "Фото": "Photo",
+  "Поиск": "Search",
+  "Возрастанию": "Asc",
+  "Убыванию": "decrease",
   "Возраст": "Age",
   "Сервер не отвечает": "Server is not response",
   "Нет данных о пользователе": "There is no data about the user",
@@ -41,5 +44,6 @@
   "Отправить": "Send",
   "Читать далее": "Read more",
   "Назад к списку": "Back to list",
+  "Сортировать по": "Sort by",
   "Произошла ошиюка при загрузке списка статей": "An error occurred while loading the list of articles"
 }

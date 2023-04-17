@@ -1,5 +1,5 @@
 import { IArticlePageSchema } from './model/types/articlePageSchema'
-import { ArticlePageAsync } from './ui/ArticlePage.async'
+import { ArticlePageAsync } from './ui/ArticlesPage/ArticlePage.async'
 
 export {
     ArticlePageAsync as ArticlePage,

@@ -26,9 +26,7 @@ ThunkConfig<string>
 
         if (hasMore && !isLoading) {
             dispatch(articlesPageAction.setPage(page + 1))
-            dispatch(fetchArticleList({
-                page: page + 1,
-            }))
+            dispatch(fetchArticleList({}))
         }
     }
 )

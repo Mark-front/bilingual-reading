@@ -42,6 +42,13 @@ export const ArticleType = {
 
 export type TArticleType = (typeof ArticleType)[keyof typeof ArticleType];
 
+export const ArticleSortField = {
+    VIEWS: 'views',
+    TITLE: 'title',
+    CREATED: 'createdAt',
+} as const;
+
+export type TArticleSortField = (typeof ArticleSortField)[keyof typeof ArticleSortField];
 export const ArticleView = {
     BIG: 'BIG',
     SMALL: 'SMALL',

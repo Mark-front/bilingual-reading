@@ -3,22 +3,22 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './Select.module.scss';
 
-export interface SelectOption {
-    value: string;
+export interface SelectOption<T> {
+    value: T;
     content: string;
 }
 
-interface ISelectProps {
+interface ISelectProps<T> {
     className?: string;
     label?: string;
     nameSelect?: string;
-    options?: SelectOption[];
-    value?: string;
-    onChange?: (value: string) => void;
+    options?: SelectOption<T>[];
+    value?: T;
+    onChange?: (value: T) => void;
     readonly?: boolean;
 }
 
-export const Select = (props: ISelectProps) => {
+export const Select = <T extends string>(props: ISelectProps<T>) => {
     const {
         className = '',
         label,
@@ -46,7 +46,7 @@ export const Select = (props: ISelectProps) => {
     }, [ options ])
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value)
+        onChange?.(e.target.value as T)
     }
 
     return (

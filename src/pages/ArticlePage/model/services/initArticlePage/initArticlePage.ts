@@ -20,8 +20,6 @@ ThunkConfig<string>
 
         if (_inited) return;
         dispatch(articlesPageAction.initState())
-        dispatch(fetchArticleList({
-            page: 1,
-        }))
+        dispatch(fetchArticleList({}))
     }
 )
