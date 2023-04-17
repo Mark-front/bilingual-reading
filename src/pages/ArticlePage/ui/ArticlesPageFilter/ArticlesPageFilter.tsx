@@ -17,6 +17,7 @@ import { Input } from '@/shared/ui/Input';
 import { TArticleSortField } from '@/entities/Article/model/types/article';
 import { SortOrder } from '@/shared/types';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
+import { useDebounce } from '../../../../shared/lib/hooks/useDebounce/useDebounce';
 
 interface IArticlesPageFilterProps {
     className?: string;
@@ -35,9 +36,10 @@ export const ArticlesPageFilter = memo((props: IArticlesPageFilterProps) => {
 
     const { t } = useTranslation();
 
-    const fetchData = useCallback(() => {
+    const debounceFetchData = useDebounce(() => {
         dispatch(fetchArticleList({ replace: true }))
-    }, [ dispatch ])
+    }, 500)
+
 
     const onChangeView = useCallback((newView: TArticleView) => {
         dispatch(articlesPageAction.setView(newView));
@@ -45,20 +47,20 @@ export const ArticlesPageFilter = memo((props: IArticlesPageFilterProps) => {
 
     const onChangeSort = useCallback((newSort: TArticleSortField) => {
         dispatch(articlesPageAction.setSort(newSort));
-        fetchData()
-    }, [ fetchData, dispatch ])
+        debounceFetchData()
+    }, [ debounceFetchData, dispatch ])
 
     const onChangeOrder = useCallback((newOrder: SortOrder) => {
         dispatch(articlesPageAction.setOrder(newOrder));
         dispatch(articlesPageAction.setPage(1));
-        fetchData()
-    }, [ fetchData, dispatch ])
+        debounceFetchData()
+    }, [ debounceFetchData, dispatch ])
 
     const onChangeSearch = useCallback((newSearch: string) => {
         dispatch(articlesPageAction.setSearch(newSearch));
         dispatch(articlesPageAction.setPage(1))
-        fetchData()
-    }, [ fetchData, dispatch ])
+        debounceFetchData()
+    }, [ debounceFetchData, dispatch ])
 
     return (
         <div className={classNames(cls.ArticlesPageFilter, {}, [ className ])}>

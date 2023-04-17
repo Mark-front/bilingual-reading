@@ -8,6 +8,7 @@ import {
     getArticlesPageSearch,
     getArticlesPageSort,
 } from '@/pages/ArticlePage/model/selectors/getArticlesPage/getArticlesPage';
+import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
 
 interface IFetchArticleListProps {
     replace?: boolean;
@@ -37,6 +38,7 @@ ThunkConfig<string>
         const search = getArticlesPageSearch(getState());
 
         try {
+            addQueryParams({ sort, order, search })
             const response = await extra.api.get<IArticle[]>(
                 '/articles', {
                     params: {

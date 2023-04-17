@@ -18,6 +18,7 @@ import { Page } from '@/widgets/Page';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
 import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
+import { useSearchParams } from 'react-router-dom';
 
 interface IArticlePageProps {
     className?: string;
@@ -38,14 +39,14 @@ const ArticlePage = (props: IArticlePageProps) => {
     const isLoading = useSelector(getArticlesPageIsLoading)
     const error = useSelector(getArticlesPageError)
     const view = useSelector(getArticlesPageView)
-
+    const [ searhcParams ] = useSearchParams()
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage())
     }, [ dispatch ])
 
     useInitialEffect(() => {
-        dispatch(initArticlePage())
+        dispatch(initArticlePage(searhcParams))
     })
 
     if (error) {
