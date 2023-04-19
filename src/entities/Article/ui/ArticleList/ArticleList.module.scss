@@ -1,13 +1,15 @@
 .ArticleList {
-    display: flex;
-    flex-wrap: wrap;
+
 }
 
 .SMALL {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 30px;
 }
 
 .BIG {
+    display: block;
     width: 100%;
 
     .card {
