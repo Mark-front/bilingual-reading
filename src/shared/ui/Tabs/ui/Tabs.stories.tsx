@@ -1,18 +1,24 @@
 import React from 'react';
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import { ArticlesPageFilter } from './ArticlesPageFilter';
+import { Tabs } from './Tabs';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/ui/ThemeProvider';
+import { action } from '@storybook/addon-actions';
 
 export default {
-    title: 'pages/ArticlesPageFilter',
-    component: ArticlesPageFilter,
+    title: 'shared/Tabs',
+    component: Tabs,
     argTypes: {},
+    args: {
+        value: 'tab1',
+        onTabClick: action('onTabClick'),
+        tabs: [ { value: 'tab1', content: 'tab1' }, { value: 'tab2', content: 'tab2' } ],
+    },
     decorators: [],
-} as ComponentMeta<typeof ArticlesPageFilter>;
+} as ComponentMeta<typeof Tabs>;
 
-const Template: ComponentStory<typeof ArticlesPageFilter> = (args) => <ArticlesPageFilter {...args}/>;
+const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args}/>;
 
 export const Default = Template.bind({});
 

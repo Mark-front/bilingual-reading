@@ -1,5 +1,7 @@
-import { Card } from './ui/Card'
+import { Card, ThemeCard, TThemeCard } from './ui/Card'
 
 export {
     Card,
+    ThemeCard,
+    TThemeCard,
 }

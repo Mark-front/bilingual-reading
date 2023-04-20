@@ -1,10 +1,17 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { IArticlePageSchema } from '../../types/articlePageSchema';
-import { ArticleView, IArticle, TArticleView } from '@/entities/Article';
+import {
+    ArticleSortField,
+    ArticleType,
+    ArticleView,
+    IArticle,
+    TArticleSortField,
+    TArticleType,
+    TArticleView,
+} from '@/entities/Article';
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchArticleList } from '../../services/fetchArticleList/fetchArticleList';
 import { VIEW_ARTICLES } from '@/shared/const/localStorage';
-import { ArticleSortField, TArticleSortField } from '@/entities/Article/model/types/article';
 import { SortOrder } from '@/shared/types';
 
 const articleListAdapter = createEntityAdapter<IArticle>({
@@ -30,6 +37,7 @@ const articlePageSlice = createSlice({
         search: '',
         sort: ArticleSortField.CREATED,
         order: 'asc',
+        type: ArticleType.ALL,
         _inited: false,
     }),
     reducers: {
@@ -49,6 +57,9 @@ const articlePageSlice = createSlice({
         },
         setSearch: (state, action: PayloadAction<string>) => {
             state.search = action.payload
+        },
+        setType: (state, action: PayloadAction<TArticleType>) => {
+            state.type = action.payload
         },
         initState: state => {
             const view = localStorage.getItem(VIEW_ARTICLES) as TArticleView

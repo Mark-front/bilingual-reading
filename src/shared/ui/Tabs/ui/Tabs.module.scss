@@ -1,0 +1,19 @@
+.Tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tab {
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: opacity .1s ease-in-out;
+
+    &:not(:last-child) {
+        margin-right: 15px;
+    }
+
+    &:hover {
+        opacity: .5;
+    }
+}

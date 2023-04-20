@@ -35,6 +35,7 @@ export interface IArticleBlockText extends IArticleBaseBlock {
 export type TArticleBlock = IArticleBlockText | IArticleBlockCode | IArticleBlockImage;
 
 export const ArticleType = {
+    ALL: 'ALL',
     IT: 'IT',
     SCIENCE: 'SCIENCE',
     ECONOMICS: 'ECONOMICS',

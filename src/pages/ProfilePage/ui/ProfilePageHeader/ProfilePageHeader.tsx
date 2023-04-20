@@ -4,11 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { Text } from '@/shared/ui/Text';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getProfileReadonly, profileActions } from '@/entities/Profile';
+import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from '@/entities/Profile';
 import { useSelector } from 'react-redux';
 import cls from './ProfilePageHeader.module.scss';
-import { getProfileData, updateProfileData } from '../../../../entities/Profile';
-import { getUserAuthData } from '../../../../entities/User';
+import { getUserAuthData } from '@/entities/User';
 
 interface IProfilePageHeaderProps {
     className?: string;
