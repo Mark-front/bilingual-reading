@@ -6,3 +6,11 @@
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
+.recommendations {
+    padding: 20px;
+    overflow-y: clip;
+    overflow-x: scroll;
+    width: 100%;
+    max-width: 100%;
+}

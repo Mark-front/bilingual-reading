@@ -65,6 +65,7 @@ const ArticlePage = (props: IArticlePageProps) => {
                 <div className={classNames(cls.ArticlePage, {}, [ className ])}>
                     <ArticlesPageFilter/>
                     <ArticleList
+                        target={'_self'}
                         className={cls.list}
                         articles={articles}
                         view={view}

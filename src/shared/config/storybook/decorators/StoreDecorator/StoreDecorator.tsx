@@ -3,7 +3,7 @@ import { Story } from '@storybook/react';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from '@/entities/Profile/model/slice/profileSlice';
-import { articleReducer } from '@/../entities/Article/model/slice/articleSlise';
+import { articleReducer } from '@/entities/Article/model/slice/articleSlise';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,

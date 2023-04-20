@@ -9,8 +9,8 @@ import { ILoginSchema } from '@/features/AuthByUsername';
 import { IArticlePageSchema } from '@/pages/ArticlePage';
 import { IAddCommentSchema } from '@/features/AddComment';
 import { NavigateOptions } from 'react-router/dist/lib/context';
-import { IArticleDetailCommentsSchema } from '@/pages/ArticleDetailPage';
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailPage/model/types';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -21,9 +21,9 @@ export interface StateSchema {
     // Ассинхронные редюсеры
     loginForm?: ILoginSchema;
     article?: IArticleSchema;
-    articleComments?: IArticleDetailCommentsSchema;
     addComment?: IAddCommentSchema;
     articlePage?: IArticlePageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 
 }
 
