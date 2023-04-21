@@ -7,6 +7,9 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from '@/entities/User';
 import { Text } from '@/shared/ui/Text';
+import { AppLink } from '@/shared/ui/AppLink';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { AppLinkTheme } from '@/shared/ui/AppLink/ui/AppLink';
 
 interface NavbarProps {
     className?: string
@@ -32,7 +35,17 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
 
     if (authUserData) {
         return (
-            <div className={classNames(cls.navbar, {}, [ className ])}>
+            <header className={classNames(cls.navbar, {}, [ className ])}>
+                <Text
+                    className={cls.appName}
+                    title={'Bilingual-reading'}
+                />
+                <AppLink
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                >
+                    {t('Создать статью')}
+                </AppLink>
                 <div className={cls.userLogin}>
                     <Text text={authUserData.username}/>
                     <Button
@@ -43,12 +56,13 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
                         {t('Выйти')}
                     </Button>
                 </div>
-            </div>
+            </header>
         )
     }
 
     return (
-        <div className={classNames(cls.navbar, {}, [ className ])}>
+        <header className={classNames(cls.navbar, {}, [ className ])}>
+            <Text className={cls.appName} title={'Bilingual-reading'}/>
             <Button
                 theme={ThemeButton.CLEAR}
                 className={cls.links}
@@ -60,6 +74,6 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
                 isOpen={isAuthModal}
                 onClose={onCloseModal}
             />
-        </div>
+        </header>
     )
 })

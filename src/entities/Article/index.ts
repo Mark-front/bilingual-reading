@@ -13,6 +13,7 @@ import { ArticleList } from './ui/ArticleList/ArticleList'
 import { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector'
 import { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
 import { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
+import { getArticleData } from './model/selectors/articleDetails'
 
 export {
     ArticleDetails,
@@ -28,4 +29,5 @@ export {
     ArticleSortField,
     TArticleSortField,
     ArticleTypeTabs,
+    getArticleData,
 }

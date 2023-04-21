@@ -16,7 +16,12 @@ ThunkConfig<string>
 
         try {
             const response = await extra.api.get<IArticle>(
-                '/articles/' + articleId
+                '/articles/' + articleId,
+                {
+                    params: {
+                        _expand: 'user',
+                    },
+                }
             );
 
             if (!response.data) {
