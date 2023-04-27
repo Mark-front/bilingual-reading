@@ -9,11 +9,24 @@ import './styles/index.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserMounted, userActions } from '@/entities/User';
 
+window.addEventListener('error', (e) => {
+    if (
+        e.message ===
+        'ResizeObserver loop completed with undelivered notifications.' ||
+        e.message === 'ResizeObserver loop limit exceeded'
+    ) {
+        console.error(e.message)
+        e.stopImmediatePropagation();
+    }
+});
 const App = memo(() => {
+
+
     useTheme()
     const dispatch = useDispatch();
     const mounted = useSelector(getUserMounted)
     useEffect(() => {
+
         dispatch(userActions.initAuthData())
     }, [ dispatch ])
     return (

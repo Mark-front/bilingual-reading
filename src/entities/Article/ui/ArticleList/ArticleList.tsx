@@ -4,6 +4,8 @@ import cls from './ArticleList.module.scss';
 import { ArticleView, IArticle, TArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '@/entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import AutoSizer from 'react-virtualized-auto-sizer';
+import { FixedSizeList as List, ListChildComponentProps } from 'react-window';
 
 interface IArticleListProps {
     className?: string;
@@ -38,16 +40,36 @@ export const ArticleList = memo((props: IArticleListProps) => {
             />
         )
     }
+    const ItemList = ({
+        index,
+        style,
+        data,
+    }: ListChildComponentProps<IArticle[]>) => {
+        console.log(data[index])
+        if (isLoading) return <ArticleListItemSkeleton view={view} className={cls.card}/>
+        return renderArticle(data[index], data[index].id + data[index].title)
+    }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])}>
-            {
-                articles.length > 0
-                    ? articles.map(article => renderArticle(article, article.id + article.title))
-                    : null
 
-            }
-            {isLoading && getSkeletons()}
+        <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])}>
+            <AutoSizer>
+                {({ height, width }) => {
+                    console.log(height,
+                        width)
+                    return (
+                        <List
+                            itemSize={660}
+                            height={height as number}
+                            width={width as number}
+                            itemData={articles}
+                            itemCount={articles.length}
+                        >
+                            {ItemList}
+                        </List>
+                    )
+                }}
+            </AutoSizer>
         </div>
     );
 })

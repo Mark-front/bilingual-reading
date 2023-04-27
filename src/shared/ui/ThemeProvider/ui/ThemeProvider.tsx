@@ -1,21 +1,16 @@
-import React, { type FC, useMemo, useState } from 'react'
-import {
-    LOCAL_STORAGE_THEME_KEY,
-    Theme,
-    ThemeContext,
-    type TTheme,
-} from '../lib/context/themeContext'
-import { useTheme } from '@/shared/ui/ThemeProvider';
+import React, { ReactNode, useMemo, useState } from 'react'
+import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, type TTheme } from '../lib/context/themeContext'
 
 const defaultTheme =
     localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as TTheme ||
     Theme.LIGHT
 
 interface ThemeProviderProps {
+    children: ReactNode;
     initialTheme?: TTheme;
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = (props) => {
+const ThemeProvider = (props: ThemeProviderProps) => {
     const {
         children,
         initialTheme = Theme.LIGHT,

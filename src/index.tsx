@@ -1,14 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import App from './app/App'
 import { BrowserRouter } from 'react-router-dom'
+import { createRoot } from 'react-dom/client';
 
 import './shared/config/i18n/i18n'
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary'
 import { ThemeProvider } from '@/shared/ui/ThemeProvider'
 import { StoreProvider } from './app/providers/StoreProvider';
 
-ReactDOM.render(
+const container = document.getElementById('root')
+const root = createRoot(container!);
+root.render(
     <BrowserRouter>
         <StoreProvider>
             <ErrorBoundary>
@@ -17,6 +19,5 @@ ReactDOM.render(
                 </ThemeProvider>
             </ErrorBoundary>
         </StoreProvider>
-    </BrowserRouter>,
-    document.querySelector('#root')
+    </BrowserRouter>
 )
