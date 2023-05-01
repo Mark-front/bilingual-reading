@@ -2,9 +2,9 @@ import React, { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './Code.module.scss';
-import { Button } from '@/shared/ui/Button';
+import { Button } from '../../Button';
 import Copy from '@/shared/assets/icons/copy.svg'
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '../../Icon';
 
 interface ICodeProps {
     className?: string;

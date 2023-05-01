@@ -1,7 +1,7 @@
 import React from 'react';
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import { Sidebar } from '@/widgets/Sidebar';
+import { Sidebar } from './Sidebar';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/ui/ThemeProvider';
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator/StoreDecorator';

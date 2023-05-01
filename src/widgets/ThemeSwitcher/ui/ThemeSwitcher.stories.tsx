@@ -1,7 +1,7 @@
 import React from 'react';
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { ThemeSwitcher } from '../index';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/ui/ThemeProvider';
 

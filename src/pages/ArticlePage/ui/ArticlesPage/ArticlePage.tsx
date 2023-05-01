@@ -14,10 +14,8 @@ import {
     getArticlesPageView,
 } from '../../model/selectors/getArticlesPage/getArticlesPage';
 import { Text, ThemeText } from '@/shared/ui/Text';
-import { Page } from '@/widgets/Page';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
-import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 import { useSearchParams } from 'react-router-dom';
 
 interface IArticlePageProps {
@@ -39,14 +37,14 @@ const ArticlePage = (props: IArticlePageProps) => {
     const isLoading = useSelector(getArticlesPageIsLoading)
     const error = useSelector(getArticlesPageError)
     const view = useSelector(getArticlesPageView)
-    const [ searhcParams ] = useSearchParams()
+    const [ searchParams ] = useSearchParams()
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlePage())
     }, [ dispatch ])
 
     useInitialEffect(() => {
-        dispatch(initArticlePage(searhcParams))
+        dispatch(initArticlePage(searchParams))
     })
 
     if (error) {
@@ -60,20 +58,16 @@ const ArticlePage = (props: IArticlePageProps) => {
     }
 
     return (
-        <Page onScrollEnd={onLoadNextPart}>
-            <DynamicModuleLoader reducers={reducers}>
-                <div className={classNames(cls.ArticlePage, {}, [ className ])}>
-                    <ArticlesPageFilter/>
-                    <ArticleList
-                        target={'_self'}
-                        className={cls.list}
-                        articles={articles}
-                        view={view}
-                        isLoading={isLoading}
-                    />
-                </div>
-            </DynamicModuleLoader>
-        </Page>
+        <DynamicModuleLoader reducers={reducers}>
+            <ArticleList
+                target={'_self'}
+                className={cls.list}
+                articles={articles}
+                view={view}
+                isLoading={isLoading}
+                onLoadNextPart={onLoadNextPart}
+            />
+        </DynamicModuleLoader>
     );
 }
 

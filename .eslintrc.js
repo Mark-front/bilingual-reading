@@ -38,7 +38,7 @@ module.exports = {
         project: [ './tsconfig.eslint.json' ],
         tsconfigRootDir: __dirname,
     },
-    plugins: [ 'react', '@typescript-eslint', 'i18next', 'react-hooks' ],
+    plugins: [ 'react', '@typescript-eslint', 'i18next', 'react-hooks', 'mym-path-checker' ],
     rules: {
         indent: [ 'error', 4, { 'SwitchCase': 1 } ],
         '@typescript-eslint/indent': [ 'error', 4 ],
@@ -77,6 +77,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'object-curly-spacing': [ 'error', 'always' ],
         'array-bracket-spacing': [ 'error', 'always' ],
+        'mym-path-checker/path-check': 'error',
     },
     globals: {
         __IS_DEV__: true,

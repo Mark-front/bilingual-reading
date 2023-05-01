@@ -1,7 +1,7 @@
 import React from 'react';
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import { Avatar } from '@/shared/ui/Avatar';
+import { Avatar } from './Avatar';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import AvatarImg from '../../../assets/test/avatar.png';

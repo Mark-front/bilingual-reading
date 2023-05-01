@@ -2,7 +2,7 @@ import React, { memo, ReactNode, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import cls from './Tabs.module.scss';
-import { Card, ThemeCard } from '@/shared/ui/Card';
+import { Card, ThemeCard } from '../../Card/ui/Card';
 
 export interface TabItem {
     value: string;

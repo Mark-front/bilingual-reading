@@ -1,19 +1,36 @@
 .ArticleList {
-    height: 1000px;
+    padding: 0 0 0 45px;
+    min-height: calc(100vh - var(--navbar-height));
 }
 
-.SMALL {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
+.header {
+    margin-top: 20px;
+    width: calc(100% - 25px);
 }
 
 .BIG {
     display: block;
     width: 100%;
 
+    .list {
+        height: 100%;
+        flex-grow: 1;
+    }
+
     .card {
-        width: 100%;
+        width: calc(100% - 25px);
         margin-bottom: 30px;
+    }
+}
+
+.SMALL {
+    display: block;
+    width: 100%;
+
+    .itemsWrapper {
+        width: calc(100% - 25px);
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 30px;
     }
 }
