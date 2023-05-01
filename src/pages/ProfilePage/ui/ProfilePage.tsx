@@ -22,8 +22,8 @@ import { TCountry } from '@/entities/Country';
 import { Text, ThemeText } from '@/shared/ui/Text';
 import { useParams } from 'react-router-dom';
 import { Page } from '@/widgets/Page';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
-// import cls from './ProfilePage.module.scss';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -101,7 +101,7 @@ const ProfilePage = memo((props: IProfilePageProps) => {
     return (
         <Page>
             <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-                <div className={classNames('cls.ProfilePage', {}, [ className ])}>
+                <VStack align={'start'} gap={'32'} className={classNames('', {}, [ className ])}>
                     <ProfilePageHeader/>
                     {validateErrors?.length &&
                         validateErrors.map(err =>
@@ -126,7 +126,7 @@ const ProfilePage = memo((props: IProfilePageProps) => {
                         onChangeNickname={onChangeNickname}
                         onChangeAvatar={onChangeAvatar}
                     />
-                </div>
+                </VStack>
             </DynamicModuleLoader>
         </Page>
     );

@@ -22,6 +22,8 @@ import { Text, TextSize, ThemeText } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 
 interface IArticleDetailsProps {
     className?: string;
@@ -82,14 +84,14 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <>
+            <VStack gap={'16'} align={'start'}>
                 <Skeleton theme={ThemeSkeleton.AVATAR} className={cls.avatar}/>
                 <Skeleton theme={ThemeSkeleton.TITLE} className={cls.skeleton}/>
                 <Skeleton theme={ThemeSkeleton.PARAGRAPH} height={100} className={cls.skeleton}/>
                 <Skeleton theme={ThemeSkeleton.PARAGRAPH} className={cls.skeleton}/>
                 <Skeleton theme={ThemeSkeleton.PARAGRAPH} className={cls.skeleton}/>
                 <Skeleton theme={ThemeSkeleton.PARAGRAPH} className={cls.skeleton}/>
-            </>
+            </VStack>
         )
     }
 
@@ -105,7 +107,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
 
     if (data) {
         content = (
-            <>
+            <VStack align={'start'} gap={'8'}>
                 <Avatar
                     size={150}
                     src={data.img || ''}
@@ -117,24 +119,24 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
                     title={data.title}
                     text={data.subtitle}
                 />
-                <div className={cls.articleInfo}>
+                <HStack gap={'8'} className={cls.articleInfo}>
                     <Icon Svg={EyeIcon}/>
                     <Text
                         className={classNames(cls.Error, {}, [ className ])}
                         text={`${data.views}`}
                     />
-                </div>
-                <div className={cls.articleInfo}>
+                </HStack>
+                <HStack gap={'8'} className={cls.articleInfo}>
                     <Icon Svg={CalendarIcon}/>
                     <Text
                         className={classNames(cls.Error, {}, [ className ])}
                         text={`${data.createdAt}`}
                     />
-                </div>
-                <div>
+                </HStack>
+                <VStack gap={'32'}>
                     {data.blocks.map(renderBlock)}
-                </div>
-            </>
+                </VStack>
+            </VStack>
         )
     }
 

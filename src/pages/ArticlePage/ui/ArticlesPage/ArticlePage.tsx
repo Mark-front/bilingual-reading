@@ -17,6 +17,7 @@ import { Text, ThemeText } from '@/shared/ui/Text';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
 import { useSearchParams } from 'react-router-dom';
+import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 
 interface IArticlePageProps {
     className?: string;
@@ -56,6 +57,7 @@ const ArticlePage = (props: IArticlePageProps) => {
             />
         )
     }
+    const Header = () => <ArticlesPageFilter/>
 
     return (
         <DynamicModuleLoader reducers={reducers}>
@@ -66,6 +68,7 @@ const ArticlePage = (props: IArticlePageProps) => {
                 view={view}
                 isLoading={isLoading}
                 onLoadNextPart={onLoadNextPart}
+                header={Header}
             />
         </DynamicModuleLoader>
     );

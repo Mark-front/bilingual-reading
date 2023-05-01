@@ -1,11 +1,10 @@
-import React, { HTMLAttributeAnchorTarget, memo } from 'react';
+import React, { ComponentType, HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticleList.module.scss';
 import { ArticleView, IArticle, TArticleView } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
-import { ArticleListItemSkeleton } from '@/entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
+import { ArticleListItemSkeleton } from '../../ui/ArticleListItem/ArticleListItemSkeleton';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { ArticlesPageFilter } from '@/pages/ArticlePage/ui/ArticlesPageFilter/ArticlesPageFilter';
 
 interface IArticleListProps {
     className?: string;
@@ -14,6 +13,7 @@ interface IArticleListProps {
     view?: TArticleView;
     target: HTMLAttributeAnchorTarget;
     onLoadNextPart?: () => void;
+    header?: ComponentType<{ context?: any; }>;
 }
 
 export const ArticleList = memo((props: IArticleListProps) => {
@@ -24,6 +24,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
         view = ArticleView.SMALL,
         target,
         onLoadNextPart,
+        header,
     } = props;
 
     const getSkeletons = () => new Array(3)
@@ -42,9 +43,6 @@ export const ArticleList = memo((props: IArticleListProps) => {
         }
         return null;
     })
-
-
-    const Header = () => <ArticlesPageFilter className={cls.header}/>
 
     const SkeletonPlaceholderGrid = () => (
         <div>
@@ -74,7 +72,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
                         itemContent={renderArticle}
                         endReached={onLoadNextPart}
                         components={{
-                            Header,
+                            Header: header,
                             Footer,
                         }}
                     >
@@ -88,7 +86,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
                         endReached={onLoadNextPart}
                         listClassName={cls.itemsWrapper}
                         components={{
-                            Header,
+                            Header: header,
                             ScrollSeekPlaceholder: SkeletonPlaceholderGrid,
                         }}
                         scrollSeekConfiguration={{

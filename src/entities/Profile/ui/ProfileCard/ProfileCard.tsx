@@ -9,6 +9,8 @@ import { Loader } from '@/shared/ui/Loader';
 import { Avatar } from '@/shared/ui/Avatar';
 import { CurrencySelect, TCurrency } from '@/entities/Currency';
 import { CountrySelect, TCountry } from '@/entities/Country';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 
 interface IProfileCartProps {
     className?: string;
@@ -47,20 +49,20 @@ export const ProfileCard = (props: IProfileCartProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [ cls.isLoading ])}>
+            <HStack justify={'center'} className={classNames(cls.ProfileCard, {}, [ cls.isLoading ])}>
                 <Loader/>
-            </div>
+            </HStack>
         )
     }
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [ cls.isError ])}>
+            <HStack justify={'center'} className={classNames(cls.ProfileCard, {}, [ cls.isError ])}>
                 <Text text={error} theme={ThemeText.ERROR}/>
-            </div>
+            </HStack>
         )
     }
     return (
-        <div className={classNames(cls.ProfileCard, {}, [ className ])}>
+        <VStack gap={'16'} max align={'start'} className={classNames(cls.ProfileCard, {}, [ className ])}>
             {
                 data?.avatar &&
                 <div className={cls.avatarWrapper}>
@@ -70,33 +72,28 @@ export const ProfileCard = (props: IProfileCartProps) => {
             <Input
                 placeholder={t('Ваше имя') || 'Ваше имя'}
                 value={data?.first || ''}
-                className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeFirstName}
             />
             <Input
                 placeholder={t('Ваше фамилия') || 'Ваше фамилия'}
                 value={data?.lastname || ''}
-                className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeLastName}
             />
             <Input
                 placeholder={t('Возраст') || 'Возраст'}
                 value={data?.age || ''}
-                className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeAge}
             />
             <Input
                 placeholder={t('Никнейм') || 'Никнейм'}
                 value={data?.username || ''}
-                className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeNickname}
             />
             <CountrySelect
-                className={cls.input}
                 value={data?.country}
                 onChange={onChangeCountry}
                 readonly={readonly}
@@ -104,12 +101,10 @@ export const ProfileCard = (props: IProfileCartProps) => {
             <Input
                 placeholder={t('Город') || 'Город'}
                 value={data?.city || ''}
-                className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeCity}
             />
             <CurrencySelect
-                className={cls.input}
                 value={data?.currency}
                 onChange={onChangeCurrency}
                 readonly={readonly}
@@ -117,10 +112,9 @@ export const ProfileCard = (props: IProfileCartProps) => {
             <Input
                 placeholder={t('Фото') || 'Фото'}
                 value={data?.avatar || ''}
-                className={cls.input}
                 readOnly={readonly}
                 onChange={onChangeAvatar}
             />
-        </div>
+        </VStack>
     );
 }
