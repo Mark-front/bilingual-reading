@@ -11,6 +11,7 @@ import { IAddCommentSchema } from '@/features/AddComment';
 import { NavigateOptions } from 'react-router/dist/lib/context';
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailPage/model/types';
+import { ArticleRecomendationsListSchema } from '@/features/ArticleRecomendationsList';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -24,6 +25,7 @@ export interface StateSchema {
     addComment?: IAddCommentSchema;
     articlePage?: IArticlePageSchema;
     articleDetailsPage?: ArticleDetailsPageSchema;
+    articleRecommendations?: ArticleRecomendationsListSchema;
 
 }
 

@@ -14,6 +14,7 @@ interface IArticleListProps {
     target: HTMLAttributeAnchorTarget;
     onLoadNextPart?: () => void;
     header?: ComponentType<{ context?: any; }>;
+    withoutVirtual?: boolean;
 }
 
 export const ArticleList = memo((props: IArticleListProps) => {
@@ -25,6 +26,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
         target,
         onLoadNextPart,
         header,
+        withoutVirtual = false,
     } = props;
 
     const getSkeletons = () => new Array(3)
@@ -58,6 +60,21 @@ export const ArticleList = memo((props: IArticleListProps) => {
                 view={view}
                 target={target}
             />
+        )
+    }
+
+    if (withoutVirtual) {
+        console.log(articles)
+        return (
+            <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])}>
+                {
+                    articles.length > 0
+                        ? articles.map((article, index) => renderArticle(index, article))
+                        : null
+
+                }
+                {isLoading && getSkeletons()}
+            </div>
         )
     }
 
