@@ -11,13 +11,14 @@ import { IAddCommentSchema } from '@/features/AddComment';
 import { NavigateOptions } from 'react-router/dist/lib/context';
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailPage/model/types';
-import { ArticleRecomendationsListSchema } from '@/features/ArticleRecomendationsList';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: IUserSchema;
     profile: ProfileSchema;
     saveScroll: SaveScrollSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
 
     // Ассинхронные редюсеры
     loginForm?: ILoginSchema;
@@ -25,7 +26,6 @@ export interface StateSchema {
     addComment?: IAddCommentSchema;
     articlePage?: IArticlePageSchema;
     articleDetailsPage?: ArticleDetailsPageSchema;
-    articleRecommendations?: ArticleRecomendationsListSchema;
 
 }
 

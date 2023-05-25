@@ -84,7 +84,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
 
     if (isLoading) {
         content = (
-            <VStack gap={'16'} align={'start'}>
+            <VStack gap={'16'} align={'start'} max>
                 <Skeleton theme={ThemeSkeleton.AVATAR} className={cls.avatar}/>
                 <Skeleton theme={ThemeSkeleton.TITLE} className={cls.skeleton}/>
                 <Skeleton theme={ThemeSkeleton.PARAGRAPH} height={100} className={cls.skeleton}/>
@@ -107,7 +107,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
 
     if (data) {
         content = (
-            <VStack align={'start'} gap={'8'}>
+            <VStack align={'start'} gap={'8'} max>
                 <Avatar
                     size={150}
                     src={data.img || ''}
@@ -142,9 +142,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <div className={classNames(cls.ArticleDetails, {}, [ className ])}>
-                {content}
-            </div>
+            {content}
         </DynamicModuleLoader>
     );
 })

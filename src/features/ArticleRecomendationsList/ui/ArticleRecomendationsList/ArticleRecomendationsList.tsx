@@ -1,18 +1,11 @@
 import cls from './ArticleRecomendationsList.module.scss';
 import React, { memo } from 'react';
 import { ArticleList, ArticleView } from '@/entities/Article';
-import { useSelector } from 'react-redux';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getArticleRecommendations } from '../../model/slices/ArticleRecomendationsListSlice';
-import {
-    getArticlesRecommendationsError,
-    getArticlesRecommendationsIsLoading,
-} from '../../model/selectors/recommendations';
-import {
-    fetchArticleRecommendationsList,
-} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { useArticleRecommendationsList } from '../../api/articleRecommendationsListApi';
+import { t } from 'i18next';
+import { Text, TextSize } from '@/shared/ui/Text';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
 interface ArticleRecomendationsListProps {
     className?: string;
@@ -22,23 +15,19 @@ export const ArticleRecomendationsList = memo((props: ArticleRecomendationsListP
     const {
         className,
     } = props;
-    const dispatch = useAppDispatch()
 
-    const recommendations = useSelector(getArticleRecommendations.selectAll)
-    const recommendationsIsLoading = useSelector(getArticlesRecommendationsIsLoading)
-    const recommendationsError = useSelector(getArticlesRecommendationsError)
-
-    useInitialEffect(() => {
-        dispatch(fetchArticleRecommendationsList())
-    })
+    const { isLoading, data } = useArticleRecommendationsList(4)
 
     return (
-        <ArticleList
-            target={'_blank'}
-            className={classNames(cls.ArticleRecomendationsList, {}, [ className ])}
-            articles={recommendations} isLoading={recommendationsIsLoading}
-            withoutVirtual={true}
-            view={ArticleView.SMALL}
-        />
+        <VStack align={'start'} gap={'16'}>
+            <Text className={cls.Comments} size={TextSize.L} title={t('Рекоммендации') || 'Рекоммендации'}/>
+            <ArticleList
+                target={'_blank'}
+                className={classNames(cls.ArticleRecomendationsList, {}, [ className ])}
+                articles={data} isLoading={isLoading}
+                withoutVirtual={true}
+                view={ArticleView.SMALL}
+            />
+        </VStack>
     );
 });

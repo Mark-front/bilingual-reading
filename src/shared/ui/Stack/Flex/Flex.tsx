@@ -49,7 +49,7 @@ export const Flex = memo((props: IFlexProps) => {
         children,
         justify = 'start',
         direction = 'row',
-        align = 'center',
+        align = 'start',
         gap = '8',
         max = true,
     } = props;

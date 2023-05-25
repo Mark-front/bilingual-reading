@@ -8,6 +8,7 @@ import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { NavigateOptions } from 'react-router/dist/lib/context';
 import { profileReducer } from '@/entities/Profile/model/slice/profileSlice';
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 
 export function createReduxStore(
@@ -21,6 +22,7 @@ export function createReduxStore(
         counter: counterReducer,
         profile: profileReducer,
         saveScroll: scrollSaveReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     }
 
     const reducerManager = createReducerManager(rootReducers);
@@ -37,7 +39,7 @@ export function createReduxStore(
             thunk: {
                 extraArgument: extraArg,
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
 
 
