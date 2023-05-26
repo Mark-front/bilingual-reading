@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Text } from '@/shared/ui/Text';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from '@/entities/Profile';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';

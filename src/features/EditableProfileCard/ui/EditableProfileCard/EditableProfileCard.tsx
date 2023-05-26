@@ -2,21 +2,18 @@ import { useTranslation } from 'react-i18next';
 import React, { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import {
-    fetchProfileData,
-    getProfileError,
-    getProfileForm,
-    getProfileIsLoading,
-    getProfileReadonly,
-    getProfileValidateErrors,
-    profileActions,
-    ProfileCard,
-    ValidateProfileError,
-} from '@/entities/Profile';
 import { Text, ThemeText } from '@/shared/ui/Text';
 import { TCountry } from '@/entities/Country';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { TCurrency } from '@/entities/Currency';
+import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { profileActions } from '../../model/slice/profileSlice';
+import { ProfileCard, ValidateProfileError } from '@/entities/Profile';
+import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
+import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
 
 interface EditableProfileCardProps {
     className?: string;

@@ -1,5 +1,5 @@
 import { IProfile } from '@/entities/Profile';
-import { TValidateProfileError, ValidateProfileError } from '../../types/profile';
+import { TValidateProfileError, ValidateProfileError } from '../../../../../entities/Profile/model/types/profile';
 
 export const validateProfileData = (profile?: IProfile) => {
     const errors: TValidateProfileError[] = [];

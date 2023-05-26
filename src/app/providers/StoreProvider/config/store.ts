@@ -6,7 +6,7 @@ import { counterReducer } from '@/entities/Counter';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 import { NavigateOptions } from 'react-router/dist/lib/context';
-import { profileReducer } from '@/entities/Profile/model/slice/profileSlice';
+import { profileReducer } from '@/features/EditableProfileCard';
 import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { rtkApi } from '@/shared/api/rtkApi';
 
