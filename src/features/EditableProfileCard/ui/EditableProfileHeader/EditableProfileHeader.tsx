@@ -51,7 +51,7 @@ export const EditableProfileHeader = memo((props: IProfilePageHeaderProps) => {
     )
 
     return (
-        <HStack justify={'between'} className={classNames('', {}, [ className ])}>
+        <HStack justify={'between'} max className={classNames('', {}, [ className ])}>
             <Text title={t('Профиль пользователя') || 'Профиль пользователя'}/>
 
             {
@@ -66,7 +66,7 @@ export const EditableProfileHeader = memo((props: IProfilePageHeaderProps) => {
                     )
 
                     : (
-                        <HStack gap={'8'}>
+                        <HStack gap={'8'} justify={'end'}>
                             <Button
                                 onClick={onCancelEdit}
                                 theme={ThemeButton.OUTLINE}

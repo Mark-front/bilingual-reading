@@ -1,7 +1,8 @@
-import { ArticleType, TypeBlock } from '@/entities/Article/model/types/article';
-import { IArticleSchema } from '@/entities/Article';
-import { fetchArticleDataById } from '@/entities/Article/model/services/fetchArticleDataById/fetchArticleDataById';
-import { articleReducer } from '@/entities/Article/model/slice/articleSlise';
+import { fetchArticleDataById } from '../../model/services/fetchArticleDataById/fetchArticleDataById';
+import { ArticleType, TypeBlock } from '../../model/types/article';
+import { articleReducer } from '../../model/slice/articleSlise';
+import { IArticleSchema } from '../types/articleDetailShema';
+
 
 const data = {
     'id': '1',
@@ -41,14 +42,14 @@ describe('articleSlice.test', () => {
 
     test('test get data fulfilled', () => {
         const state: DeepPartial<IArticleSchema> = {
-            data: undefined,
+            data,
         }
 
         expect(articleReducer(
             state as IArticleSchema,
             fetchArticleDataById.fulfilled
         )).toEqual({
-            data,
+            data: data,
             isLoading: false,
         })
     });

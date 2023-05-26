@@ -105,7 +105,7 @@ export const ArticleDetails = memo((props: IArticleDetailsProps) => {
         )
     }
 
-    if (data) {
+    if (data && !isLoading) {
         content = (
             <VStack align={'start'} gap={'8'} max>
                 <Avatar

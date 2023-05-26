@@ -39,16 +39,16 @@ const ArticleDetailPage = (props: IArticleDetailPageProps) => {
     }
 
     return (
-        <Page>
-            <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <Page>
                 <VStack max gap={'32'} className={classNames(cls.ArticleDetailPage, {}, [ className ])}>
                     <ArticleDetailPageHeader/>
                     <ArticleDetails id={id as string}/>
                     <ArticleRecomendationsList/>
                     <ArticleDetailComments id={id as string}/>
                 </VStack>
-            </DynamicModuleLoader>
-        </Page>
+            </Page>
+        </DynamicModuleLoader>
     );
 }
 
