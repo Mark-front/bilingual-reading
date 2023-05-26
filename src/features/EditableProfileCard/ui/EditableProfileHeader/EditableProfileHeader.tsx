@@ -1,18 +1,23 @@
 import React, { memo, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text } from '@/shared/ui/Text';
-import { Button, ThemeButton } from '@/shared/ui/Button';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { getUserAuthData } from '@/entities/User';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
+import { profileActions } from '../../model/slices/profileSlice';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { getUserAuthData } from '@/entities/User';
+import { Button, ThemeButton } from '@/shared/ui/Button';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { Text } from '@/shared/ui/Text';
 
 interface IProfilePageHeaderProps {
     className?: string;
 }
 
-export const ProfilePageHeader = memo((props: IProfilePageHeaderProps) => {
+
+export const EditableProfileHeader = memo((props: IProfilePageHeaderProps) => {
     const {
         className = '',
     } = props;
@@ -80,3 +85,5 @@ export const ProfilePageHeader = memo((props: IProfilePageHeaderProps) => {
         </HStack>
     );
 })
+
+EditableProfileHeader.displayName = 'EditableProfileHeader'

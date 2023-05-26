@@ -1,8 +1,5 @@
 export {
     IProfile,
-    ProfileSchema,
-    TValidateProfileError,
-    ValidateProfileError,
 } from './model/types/profile';
 
 export {
