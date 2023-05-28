@@ -60,6 +60,7 @@ export const EditableProfileHeader = memo((props: IProfilePageHeaderProps) => {
                         <Button
                             onClick={onEdit}
                             theme={ThemeButton.BACKGROUND_INVERTED}
+                            data-testid={'EditableProfileHeader.EditButton'}
                         >
                             {t('Редактировать')}
                         </Button>
@@ -70,12 +71,14 @@ export const EditableProfileHeader = memo((props: IProfilePageHeaderProps) => {
                             <Button
                                 onClick={onCancelEdit}
                                 theme={ThemeButton.OUTLINE}
+                                data-testid={'EditableProfileHeader.CancelButton'}
                             >
                                 {t('Отменить')}
                             </Button>
                             <Button
                                 onClick={onSaveEdit}
                                 theme={ThemeButton.BACKGROUND_INVERTED}
+                                data-testid={'EditableProfileHeader.SaveButton'}
                             >
                                 {t('Сохранить')}
                             </Button>

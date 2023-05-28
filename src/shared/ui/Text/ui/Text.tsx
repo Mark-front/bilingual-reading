@@ -33,6 +33,7 @@ interface TextProps {
     theme?: TThemeText;
     align?: TTextAlign;
     size?: TTextSize;
+    'data-testid'?: string;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -43,14 +44,28 @@ export const Text = memo((props: TextProps) => {
         theme = '',
         align = TextAlign.LEFT,
         size = TextSize.M,
+        'data-testid': dataTestId = 'Text',
     } = props;
 
     const { t } = useTranslation();
-
+    console.log(text)
     return (
-        <div className={classNames(cls.Text, {}, [ className, cls[theme], cls[align], cls[size] ])}>
-            {title && <p className={cls.title}>{title}</p>}
-            {text && <p className={cls.text}>{text}</p>}
+        <div
+            className={classNames(cls.Text, {}, [ className, cls[theme], cls[align], cls[size] ])}>
+            {title &&
+                <p className={cls.title}
+                    data-testid={`${dataTestId}.Header`}
+                >
+                    {title}
+                </p>
+            }
+            {text &&
+                <p className={cls.text}
+                    data-testid={`${dataTestId}.Paragraph`}
+                >
+                    {text}
+                </p>
+            }
         </div>
     );
 })

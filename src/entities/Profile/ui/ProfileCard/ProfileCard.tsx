@@ -55,9 +55,10 @@ export const ProfileCard = (props: IProfileCartProps) => {
         )
     }
     if (error) {
+
         return (
             <HStack justify={'center'} className={classNames(cls.ProfileCard, {}, [ cls.isError ])}>
-                <Text text={error} theme={ThemeText.ERROR}/>
+                <Text text={error} theme={ThemeText.ERROR} data-testid={'ProfileCard.Error'}/>
             </HStack>
         )
     }
@@ -74,24 +75,28 @@ export const ProfileCard = (props: IProfileCartProps) => {
                 value={data?.first || ''}
                 readOnly={readonly}
                 onChange={onChangeFirstName}
+                data-testid={'ProfileCard.firstname'}
             />
             <Input
                 placeholder={t('Ваше фамилия') || 'Ваше фамилия'}
                 value={data?.lastname || ''}
                 readOnly={readonly}
                 onChange={onChangeLastName}
+                data-testid={'ProfileCard.lastname'}
             />
             <Input
                 placeholder={t('Возраст') || 'Возраст'}
                 value={data?.age || ''}
                 readOnly={readonly}
                 onChange={onChangeAge}
+                data-testid={'ProfileCard.age'}
             />
             <Input
                 placeholder={t('Никнейм') || 'Никнейм'}
                 value={data?.username || ''}
                 readOnly={readonly}
                 onChange={onChangeNickname}
+                data-testid={'ProfileCard.username'}
             />
             <CountrySelect
                 value={data?.country}
@@ -103,6 +108,7 @@ export const ProfileCard = (props: IProfileCartProps) => {
                 value={data?.city || ''}
                 readOnly={readonly}
                 onChange={onChangeCity}
+                data-testid={'ProfileCard.city'}
             />
             <CurrencySelect
                 value={data?.currency}
@@ -114,6 +120,7 @@ export const ProfileCard = (props: IProfileCartProps) => {
                 value={data?.avatar || ''}
                 readOnly={readonly}
                 onChange={onChangeAvatar}
+                data-testid={'ProfileCard.avatar'}
             />
         </VStack>
     );
