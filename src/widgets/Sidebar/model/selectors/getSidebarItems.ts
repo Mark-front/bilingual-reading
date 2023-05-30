@@ -23,6 +23,7 @@ export const getSidebarItems = createSelector(
             },
         ]
 
+
         if (userData) {
             SidebarItemsList.push({
                 path: RoutePath.profile + '/' + userData.id,
@@ -34,6 +35,12 @@ export const getSidebarItems = createSelector(
                 path: RoutePath.articles,
                 Icon: ArticlesIcon,
                 text: 'Статьи',
+                authOnly: true,
+            },
+            {
+                path: RoutePath.admin_panel,
+                Icon: ArticlesIcon,
+                text: 'Админка',
                 authOnly: true,
             })
         }

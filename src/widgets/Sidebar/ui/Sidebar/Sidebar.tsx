@@ -8,6 +8,8 @@ import cls from './Sidebar.module.scss'
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { isUserAdmin, isUserManager } from '@/entities/User';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 
 interface SidebarProps {
@@ -19,7 +21,13 @@ export const Sidebar = memo(({ className = '' }: SidebarProps) => {
     const onToggle = () => {
         setCollapsed(prev => !prev)
     }
+
     const SidebarItemsList = useSelector(getSidebarItems)
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
+    const isAdminPageAvailable = isAdmin || isManager;
+
+
     return (
         <div
             data-testid="sidebar"
@@ -42,12 +50,17 @@ export const Sidebar = memo(({ className = '' }: SidebarProps) => {
             <VStack gap={'16'} align={'start'} className={cls.items}>
                 {
                     SidebarItemsList.map(
-                        (item, index) =>
-                            <SidebarItem
-                                key={index}
-                                item={item}
-                                collapsed={collapsed}
-                            />
+                        (item, index) => {
+                            if (!isAdminPageAvailable && item.path === RoutePath.admin_panel) return;
+
+                            return (
+                                <SidebarItem
+                                    key={index}
+                                    item={item}
+                                    collapsed={collapsed}
+                                />
+                            )
+                        }
                     )
                 }
             </VStack>

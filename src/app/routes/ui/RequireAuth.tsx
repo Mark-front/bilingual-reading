@@ -4,7 +4,6 @@ import { getUserAuthData } from '@/entities/User';
 import { Navigate, useLocation } from 'react-router-dom';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
-
 export const RequireAuth = (props: PropsWithChildren<any>) => {
     const {
         children,

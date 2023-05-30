@@ -6,10 +6,14 @@ import { ProfilePage } from '@/pages/ProfilePage';
 import { ArticlePage } from '@/pages/ArticlePage';
 import { ArticleDetailPage } from '@/pages/ArticleDetailPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
+import { AdminPanelPage } from '@/pages/AdminPanelPage';
+import { TUserRole } from '@/entities/User';
+import UnavailablePage from '@/pages/UnavailablePage/ui/UnavailablePage';
 
 
 export type AppRouteProps = RouteProps & {
-    authOnly?: boolean
+    authOnly?: boolean,
+    roles?: TUserRole[]
 }
 export const AppRoutes = {
     MAIN: 'main',
@@ -19,6 +23,8 @@ export const AppRoutes = {
     ARTICLE_DETAIL: 'article_detail',
     ARTICLE_EDIT: 'article_edit',
     ARTICLE_CREATE: 'article_create',
+    ADMIN_PANEL: 'admin_panel',
+    UNAVAILABLE: 'unavailable',
     //last
     NOT_FOUND: 'not-found',
 } as const
@@ -32,6 +38,8 @@ export const RoutePath: Record<AppRoutesType, string> = {
     [AppRoutes.ARTICLE_DETAIL]: '/articles/',// + :id
     [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
     [AppRoutes.ARTICLE_CREATE]: '/articles/new',
+    [AppRoutes.ADMIN_PANEL]: '/admin_panel',
+    [AppRoutes.UNAVAILABLE]: '/unavailable',
     //last
     [AppRoutes.NOT_FOUND]: '*',
 }
@@ -44,6 +52,12 @@ export const routeConfig: Record<AppRoutesType, AppRouteProps> = {
     [AppRoutes.ABOUT]: {
         path: RoutePath.about,
         element: <AboutPage/>,
+    },
+    [AppRoutes.ADMIN_PANEL]: {
+        path: RoutePath.admin_panel,
+        element: <AdminPanelPage/>,
+        authOnly: true,
+        roles: [ 'ADMIN', 'MANAGER' ],
     },
     [AppRoutes.PROFILE]: {
         path: RoutePath.profile + '/:id',
@@ -69,6 +83,10 @@ export const routeConfig: Record<AppRoutesType, AppRouteProps> = {
         path: RoutePath.article_create,
         element: <ArticleEditPage/>,
         authOnly: true,
+    },
+    [AppRoutes.UNAVAILABLE]: {
+        path: RoutePath.unavailable,
+        element: <UnavailablePage/>,
     },
     //last
     [AppRoutes.NOT_FOUND]: {
