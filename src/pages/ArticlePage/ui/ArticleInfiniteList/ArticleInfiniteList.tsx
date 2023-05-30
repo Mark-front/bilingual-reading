@@ -25,7 +25,6 @@ export const ArticleInfiniteList = memo((props: IArticleInfiniteListProps) => {
         className = '',
     } = props;
 
-
     const { t } = useTranslation();
 
     const dispatch = useAppDispatch();

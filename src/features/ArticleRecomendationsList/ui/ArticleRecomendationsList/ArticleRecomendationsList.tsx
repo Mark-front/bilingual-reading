@@ -7,11 +7,11 @@ import { t } from 'i18next';
 import { Text, TextSize } from '@/shared/ui/Text';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 
-interface ArticleRecomendationsListProps {
+interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecomendationsList = memo((props: ArticleRecomendationsListProps) => {
+export const ArticleRecomendationsList = memo((props: ArticleRecommendationsListProps) => {
     const {
         className,
     } = props;

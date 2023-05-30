@@ -4,20 +4,22 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import AboutPage from './AboutPage';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/ui/ThemeProvider';
+import { StoreDecorator } from '../../../shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
 
 export default {
     title: 'pages/AboutPage',
     component: AboutPage,
     argTypes: {},
+    decorators: [ StoreDecorator({}) ],
 } as ComponentMeta<typeof AboutPage>;
 
 const Template: ComponentStory<typeof AboutPage> = () => <AboutPage/>;
 
-export const AboutPageDefault = Template.bind({});
+export const Default = Template.bind({});
 
-AboutPageDefault.args = {};
+Default.args = {};
 
-export const AboutPageDark = Template.bind({});
+export const Dark = Template.bind({});
 
-AboutPageDark.args = {};
-AboutPageDark.decorators = [ ThemeDecorator(Theme.DARK) ]
+Dark.args = {};
+Dark.decorators = [ ThemeDecorator(Theme.DARK) ]

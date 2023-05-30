@@ -3,11 +3,11 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import { Card } from './Card';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/ui/ThemeProvider';
+import { Theme } from '../../ThemeProvider/lib/context/themeContext';
 import { Text } from '../../Text';
 
 export default {
-    title: 'pages/Card',
+    title: 'shared/Card',
     component: Card,
     argTypes: {},
     decorators: [],
