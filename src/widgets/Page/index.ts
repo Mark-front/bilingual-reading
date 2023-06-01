@@ -5,8 +5,11 @@ import { getSaveScrollByPath } from './model/selectors/saveScroll'
 
 export {
     Page,
-    SaveScrollSchema,
     scrollSaveReducer,
     scrollSaveAction,
     getSaveScrollByPath,
+}
+
+export type {
+    SaveScrollSchema,
 }

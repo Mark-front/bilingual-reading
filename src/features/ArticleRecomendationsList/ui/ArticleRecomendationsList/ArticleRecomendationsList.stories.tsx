@@ -27,12 +27,12 @@ const article: IArticle = {
     title: '123',
     subtitle: 'asfsa',
 };
-
 export const Normal = Template.bind({});
 Normal.args = {};
 Normal.parameters = {
     mockData: [
         {
+            //@ts-ignore
             url: `${__API__}/articles?_limit=4`,
             method: 'GET',
             status: 200,

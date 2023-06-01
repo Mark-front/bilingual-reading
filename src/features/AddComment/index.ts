@@ -3,5 +3,8 @@ import { AddCommentFormAsync as AddCommentForm } from './ui/AddCommentForm/AddCo
 
 export {
     AddCommentForm,
+}
+
+export type {
     IAddCommentSchema,
 }

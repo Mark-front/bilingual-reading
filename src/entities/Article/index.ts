@@ -17,17 +17,20 @@ import { getArticleData } from './model/selectors/articleDetails'
 
 export {
     ArticleDetails,
-    IArticle,
-    IArticleSchema,
     ArticleList,
     ArticleView,
-    TArticleView,
     ArticleViewSelector,
     ArticleSortSelector,
     ArticleType,
-    TArticleType,
     ArticleSortField,
-    TArticleSortField,
     ArticleTypeTabs,
     getArticleData,
+}
+
+export type {
+    IArticle,
+    IArticleSchema,
+    TArticleView,
+    TArticleType,
+    TArticleSortField,
 }

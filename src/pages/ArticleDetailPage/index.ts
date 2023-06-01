@@ -4,6 +4,9 @@ import { ArticleDetailPageAsync } from './ui/ArticleDetailPage/ArticleDetailPage
 
 export {
     ArticleDetailPageAsync as ArticleDetailPage,
+}
+
+export type {
     IArticleDetailCommentsSchema,
     ArticleDetailsPageSchema,
 }

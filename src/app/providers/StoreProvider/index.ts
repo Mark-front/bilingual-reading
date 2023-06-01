@@ -5,6 +5,10 @@ import { StateSchema, ThunkConfig, ThunkExtraArg } from './config/StateSchema';
 export {
     StoreProvider,
     createReduxStore,
+
+}
+
+export type {
     StateSchema,
     AppDispatch,
     ThunkExtraArg,

@@ -42,6 +42,7 @@ module.exports = {
         indent: [ 'error', 4, { 'SwitchCase': 1 } ],
         '@typescript-eslint/indent': [ 'error', 4 ],
         '@typescript-eslint/no-var-requires': 'warn',
+        '@typescript-eslint/ban-ts-comment': 'warn',
         'react/jsx-indent': [ 2, 4 ],
         'react/jsx-filename-extension': [ 2, {
             extensions: [ '.js', '.jsx', '.tsx' ],
