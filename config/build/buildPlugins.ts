@@ -6,6 +6,7 @@ import { type BuildOptions } from './types/config'
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
     const { paths, isDev, isAnalyze, apiUrl, project } = options
@@ -41,6 +42,15 @@ export function buildPlugins(options: BuildOptions): WebpackPluginInstance[] {
             allowAsyncCycles: false,
             // set the current working directory for displaying module paths
             cwd: process.cwd(),
+        }),
+        new ForkTsCheckerWebpackPlugin({
+            typescript: {
+                diagnosticOptions: {
+                    semantic: true,
+                    syntactic: true,
+                },
+                mode: 'write-references',
+            },
         }),
     ]
     if (isDev) {
