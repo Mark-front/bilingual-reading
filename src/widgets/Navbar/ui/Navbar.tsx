@@ -1,6 +1,6 @@
-import React, { memo, useCallback, useState } from 'react'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import cls from './Navbar.module.scss'
+import React, { memo, useCallback, useState } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cls from './Navbar.module.scss';
 import { useTranslation } from 'react-i18next';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { LoginModal } from '@/features/AuthByUsername';
@@ -13,25 +13,26 @@ import { AppLinkTheme } from '@/shared/ui/AppLink/ui/AppLink';
 import { NotificationsButton } from '@/features/NotificationsButton';
 
 interface NavbarProps {
-    className?: string
+    className?: string;
 }
 
 export const Navbar = memo(({ className = '' }: NavbarProps) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
     const authUserData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
-    const [ isAuthModal, setIsAuthModal ] = useState(false)
+
+    const [ isAuthModal, setIsAuthModal ] = useState(false);
 
     const onCloseModal = useCallback(() => {
-        setIsAuthModal(false)
+        setIsAuthModal(false);
     }, []);
 
     const onShowModal = useCallback(() => {
-        setIsAuthModal(true)
+        setIsAuthModal(true);
     }, []);
 
     const onLogout = useCallback(() => {
-        dispatch(userActions.logout())
+        dispatch(userActions.logout());
     }, [ dispatch ]);
 
     if (authUserData) {
@@ -49,6 +50,7 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
                 </AppLink>
                 <div className={cls.userLogin}>
                     <NotificationsButton/>
+
                     <Text text={authUserData.username}/>
                     <Button
                         theme={ThemeButton.CLEAR}
@@ -59,7 +61,7 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
                     </Button>
                 </div>
             </header>
-        )
+        );
     }
 
     return (
@@ -77,5 +79,5 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
                 onClose={onCloseModal}
             />
         </header>
-    )
-})
+    );
+});

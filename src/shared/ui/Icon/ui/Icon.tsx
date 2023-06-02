@@ -13,6 +13,7 @@ export const Icon = memo((props: IIconProps) => {
         className = '',
         Svg,
         inverted,
+        ...otherProps
     } = props;
 
 
@@ -20,7 +21,7 @@ export const Icon = memo((props: IIconProps) => {
         [cls.inverted]: Boolean(inverted),
     }
     return (
-        <Svg className={classNames(cls.Icon, mods, [ className ])}/>
+        <Svg {...otherProps} className={classNames(cls.Icon, mods, [ className ])}/>
     );
 })
 
