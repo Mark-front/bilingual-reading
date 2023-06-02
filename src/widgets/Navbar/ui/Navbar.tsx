@@ -10,6 +10,7 @@ import { Text } from '@/shared/ui/Text';
 import { AppLink } from '@/shared/ui/AppLink';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { AppLinkTheme } from '@/shared/ui/AppLink/ui/AppLink';
+import { NotificationsButton } from '@/features/NotificationsButton';
 
 interface NavbarProps {
     className?: string
@@ -47,6 +48,7 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
                     {t('Создать статью')}
                 </AppLink>
                 <div className={cls.userLogin}>
+                    <NotificationsButton/>
                     <Text text={authUserData.username}/>
                     <Button
                         theme={ThemeButton.CLEAR}

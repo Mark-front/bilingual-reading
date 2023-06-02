@@ -1,13 +1,35 @@
 {
-  "posts": [
+  "notifications": [
     {
       "id": "1",
-      "title": "json-server",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
       "userId": "1"
     },
     {
       "id": "2",
-      "title": "json-server",
+      "title": "Уведомление 2",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "3",
+      "title": "Уведомление 3",
+      "description": "Произошло какое-то событие",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Уведомление 4",
+      "description": "Произошло какое-то событие",
+      "userId": "1"
+    },
+    {
+      "id": "5",
+      "title": "Уведомление 1",
+      "description": "Произошло какое-то событие",
       "userId": "2"
     }
   ],
@@ -16,8 +38,8 @@
       "id": "1",
       "title": "Javascript news СВЕЖАЯ",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.04.2022",
       "userId": "1",
       "type": [
@@ -88,8 +110,8 @@
       "id": "2",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
       "views": 5204,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -112,8 +134,8 @@
       "id": "3",
       "title": "Kotlin news 2019",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 94002,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2019",
       "userId": "1",
       "type": [
@@ -136,8 +158,8 @@
       "id": "4",
       "title": "Scala news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://coursefreedl.com/wp-content/uploads/2020/01/Scala-Zero-To-Hero-Complete-Guide.jpg",
       "views": 10222,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "24.01.2022",
       "userId": "1",
       "type": [
@@ -160,8 +182,8 @@
       "id": "5",
       "title": "Golang news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://cdn-front.kwork.ru/pics/t3/88/16350941-1630390388.jpg",
       "views": 10222,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2020",
       "userId": "1",
       "type": [
@@ -184,8 +206,8 @@
       "id": "6",
       "title": "Java news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://andreyex.ru/wp-content/uploads/2018/05/Kak-ustanovit-Java-s-apt-na-Ubuntu-18.04.jpg",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -208,8 +230,8 @@
       "id": "7",
       "title": "Ruby news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://res.cloudinary.com/practicaldev/image/fetch/s--oqV3akcU--/c_imagga_scale,f_auto,fl_progressive,h_500,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/pgnw91fs7tpxn0wyeqh2.jpg",
       "views": 100,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "21.02.2022",
       "userId": "1",
       "type": [
@@ -232,8 +254,8 @@
       "id": "8",
       "title": "TypeScript news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1400/1*aTCN2ctKNoZupUCMP0hQuw.png",
       "views": 102222,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -256,8 +278,8 @@
       "id": "9",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -280,8 +302,8 @@
       "id": "10",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -304,8 +326,8 @@
       "id": "11",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -328,8 +350,8 @@
       "id": "12",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -352,8 +374,8 @@
       "id": "13",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -376,8 +398,8 @@
       "id": "14",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -400,8 +422,8 @@
       "id": "15",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -424,8 +446,8 @@
       "id": "16",
       "title": "Python news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://zsfond.ru/wp-content/uploads/2021/03/piton-1-1024x578.jpg",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -448,8 +470,8 @@
       "id": "17",
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -472,8 +494,8 @@
       "id": "18",
       "title": "Экономическая статья - ИНФЛЯЦИЯ!",
       "subtitle": "Экономика",
+      "img": "https://www.mirea.ru/upload/iblock/7cf/vvp_rf2018_1.jpg",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -496,8 +518,8 @@
       "id": "18",
       "title": "Научная статья - Биология",
       "subtitle": "БиологиЯ",
+      "img": "https://avatars.mds.yandex.net/get-zen_doc/2746556/pub_5f50dd7e1a1ddf4776aa5569_5f50decd2506f211d1de6284/scale_1200",
       "views": 1022,
-      "img": "https://bipbap.ru/wp-content/uploads/2021/11/1619541010_52-oir_mobi-p-nyashnie-kotiki-zhivotnie-krasivo-foto-57-730x856.jpg",
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -615,16 +637,64 @@
       "id": "yYEdTI-"
     },
     {
-      "articleId": "4",
+      "articleId": "7",
       "userId": "1",
-      "text": "djdjdjdjdj",
-      "id": "pxq05Vh"
+      "text": "123213",
+      "id": "TR1yDY6"
     },
     {
       "articleId": "7",
       "userId": "1",
-      "text": "dfgsdfgsdgf",
-      "id": "sfoYcew"
+      "text": "112",
+      "id": "wSAhqy5"
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "text": "12",
+      "id": "r6b1z-N"
+    },
+    {
+      "articleId": "18",
+      "userId": "2",
+      "text": "привет",
+      "id": "DENfTu6"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "33",
+      "id": "Ps59wrg"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "123",
+      "id": "zzYVth3"
+    },
+    {
+      "articleId": "7",
+      "userId": "2",
+      "text": "123",
+      "id": "WjF4c_d"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "privet",
+      "id": "fta748h"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "питон топ",
+      "id": "ZlmlUrg"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "123",
+      "id": "KmtWJR_"
     }
   ],
   "users": [
@@ -633,10 +703,9 @@
       "username": "admin",
       "password": "123",
       "roles": [
-        "ADMIN",
-        "MANAGER"
+        "ADMIN"
       ],
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+      "avatar": "https://yakutsk.ru/wp-content/uploads/2022/07/12/bystrov_haker.jpeg"
     },
     {
       "id": "2",
@@ -646,27 +715,36 @@
         "USER"
       ],
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "Никоноров ",
-      "lastname": "Мар",
+      "first": "timur",
+      "lastname": "ulbi",
       "age": 465,
       "currency": "RUB",
       "country": "Belarus",
       "city": "Moscow",
       "username": "admin213",
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
+      "avatar": "https://yt3.ggpht.com/ytc/AKedOLTYUJxG8Hu036PQ_TXpMLq2fG8Kj8NZI4h0lbn_3g=s900-c-k-c0x00ffffff-no-rj"
     },
     {
       "id": "2",
       "first": "ulbi tv",
       "lastname": "asf",
       "age": 465,
-      "currency": "RUB",
-      "country": "Russia",
+      "currency": "EUR",
+      "country": "Ukraine",
       "city": "Moscow",
       "username": "ulbi tv",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
