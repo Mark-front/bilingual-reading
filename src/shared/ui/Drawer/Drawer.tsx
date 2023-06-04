@@ -9,6 +9,7 @@ interface IDrawerProps {
     className?: string;
     children: ReactNode;
     isOpen?: boolean;
+    lazy?: boolean;
     onClose?: () => void;
 }
 
@@ -20,6 +21,7 @@ export const DrawerContent = memo((props: IDrawerProps) => {
         children,
         isOpen,
         onClose,
+        lazy,
     } = props;
 
     const { Gesture, Spring } = useAnimationLibs();
@@ -72,6 +74,10 @@ export const DrawerContent = memo((props: IDrawerProps) => {
     );
 
     if (!isOpen) {
+        return null;
+    }
+
+    if (lazy && !isOpen) {
         return null;
     }
 
