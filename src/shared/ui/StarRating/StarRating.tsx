@@ -20,7 +20,7 @@ export const StarRating = memo((props: IStarRatingProps) => {
         onSelect,
     } = props;
 
-    const [ currenStarsCount, setCurrentStarsCount ] = useState(0)
+    const [ currenStarsCount, setCurrentStarsCount ] = useState(selectedStars)
     const [ isSelected, setIsSelected ] = useState(Boolean(selectedStars))
 
     const onHover = (starsCount: number) => () => {
@@ -37,6 +37,7 @@ export const StarRating = memo((props: IStarRatingProps) => {
 
     const onClick = (starsCount: number) => () => {
         if (!isSelected) {
+            console.log('StarRating', starsCount)
             onSelect?.(starsCount)
             setCurrentStarsCount(starsCount)
             setIsSelected(true)
@@ -48,7 +49,6 @@ export const StarRating = memo((props: IStarRatingProps) => {
             {
                 stars.map((starsNumber) => (
                     <Icon
-                        id={`${starsNumber}-${currenStarsCount}-${selectedStars}`}
                         key={starsNumber}
                         className={
                             classNames(

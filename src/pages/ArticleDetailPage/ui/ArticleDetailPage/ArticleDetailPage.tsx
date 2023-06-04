@@ -12,6 +12,7 @@ import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetai
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList';
 import { ArticleDetailComments } from '../ArticleDetailComments/ArticleDetailComments';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { ArticleRating } from '../../../../features/ArticleRating';
 
 interface IArticleDetailPageProps {
     className?: string;
@@ -45,6 +46,7 @@ const ArticleDetailPage = (props: IArticleDetailPageProps) => {
                     <ArticleDetailPageHeader/>
                     <ArticleDetails id={id as string}/>
                     <ArticleRecomendationsList/>
+                    <ArticleRating articleId={id as string}/>
                     <ArticleDetailComments id={id as string}/>
                 </VStack>
             </Page>
