@@ -1,8 +1,9 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { MouseEvent, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
-import { Portal } from '@/shared/ui/Portal';
-import { Overlay } from '@/shared/ui/Overlay/Overlay';
+import { Portal } from '../../Portal';
+import { Overlay } from '../../Overlay/Overlay';
+import { useModal } from '../../../lib/hooks/useModal/useModal';
 
 interface ModalProps {
     className?: string;
@@ -22,34 +23,29 @@ export const Modal = (props: ModalProps) => {
         lazy,
     } = props;
 
-    const mods: Record<string, boolean> = {
-        [cls.opening]: isOpen,
-        [cls.isClosing]: isClosing,
+    const { isClosing, close, isMounted } = useModal({
+        animationDelay: ANIMATION_DELAY,
+        isOpen,
+        onClose,
+    })
+
+    const onContentClick = (e: MouseEvent<HTMLDivElement>) => {
+        e.stopPropagation()
     }
-
-    useEffect(() => {
-        openHandler()
-        return () => {
-            clearTimeout(timerRef.current)
-            window.removeEventListener('keydown', (event) => onKeyDown(event))
-        }
-    }, [ onKeyDown, openHandler ])
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true)
-        }
-
-    }, [ isOpen ])
 
     if (lazy && !isMounted) {
         return null;
     }
 
+    const mods: Record<string, boolean> = {
+        [cls.opening]: isOpen,
+        [cls.isClosing]: isClosing,
+    }
+
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [ className ])}>
-                <Overlay isOpen={isOpen} onClose={closeHandler}/>
+                <Overlay isOpen={isOpen} onClose={close}/>
                 <div
                     onClick={(event) => onContentClick(event)}
                     className={classNames(cls.content, { [cls.contentClosing]: isClosing })}

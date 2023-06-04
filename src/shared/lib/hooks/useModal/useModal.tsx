@@ -3,11 +3,10 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 interface UseModalProps {
     onClose?: () => void;
     isOpen?: boolean;
-    lazy?: boolean;
     animationDelay?: number
 }
 
-export function useModal({ animationDelay, onClose, lazy, isOpen }: UseModalProps) {
+export function useModal({ animationDelay, onClose, isOpen }: UseModalProps) {
     const [ isClosing, setIsClosing ] = useState(true);
     const [ isMounted, setIsMounted ] = useState(false)
 
@@ -23,6 +22,20 @@ export function useModal({ animationDelay, onClose, lazy, isOpen }: UseModalProp
 
     }, [ animationDelay, onClose ])
 
+    const onKeyDown = useCallback((e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+            close();
+        }
+    }, [ close ]);
+
+    const openHandler = useCallback(() => {
+        if (isOpen) {
+            window.addEventListener('keydown', (event) => onKeyDown(event))
+            setIsClosing(false)
+        }
+
+    }, [ isOpen, onKeyDown ])
+
     useEffect(() => {
         openHandler()
         return () => {
@@ -30,6 +43,13 @@ export function useModal({ animationDelay, onClose, lazy, isOpen }: UseModalProp
             window.removeEventListener('keydown', (event) => onKeyDown(event))
         }
     }, [ onKeyDown, openHandler ])
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true)
+        }
+
+    }, [ isOpen ])
 
     return {
         isClosing,
