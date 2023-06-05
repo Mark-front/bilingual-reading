@@ -10,7 +10,7 @@ import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/AddComment';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 
 interface IArticleDetailCommentsProps {
     id: string;

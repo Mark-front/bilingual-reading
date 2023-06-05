@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsListApi';
 import { t } from 'i18next';
 import { Text, TextSize } from '@/shared/ui/Text';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 
 interface ArticleRecommendationsListProps {
     className?: string;

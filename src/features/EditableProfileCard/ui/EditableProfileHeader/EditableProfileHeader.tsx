@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { profileActions } from '../../model/slices/profileSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { HStack } from '@/shared/ui/Stack';
 import { getUserAuthData } from '@/entities/User';
 import { Button, ThemeButton } from '@/shared/ui/Button';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';

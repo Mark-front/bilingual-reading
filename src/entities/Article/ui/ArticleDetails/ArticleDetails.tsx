@@ -22,8 +22,7 @@ import { Text, TextSize, ThemeText } from '@/shared/ui/Text';
 import EyeIcon from '@/shared/assets/icons/eye.svg'
 import { Avatar } from '@/shared/ui/Avatar';
 import { Icon } from '@/shared/ui/Icon';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface IArticleDetailsProps {
     className?: string;

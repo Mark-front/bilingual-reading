@@ -1,13 +1,13 @@
-import React, {memo} from 'react'
-import {useTranslation} from 'react-i18next'
-import {Page} from '@/widgets/Page';
-import {RequireRole} from '../../../app/routes/ui/RequireRole';
-import {RequireAuth} from '@/app/routes/ui/RequireAuth';
+import React, { memo } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Page } from '@/widgets/Page';
+import { RequireRole } from '../../../app/providers/routes/ui/RequireRole';
+import { RequireAuth } from '@/app/routes/ui/RequireAuth';
 
 const AdminPanelPage = memo(() => {
-    const {t} = useTranslation()
+    const { t } = useTranslation()
     return (
-        <RequireRole roles={['ADMIN', 'MANAGER']}>
+        <RequireRole roles={[ 'ADMIN', 'MANAGER' ]}>
             <RequireAuth>
                 <Page>
                     <div>

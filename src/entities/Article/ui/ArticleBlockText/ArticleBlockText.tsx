@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize } from '@/shared/ui/Text';
 import cls from './ArticleBlockText.module.scss';
-import { IArticleBlockText } from '@/entities/Article/model/types/article';
+import { IArticleBlockText } from '../../model/types/article';
 
 interface IArticleBlockTextProps {
     className?: string;

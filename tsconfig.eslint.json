@@ -12,6 +12,7 @@
     // the "parserOptions.project" error
     ".eslintrc.js",
     "webpack.config.ts",
+    "vite.config.ts",
     "generate-visual-json-report.js"
   ]
 }

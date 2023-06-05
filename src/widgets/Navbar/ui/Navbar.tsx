@@ -7,10 +7,9 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from '@/entities/User';
 import { Text } from '@/shared/ui/Text';
-import { AppLink } from '@/shared/ui/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
-import { AppLinkTheme } from '@/shared/ui/AppLink/ui/AppLink';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { NotificationsButton } from '@/features/NotificationsButton';
+import { RoutePath } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;

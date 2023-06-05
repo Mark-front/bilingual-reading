@@ -5,7 +5,7 @@ import cls from './ArticleViewSelector.module.scss';
 import ListIcon from '@/shared/assets/icons/list.svg';
 import GridIcon from '@/shared/assets/icons/grid.svg';
 import { Button, ThemeButton } from '@/shared/ui/Button';
-import { ArticleView, TArticleView } from '@/entities/Article';
+import { ArticleView, TArticleView } from '../../../Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface IArticleViewSelectorProps {

@@ -9,8 +9,7 @@ import { Loader } from '@/shared/ui/Loader';
 import { Avatar } from '@/shared/ui/Avatar';
 import { CurrencySelect, TCurrency } from '@/entities/Currency';
 import { CountrySelect, TCountry } from '@/entities/Country';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface IProfileCartProps {
     className?: string;

@@ -8,9 +8,9 @@ export function useThrottle(callback: (...args: any[]) => void, delay: number) {
 
         callback(...args);
         throttleRef.current = true;
-        
+
         setTimeout(() => {
             throttleRef.current = false;
         }, delay)
-    }, [ callback, throttleRef ])
+    }, [ callback, delay ])
 }

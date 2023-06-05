@@ -5,7 +5,7 @@ import { NotificationList } from '@/entities/Notification';
 import cls from './NotificationsButton.module.scss';
 import { Popover } from '@/shared/ui/Popups';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/Drawer';
 import { BrowserView, MobileView } from 'react-device-detect';
 
 interface NotificationsButtonProps {

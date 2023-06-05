@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNotifications } from '../../api/notificationApi';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NotificationList.module.scss';
-import { NotificationItem } from '@/entities/Notification';
+import { NotificationItem } from '../../ui/NotificationItem/NotificationItem';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Card, ThemeCard } from '@/shared/ui/Card';
 

@@ -11,7 +11,7 @@ import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetailPageHeader';
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList';
 import { ArticleDetailComments } from '../ArticleDetailComments/ArticleDetailComments';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 import { ArticleRating } from '../../../../features/ArticleRating';
 
 interface IArticleDetailPageProps {

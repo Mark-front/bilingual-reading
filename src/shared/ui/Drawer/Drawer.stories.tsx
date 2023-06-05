@@ -1,9 +1,9 @@
 import React from 'react';
-import {type ComponentMeta, type ComponentStory} from '@storybook/react';
+import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
-import {Drawer} from './Drawer';
-import {ThemeDecorator} from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/shared/ui/ThemeProvider';
+import { Drawer } from './Drawer';
+import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
+import { Theme } from '../../ui/ThemeProvider';
 
 export default {
     title: 'pages/Drawer',
@@ -21,4 +21,4 @@ Default.args = {};
 export const Dark = Template.bind({});
 
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ ThemeDecorator(Theme.DARK) ]

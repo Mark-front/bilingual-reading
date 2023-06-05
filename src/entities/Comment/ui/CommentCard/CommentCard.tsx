@@ -6,7 +6,7 @@ import { Text } from '@/shared/ui/Text';
 import { IComment } from '../../model/types/comment';
 import { Skeleton, ThemeSkeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 
 interface ICommentCardProps {
     className?: string;

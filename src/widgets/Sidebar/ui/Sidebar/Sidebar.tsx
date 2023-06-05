@@ -7,9 +7,9 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss'
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 import { isUserAdmin, isUserManager } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 
 
 interface SidebarProps {

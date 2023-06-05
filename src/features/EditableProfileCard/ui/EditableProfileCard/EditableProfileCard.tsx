@@ -17,7 +17,7 @@ import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/g
 import { EditableProfileHeader } from '../EditableProfileHeader/EditableProfileHeader';
 import { ValidateProfileError } from '../../model/types/editableProfileCardSchema';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface EditableProfileCardProps {

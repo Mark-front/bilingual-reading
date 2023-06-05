@@ -78,7 +78,15 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'object-curly-spacing': [ 'error', 'always' ],
         'array-bracket-spacing': [ 'error', 'always' ],
-        'mym-path-checker/path-check': 'error',
+        'mym-path-checker/path-check': [ 'error', { alias: '@' } ],
+        'mym-path-checker/public-api-imports': [ 'error', {
+            alias: '@',
+            testFilesPatterns: [ '**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx' ],
+        } ],
+        'mym-path-checker/layer-imports': [ 'error', {
+            alias: '@',
+            importIgnorePatterns: [ '**/StoreDecorator.tsx', '**/testing' ],
+        } ],
     },
     globals: {
         __IS_DEV__: true,
