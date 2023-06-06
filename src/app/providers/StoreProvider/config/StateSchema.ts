@@ -9,7 +9,7 @@ import { IArticlePageSchema } from '@/pages/ArticlePage';
 import { IAddCommentSchema } from '@/features/AddComment';
 import { NavigateOptions } from 'react-router/dist/lib/context';
 import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
-import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailPage/model/types';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { ProfileSchema } from '@/features/EditableProfileCard';
 

@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 
 export const RequireAuth = (props: PropsWithChildren<any>) => {
     const {

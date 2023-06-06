@@ -4,8 +4,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import ArticleDetailPage from './ArticleDetailPage';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/ui/ThemeProvider';
-import { IArticle } from '@/entities/Article';
-import { ArticleType, TypeBlock } from '@/entities/Article/model/types/article';
+import { ArticleType, IArticle, TypeBlock } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
 
 const article: IArticle = {

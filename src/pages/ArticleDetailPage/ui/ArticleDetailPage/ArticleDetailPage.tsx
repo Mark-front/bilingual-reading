@@ -12,7 +12,7 @@ import { ArticleDetailPageHeader } from '../ArticleDetailPageHeader/ArticleDetai
 import { ArticleRecomendationsList } from '@/features/ArticleRecomendationsList';
 import { ArticleDetailComments } from '../ArticleDetailComments/ArticleDetailComments';
 import { VStack } from '@/shared/ui/Stack';
-import { ArticleRating } from '../../../../features/ArticleRating';
+import { ArticleRating } from '@/features/ArticleRating';
 
 interface IArticleDetailPageProps {
     className?: string;

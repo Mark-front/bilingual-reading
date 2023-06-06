@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { IComment } from '@/entities/Comment';
 import { getUserAuthData } from '@/entities/User';
-import { getArticleData } from '@/entities/Article/model/selectors/articleDetails';
+import { getArticleData } from '@/entities/Article';
 import { fetchCommentsByArticleId } from '../../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 export const postArticleComment = createAsyncThunk<
@@ -39,7 +39,7 @@ ThunkConfig<string>
             if (!response.data) {
                 throw new Error()
             }
-            
+
             dispatch(fetchCommentsByArticleId(article.id))
 
             return response.data

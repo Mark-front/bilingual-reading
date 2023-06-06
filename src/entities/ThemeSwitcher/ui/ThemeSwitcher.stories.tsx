@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecora
 import { Theme } from '@/shared/ui/ThemeProvider';
 
 export default {
-    title: 'widgets/ThemeSwitcher',
+    title: 'entities/ThemeSwitcher',
     component: ThemeSwitcher,
     argTypes: {},
 } as ComponentMeta<typeof ThemeSwitcher>;

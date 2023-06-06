@@ -1,8 +1,9 @@
 import React, { PropsWithChildren, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { getUserRoles, TUserRole } from '../../../../entities/User';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
+import { getUserRoles } from '@/entities/User';
+import { TUserRole } from '@/shared/types';
 
 interface RequireRoleProps {
     children: PropsWithChildren<any>;

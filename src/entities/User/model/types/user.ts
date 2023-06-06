@@ -1,10 +1,4 @@
-export const UserRole = {
-    'ADMIN': 'ADMIN',
-    'USER': 'USER',
-    'MANAGER': 'MANAGER',
-} as const;
-
-export type TUserRole = (typeof UserRole)[keyof typeof UserRole];
+import { TUserRole } from '@/shared/types';
 
 export interface IUser {
     id: string;

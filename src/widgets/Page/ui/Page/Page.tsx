@@ -7,6 +7,8 @@ import { scrollSaveAction } from '../../model/slices/scrollSaveSlice/scrollSaveS
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getSaveScrollByPath } from '../../model/selectors/saveScroll';
+
+// eslint-disable-next-line mym-path-checker/layer-imports
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';

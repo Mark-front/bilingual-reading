@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Category, Component, Palette, Variant } from '@react-buddy/ide-toolbox';
 import { Text, TextSize } from '@/shared/ui/Text';
 import { Button, ButtonSize } from '@/shared/ui/Button';
-import { ThemeButton } from '../shared/ui/Button';
+import { ThemeButton } from '@/shared/ui';
 
 export const PaletteTree = () => (
     <Palette>

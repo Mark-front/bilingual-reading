@@ -6,7 +6,7 @@ import { Country } from '@/entities/Country';
 import { profileReducer } from '../../model/slices/profileSlice';
 import { screen } from '@testing-library/react'
 import { userEvent } from '@storybook/testing-library';
-import { $api } from '../../../../shared/api/api';
+import { $api } from '@/shared/api';
 
 const profile: IProfile = {
     id: '1',

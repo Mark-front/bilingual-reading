@@ -1,8 +1,10 @@
 import React, { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Page } from '@/widgets/Page';
-import { RequireRole } from '../../../app/providers/routes/ui/RequireRole';
-import { RequireAuth } from '@/app/routes/ui/RequireAuth';
+// eslint-disable-next-line mym-path-checker/layer-imports
+import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
+// eslint-disable-next-line mym-path-checker/layer-imports
+import { RequireRole } from '@/app/providers/router/ui/RequireRole';
 
 const AdminPanelPage = memo(() => {
     const { t } = useTranslation()

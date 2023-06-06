@@ -5,6 +5,7 @@ import cls from './ArticlesPageFilter.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
     ArticleSortSelector,
+    ArticleTypeTabs,
     ArticleViewSelector,
     TArticleSortField,
     TArticleType,
@@ -24,7 +25,6 @@ import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleTypeTabs } from '../../../../entities/Article/ui/ArticleTypeTabs/ArticleTypeTabs';
 
 interface IArticlesPageFilterProps {
     className?: string;

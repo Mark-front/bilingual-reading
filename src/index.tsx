@@ -1,12 +1,11 @@
 import React from 'react'
-import App from './app/App'
+import App, { StoreProvider } from '@/./app'
 import { BrowserRouter } from 'react-router-dom'
 import { createRoot } from 'react-dom/client';
 
-import './shared/config/i18n/i18n'
+import '@/./shared'
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary'
 import { ThemeProvider } from '@/shared/ui/ThemeProvider'
-import { StoreProvider } from './app/providers/StoreProvider';
 import { DevSupport } from '@react-buddy/ide-toolbox';
 import { ComponentPreviews, useInitial } from './dev';
 
@@ -28,3 +27,5 @@ root.render(
         </StoreProvider>
     </BrowserRouter>
 )
+export { UserRole } from './shared/const/user';
+export { TUserRole } from './shared/types';

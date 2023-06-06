@@ -1,3 +1,4 @@
+// eslint-disable-next-line mym-path-checker/layer-imports
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
