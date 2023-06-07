@@ -6,7 +6,7 @@ import { Text } from '@/shared/ui/Text';
 import { IComment } from '../../model/types/comment';
 import { Skeleton, ThemeSkeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 
 interface ICommentCardProps {
     className?: string;
@@ -35,7 +35,7 @@ export const CommentCard = memo((props: ICommentCardProps) => {
 
     return (
         <div className={classNames(cls.CommentCard, {}, [ className ])}>
-            <AppLink to={RoutePath.profile + '/' + comment.userId} className={cls.header}>
+            <AppLink to={getRouteProfile(comment.userId ?? '')} className={cls.header}>
                 <Avatar src={comment.user.avatar || ''} size={30}/>
                 <Text className={cls.username} title={comment.user.username}/>
             </AppLink>

@@ -4,7 +4,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import AdminPanelPage from './AdminPanelPage';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/ui/ThemeProvider';
-import { StoreDecorator } from '@/shared/config';
+import { StoreDecorator } from '@/shared/config/storybook/decorators/StoreDecorator/StoreDecorator';
 
 export default {
     title: 'pages/AdminPanel',

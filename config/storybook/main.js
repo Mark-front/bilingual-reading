@@ -7,8 +7,15 @@ module.exports = {
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
         'storybook-addon-mock',
+        {
+            name: '@storybook/addon-essentials',
+            options: {
+                backgrounds: false,
+            },
+        },
+        'storybook-addon-themes',
     ],
-    framework: '@storybook/react',
+    framework: '@storybook/react-webpack5',
     core: {
         builder: '@storybook/builder-webpack5',
     },

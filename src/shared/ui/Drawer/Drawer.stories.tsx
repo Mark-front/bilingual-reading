@@ -6,13 +6,15 @@ import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecora
 import { Theme } from '../../ui/ThemeProvider';
 
 export default {
-    title: 'pages/Drawer',
+    title: 'shared/Drawer',
     component: Drawer,
     argTypes: {},
     decorators: [],
 } as ComponentMeta<typeof Drawer>;
 
-const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args}/>;
+const Template: ComponentStory<typeof Drawer> = (args) => <Drawer isOpen {...args}>Lorem ipsum dolor sit amet,
+    consectetur adipisicing elit. Accusamus alias, animi aperiam deserunt eveniet facilis in ipsam iste iusto magnam
+    necessitatibus nihil non nostrum officia officiis, quo repudiandae sapiente ut.</Drawer>;
 
 export const Default = Template.bind({});
 

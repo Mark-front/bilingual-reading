@@ -3,6 +3,7 @@ import { Story } from '@storybook/react';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { articleReducer } from '@/entities/Article/testing';
+// eslint-disable-next-line mym-path-checker/layer-imports
 import { profileReducer } from '@/features/EditableProfileCard';
 
 const defaultAsyncReducers: ReducersList = {

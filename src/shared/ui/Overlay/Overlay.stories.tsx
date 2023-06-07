@@ -6,13 +6,13 @@ import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecora
 import { Theme } from '../../ui/ThemeProvider';
 
 export default {
-    title: 'pages/Overlay',
+    title: 'shared/Overlay',
     component: Overlay,
     argTypes: {},
     decorators: [],
 } as ComponentMeta<typeof Overlay>;
 
-const Template: ComponentStory<typeof Overlay> = (args) => <Overlay {...args}/>;
+const Template: ComponentStory<typeof Overlay> = (args) => <Overlay isOpen {...args}/>;
 
 export const Default = Template.bind({});
 

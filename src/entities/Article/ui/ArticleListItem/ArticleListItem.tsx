@@ -12,7 +12,7 @@ import { Button, ButtonSize, ThemeButton } from '@/shared/ui/Button';
 import { ArticleBlockText } from '../../ui/ArticleBlockText/ArticleBlockText';
 import { useNavigate } from 'react-router-dom';
 import { AppLink } from '@/shared/ui/AppLink';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetail } from '@/shared/const/router';
 
 interface IArticleListItemProps {
     className?: string;
@@ -34,7 +34,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
     const navigate = useNavigate()
 
     const onOpenArticle = useCallback(() => {
-        navigate(RoutePath.articles + '/' + article.id)
+        navigate(getRouteArticleDetail(article.id))
     }, [ article.id, navigate ])
 
     const types = <Text text={article.type.join(', ')} className={cls.types}/>
@@ -68,7 +68,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
                         />
                     )}
                     <div className={cls.footer}>
-                        <AppLink to={RoutePath.articles + '/' + article.id}
+                        <AppLink to={getRouteArticleDetail(article.id)}
                             target={target}>
                             <Button theme={ThemeButton.OUTLINE} size={ButtonSize.XL} onClick={onOpenArticle}>
                                 {t('Читать далее')}
@@ -83,7 +83,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
 
     return (
         <AppLink
-            to={RoutePath.articles + '/' + article.id}
+            to={getRouteArticleDetail(article.id)}
             className={classNames(cls.ArticleListItem, {}, [ className, cls[view] ])}
             target={target}
         >

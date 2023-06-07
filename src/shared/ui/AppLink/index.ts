@@ -1,5 +1,10 @@
-import { AppLink } from './ui/AppLink'
+import { AppLink, AppLinkTheme, TAppLinkTheme } from './ui/AppLink'
 
 export {
     AppLink,
+    AppLinkTheme,
+}
+
+export type {
+    TAppLinkTheme,
 }

@@ -9,7 +9,7 @@ import { getUserAuthData, userActions } from '@/entities/User';
 import { Text } from '@/shared/ui/Text';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { NotificationsButton } from '@/features/NotificationsButton';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
@@ -42,7 +42,7 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
                     title={'Bilingual-reading'}
                 />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}
                 >
                     {t('Создать статью')}

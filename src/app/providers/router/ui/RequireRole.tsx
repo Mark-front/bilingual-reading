@@ -1,9 +1,9 @@
 import React, { PropsWithChildren, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
-import { RoutePath } from '@/shared/const/router';
 import { getUserRoles } from '@/entities/User';
 import { TUserRole } from '@/shared/types';
+import { getRouteUnavailable } from '@/shared/const/router';
 
 interface RequireRoleProps {
     children: PropsWithChildren<any>;
@@ -31,7 +31,7 @@ export const RequireRole = (props: RequireRoleProps) => {
     }, [ userRoles, roles ])
 
     // если у пользователья нет доступа
-    if (!hasRequire) return (<Navigate to={RoutePath.unavailable} state={{ from: location }} replace/>)
+    if (!hasRequire) return (<Navigate to={getRouteUnavailable()} state={{ from: location }} replace/>)
 
     return children
 }

@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecora
 import { Theme } from '@/shared/ui/ThemeProvider';
 
 export default {
-    title: 'pages/NotificationList',
+    title: 'entities/NotificationList',
     component: NotificationList,
     argTypes: {},
     decorators: [],

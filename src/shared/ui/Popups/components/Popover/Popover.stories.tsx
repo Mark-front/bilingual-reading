@@ -6,9 +6,14 @@ import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecora
 import { Theme } from '../../../../ui/ThemeProvider';
 
 export default {
-    title: 'pages/Popover',
+    title: 'shared/Popover',
     component: Popover,
-    argTypes: {},
+    args: {
+        trigger: <button> open popover </button>,
+        children: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consectetur consequatur dolor
+            doloribus earum est harum, itaque laboriosam minus, molestias necessitatibus nostrum placeat praesentium
+            quis sequi totam unde voluptas?</p>,
+    },
     decorators: [],
 } as ComponentMeta<typeof Popover>;
 

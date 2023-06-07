@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { VStack } from '@/shared/ui/Stack';
 import { isUserAdmin, isUserManager } from '@/entities/User';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel } from '@/shared/const/router';
 
 
 interface SidebarProps {
@@ -51,7 +51,7 @@ export const Sidebar = memo(({ className = '' }: SidebarProps) => {
                 {
                     SidebarItemsList.map(
                         (item, index) => {
-                            if (!isAdminPageAvailable && item.path === RoutePath.admin_panel) return;
+                            if (!isAdminPageAvailable && item.path === getRouteAdminPanel()) return;
 
                             return (
                                 <SidebarItem

@@ -1,5 +1,3 @@
-import { AppRoutesType } from '@/shared/types/router';
-
 export const AppRoutes = {
     MAIN: 'main',
     ABOUT: 'about',
@@ -13,16 +11,15 @@ export const AppRoutes = {
     //last
     NOT_FOUND: 'not-found',
 } as const
-export const RoutePath: Record<AppRoutesType, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile',// + :id
-    [AppRoutes.ARTICLES]: '/articles',
-    [AppRoutes.ARTICLE_DETAIL]: '/articles/',// + :id
-    [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-    [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-    [AppRoutes.ADMIN_PANEL]: '/admin_panel',
-    [AppRoutes.UNAVAILABLE]: '/unavailable',
-    //last
-    [AppRoutes.NOT_FOUND]: '*',
-}
+
+
+export const getRouteMain = () => '/'
+export const getRouteAbout = () => '/about'
+export const getRouteProfile = (id: string) => '/profile/' + id
+export const getRouteArticles = () => '/articles'
+export const getRouteArticleDetail = (id: string) => '/articles/' + id
+export const getRouteArticleEdit = (id: string) => '/articles/' + id + '/edit'
+export const getRouteArticleCreate = () => '/articles/new'
+export const getRouteAdminPanel = () => '/admin_panel'
+export const getRouteUnavailable = () => '/unavailable'
+export const getRouteNotFound = () => '*'

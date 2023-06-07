@@ -8,55 +8,67 @@ import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { UnavailablePage } from '@/pages/UnavailablePage';
 import { AppRouteProps, AppRoutesType } from '@/shared/types/router';
-import { AppRoutes, RoutePath } from '@/shared/const/router';
+import {
+    AppRoutes,
+    getRouteAbout,
+    getRouteAdminPanel,
+    getRouteArticleCreate,
+    getRouteArticleDetail,
+    getRouteArticleEdit,
+    getRouteArticles,
+    getRouteMain,
+    getRouteNotFound,
+    getRouteProfile,
+    getRouteUnavailable,
+} from '@/shared/const/router';
 
 export const routeConfig: Record<AppRoutesType, AppRouteProps> = {
     [AppRoutes.MAIN]: {
-        path: RoutePath.main,
+        path: getRouteMain(),
         element: <MainPage/>,
     },
     [AppRoutes.ABOUT]: {
-        path: RoutePath.about,
+        path: getRouteAbout(),
         element: <AboutPage/>,
     },
     [AppRoutes.ADMIN_PANEL]: {
-        path: RoutePath.admin_panel,
+        path: getRouteAdminPanel(),
         element: <AdminPanelPage/>,
         authOnly: true,
         roles: [ 'ADMIN', 'MANAGER' ],
     },
     [AppRoutes.PROFILE]: {
-        path: RoutePath.profile + '/:id',
+        path: getRouteProfile(':id'),
         element: <ProfilePage/>,
         authOnly: true,
     },
     [AppRoutes.ARTICLES]: {
-        path: RoutePath.articles,
+        path: getRouteArticles(),
         element: <ArticlePage/>,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_DETAIL]: {
-        path: RoutePath.article_detail + ':id',
+        path: getRouteArticleDetail(':id'),
         element: <ArticleDetailPage/>,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_EDIT]: {
-        path: RoutePath.article_edit,
+        path: getRouteArticleEdit(':id'),
         element: <ArticleEditPage/>,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_CREATE]: {
-        path: RoutePath.article_create,
+        path: getRouteArticleCreate(),
         element: <ArticleEditPage/>,
         authOnly: true,
     },
     [AppRoutes.UNAVAILABLE]: {
-        path: RoutePath.unavailable,
+        path: getRouteUnavailable(),
         element: <UnavailablePage/>,
     },
     //last
     [AppRoutes.NOT_FOUND]: {
-        path: RoutePath['not-found'],
+        path: getRouteNotFound(),
         element: <NotFoundPage/>,
     },
 }

@@ -81,11 +81,11 @@ module.exports = {
         'mym-path-checker/path-check': [ 'error', { alias: '@' } ],
         'mym-path-checker/public-api-imports': [ 'error', {
             alias: '@',
-            testFilesPatterns: [ '**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx', '**/StoreDecorator.tsx' ],
+            testFilesPatterns: [ '**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx' ],
         } ],
         'mym-path-checker/layer-imports': [ 'error', {
             alias: '@',
-            ignoreImportPatterns: [ '**/StoreDecorator.*', '**/testing', '**/StoreProvider.tsx' ],
+            ignoreImportPatterns: [ '**/StoreDecorator.*', '**/testing', '**/StoreProvider', '**/styles/*' ],
         } ],
     },
     globals: {
