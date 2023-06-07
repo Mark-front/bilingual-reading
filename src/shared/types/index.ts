@@ -1,2 +1,2 @@
 export type SortOrder = 'asc' | 'desc';
-export { TUserRole } from '@/shared/types/user';
+export type { TUserRole } from '@/shared/types/user';
