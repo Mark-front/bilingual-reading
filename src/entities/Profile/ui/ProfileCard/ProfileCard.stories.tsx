@@ -4,7 +4,6 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 // @ts-ignore
 import AvatarImg from '@/shared/assets/test/avatar.png';
 import { ProfileCard } from './ProfileCard';
-import { ValidateProfileError } from '../../model/types/profile';
 import { Country } from '../../../Country';
 import { Currency } from '../../../Currency';
 
@@ -41,6 +40,6 @@ Loading.args = {
 export const withError = Template.bind({});
 withError.args = {
     isLoading: false,
-    error: ValidateProfileError.SERVER_NOT_RESPONSE,
+    error: 'SERVER_NOT_RESPONSE',
 }
 

@@ -2,23 +2,26 @@ import React from 'react';
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import { NotificationItem } from './NotificationItem';
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/ui/ThemeProvider';
+import { Notification } from '../../model/types/notification';
 
+const data: Notification = {
+    title: 'asfdasdf',
+    description: 'asdfasdfas asdfasdf asdfasdf',
+    id: '',
+    userId: 'asdf',
+    href: 'asdfaqwerqw',
+}
 export default {
     title: 'entities/NotificationItem',
     component: NotificationItem,
-    argTypes: {},
+    args: {
+        data: data,
+    },
     decorators: [],
 } as ComponentMeta<typeof NotificationItem>;
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args}/>;
+const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem  {...args}/>;
 
 export const Default = Template.bind({});
 
 Default.args = {};
-
-export const Dark = Template.bind({});
-
-Dark.args = {};
-Dark.decorators = [ ThemeDecorator(Theme.DARK) ]

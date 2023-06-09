@@ -4,6 +4,8 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 import { Icon } from './Icon';
 import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
 import { Theme } from '../../ThemeProvider';
+// @ts-ignore
+import IconPoo from '../../../assets/icons/star.svg'
 
 export default {
     title: 'shared/Icon',
@@ -12,7 +14,8 @@ export default {
     decorators: [],
 } as ComponentMeta<typeof Icon>;
 
-const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args}/>;
+// @ts-ignore
+const Template: ComponentStory<typeof Icon> = (args) => <Icon Svg={IconPoo} {...args}/>;
 
 export const Default = Template.bind({});
 

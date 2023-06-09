@@ -6,6 +6,8 @@ import {
     TArticleSortField,
     TArticleType,
     TArticleView,
+    TTypeBlock,
+    TypeBlock,
 } from './model/types/article'
 import { IArticleSchema } from './model/types/articleDetailShema'
 import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
@@ -25,6 +27,7 @@ export {
     ArticleSortField,
     ArticleTypeTabs,
     getArticleData,
+    TypeBlock,
 }
 
 export type {
@@ -33,4 +36,5 @@ export type {
     TArticleView,
     TArticleType,
     TArticleSortField,
+    TTypeBlock,
 }

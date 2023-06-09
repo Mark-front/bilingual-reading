@@ -2,23 +2,35 @@ import React from 'react';
 import { type ComponentMeta, type ComponentStory } from '@storybook/react';
 
 import { NotificationList } from './NotificationList';
-import { ThemeDecorator } from '@/shared/config/storybook/decorators/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/shared/ui/ThemeProvider';
+import { StoreProvider } from '@/app/providers/StoreProvider';
+import { Notification } from '../../model/types/notification';
 
+const data: Notification = {
+    title: 'asfdasdf',
+    description: 'asdfasdfas asdfasdf asdfasdf',
+    id: '',
+    userId: 'asdf',
+    href: 'asdfaqwerqw',
+}
 export default {
     title: 'entities/NotificationList',
     component: NotificationList,
-    argTypes: {},
-    decorators: [],
+    args: {},
+    decorators: [ StoreProvider ],
 } as ComponentMeta<typeof NotificationList>;
 
 const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args}/>;
 
 export const Default = Template.bind({});
 
-Default.args = {};
-
-export const Dark = Template.bind({});
-
-Dark.args = {};
-Dark.decorators = [ ThemeDecorator(Theme.DARK) ]
+Default.parameters = {
+    mockData: [
+        {
+            //@ts-ignore
+            url: `${__API__}/notifications`,
+            method: 'GET',
+            status: 200,
+            response: [ data ],
+        },
+    ],
+};
