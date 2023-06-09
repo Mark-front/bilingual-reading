@@ -11,7 +11,7 @@ const AdminPanelPage = memo(() => {
     return (
         <RequireRole roles={[ 'ADMIN', 'MANAGER' ]}>
             <RequireAuth>
-                <Page>
+                <Page data-testid='AdminPanelPage'>
                     <div>
                         {t('Администрирование')}
                     </div>

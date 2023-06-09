@@ -13,7 +13,7 @@ const ProfilePage = memo((props: IProfilePageProps) => {
     } = props;
 
     return (
-        <Page>
+        <Page data-testid='ProfilePage'>
             <EditableProfileCard/>
         </Page>
     );

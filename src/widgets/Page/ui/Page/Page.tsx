@@ -12,8 +12,9 @@ import { getSaveScrollByPath } from '../../model/selectors/saveScroll';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { TestProps } from '@/shared/types/test';
 
-interface IPageProps {
+interface IPageProps extends TestProps {
     className?: string;
     children: ReactNode;
     onScrollEnd?: () => void;
@@ -55,6 +56,7 @@ export const Page = memo((props: IPageProps) => {
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [ className ])}
             onScroll={onScroll}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             {onScrollEnd ? <div ref={triggerRef} className={cls.trigger}></div> : null}

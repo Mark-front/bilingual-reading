@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 const NotFoundPage = memo(() => {
     const { t } = useTranslation()
     return (
-        <Page>
+        <Page data-testid="NotFoundPage">
             <div>
                 {t('Страница не найдена')}
             </div>

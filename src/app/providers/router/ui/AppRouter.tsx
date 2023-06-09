@@ -7,7 +7,7 @@ import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
 // eslint-disable-next-line mym-path-checker/layer-imports
 import { routeConfig } from '@/app/providers/router/config/routeConfig/routeConfig';
 
-const AppRouter = () => {
+export const AppRouter = memo(() => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
         const element = (
             <Suspense fallback={<PageLoader/>}>
@@ -32,7 +32,6 @@ const AppRouter = () => {
         </Routes>
 
     )
-}
+})
 
 AppRouter.displayName = 'AppRouter'
-export default memo(AppRouter)

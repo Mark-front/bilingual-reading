@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 const UnavailablePage = memo(() => {
     const { t } = useTranslation()
     return (
-        <Page>
+        <Page data-testid='UnavailablePage'>
             <div>
                 {t('Недостаточно прав для перехода на страницу')}
             </div>

@@ -7,7 +7,7 @@ import { RatingCard } from '@/entities/Rating';
 const MainPage = memo(() => {
     const { t } = useTranslation()
     return (
-        <Page>
+        <Page data-testid='MainPage'>
             <div>
                 {t('Главная')}
                 <br/>
