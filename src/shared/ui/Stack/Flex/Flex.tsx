@@ -52,6 +52,7 @@ export const Flex = memo((props: IFlexProps) => {
         align = 'start',
         gap = '8',
         max = true,
+        ...otherProps
     } = props;
 
     const additional = [
@@ -67,10 +68,12 @@ export const Flex = memo((props: IFlexProps) => {
     }
     return (
         <div
+            {...otherProps}
             className={classNames(
                 cls.Flex,
                 mods,
-                additional)}>
+                additional)}
+        >
             {children}
         </div>
     );

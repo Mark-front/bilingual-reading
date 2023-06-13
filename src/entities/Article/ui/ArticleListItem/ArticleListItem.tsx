@@ -51,7 +51,10 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
         }) as IArticleBlockText;
 
         return (
-            <div className={classNames(cls.ArticleListItem, {}, [ className, cls[view] ])}>
+            <div
+                className={classNames(cls.ArticleListItem, {}, [ className, cls[view] ])}
+                data-testid='ArticleListItem'
+            >
                 <Card className={cls.card}>
                     <div className={cls.header}>
                         <Avatar size={30} src={article.user.avatar || ''}/>
@@ -86,6 +89,7 @@ export const ArticleListItem = memo((props: IArticleListItemProps) => {
             to={getRouteArticleDetail(article.id)}
             className={classNames(cls.ArticleListItem, {}, [ className, cls[view] ])}
             target={target}
+            data-testid='ArticleListItem'
         >
             <Card className={cls.card} onClick={onOpenArticle}>
                 <div className={cls.imageWrapper}>

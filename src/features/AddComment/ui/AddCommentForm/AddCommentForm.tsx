@@ -40,19 +40,21 @@ const AddCommentForm = memo((props: IAddCommentFormProps) => {
     }, [ onSendComment, text, dispatch ])
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.AddCommentForm, {}, [ className ])}>
+            <div data-testid='AddCommentForm' className={classNames(cls.AddCommentForm, {}, [ className ])}>
                 <Input
                     type={'text'}
                     onChange={onChangeText}
                     value={text}
                     placeholder={'Напишите что-нибудь...'}
                     theme={ThemeInput.OUTLINE}
+                    data-testid='AddCommentForm.Input'
                 />
                 <Button
                     className={cls.btn}
                     theme={ThemeButton.OUTLINE}
                     size={ButtonSize.L}
                     onClick={onSend}
+                    data-testid='AddCommentForm.BtnSend'
                 >
                     {t('Отправить')}
                 </Button>

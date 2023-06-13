@@ -78,7 +78,10 @@ export const ArticleList = memo((props: IArticleListProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])}>
+        <div
+            className={classNames(cls.ArticleList, {}, [ className, cls[view] ])}
+            data-testid='ArticleList'
+        >
             {
                 view === 'BIG' ?
                     <Virtuoso

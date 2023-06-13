@@ -28,6 +28,7 @@ export const CommentList = memo((props: ICommentListProps) => {
             {comments?.length
                 ? comments.map((comment, index) => (
                     <CommentCard
+
                         key={String(index) + String(comment)}
                         className={cls.CommentItem}
                         comment={comment}

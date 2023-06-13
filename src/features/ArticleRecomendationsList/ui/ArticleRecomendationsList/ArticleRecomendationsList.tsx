@@ -19,7 +19,7 @@ export const ArticleRecomendationsList = memo((props: ArticleRecommendationsList
     const { isLoading, data } = useArticleRecommendationsList(4)
 
     return (
-        <VStack align={'start'} gap={'16'}>
+        <VStack data-testid='ArticleRecomendationsList' align={'start'} gap={'16'}>
             <Text className={cls.Comments} size={TextSize.L} title={t('Рекоммендации') || 'Рекоммендации'}/>
             <ArticleList
                 target={'_blank'}

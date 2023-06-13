@@ -42,7 +42,12 @@ const ArticleDetailPage = (props: IArticleDetailPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page>
-                <VStack max gap={'32'} className={classNames(cls.ArticleDetailPage, {}, [ className ])}>
+                <VStack
+                    data-testid='ArticleDetailPage'
+                    max
+                    gap={'32'}
+                    className={classNames(cls.ArticleDetailPage, {}, [ className ])}
+                >
                     <ArticleDetailPageHeader/>
                     <ArticleDetails id={id as string}/>
                     <ArticleRecomendationsList/>
