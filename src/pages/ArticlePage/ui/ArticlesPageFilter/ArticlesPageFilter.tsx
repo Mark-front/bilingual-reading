@@ -22,7 +22,7 @@ import {
 } from '../../model/selectors/getArticlesPage/getArticlesPage';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { fetchArticleList } from '../../model/services/fetchArticleList/fetchArticleList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 

@@ -30,4 +30,4 @@ root.render(
     </BrowserRouter>
 )
 export { UserRole } from './shared/const/user';
-export type { TUserRole } from './shared/types';
+export type { TUserRole } from './shared/types/user';

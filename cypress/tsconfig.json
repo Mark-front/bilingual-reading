@@ -6,7 +6,7 @@
       "dom"
     ],
     "allowJs": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "types": [
       "cypress",
       "node"

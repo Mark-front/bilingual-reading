@@ -2,7 +2,7 @@ import React, { PropsWithChildren, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 import { getUserRoles } from '@/entities/User';
-import { TUserRole } from '@/shared/types';
+import { TUserRole } from '@/shared/types/user';
 import { getRouteUnavailable } from '@/shared/const/router';
 
 interface RequireRoleProps {

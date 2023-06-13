@@ -3,10 +3,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Mods } from '../../../lib/classNames/classNames';
 import cls from './Avatar.module.scss';
-import { AppImg } from '@/shared/ui/AppImg';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { AppImg } from '../../../ui/AppImg';
+import { Skeleton } from '../../../ui/Skeleton';
 import IconAvatar from '../../../assets/icons/avatar.svg'
-import { Icon } from '@/shared/ui/Icon';
+import { Icon } from '../../../ui/Icon';
 
 interface IAvatarProps {
     className?: string;
@@ -39,7 +39,7 @@ export const Avatar = (props: IAvatarProps) => {
             src={src}
             alt={alt ?? 'avatar'}
             fallback={<Skeleton width={size} height={size} theme={'avatar'}/>}
-            fallbackError={<Icon Svg={IconAvatar}/>}
+            fallbackError={<Icon style={styles} Svg={IconAvatar}/>}
             className={classNames(cls.Avatar, mods, [ className ])}/>
     );
 }

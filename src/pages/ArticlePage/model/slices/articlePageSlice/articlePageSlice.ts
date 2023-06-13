@@ -12,7 +12,7 @@ import {
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { fetchArticleList } from '../../services/fetchArticleList/fetchArticleList';
 import { VIEW_ARTICLES } from '@/shared/const/localStorage';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 
 const articleListAdapter = createEntityAdapter<IArticle>({
     selectId: (article) => article.id,

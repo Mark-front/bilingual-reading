@@ -1,4 +1,4 @@
-import { TUserRole } from '@/shared/types';
+import { TUserRole } from '@/shared/types/user';
 
 export interface IUser {
     id: string;

@@ -81,7 +81,13 @@ module.exports = {
         'mym-path-checker/path-check': [ 'error', { alias: '@' } ],
         'mym-path-checker/public-api-imports': [ 'error', {
             alias: '@',
-            testFilesPatterns: [ '**/*.test.ts', '**/*.test.ts', '**/StoreDecorator.tsx' ],
+            testFilesPatterns: [
+                '**/*.test.ts',
+                '**/*.test.ts',
+                '**/StoreDecorator.tsx',
+                '**/*.cy.ts',
+                '**/cypress/support/commands.ts',
+            ],
         } ],
         'mym-path-checker/layer-imports': [ 'error', {
             alias: '@',

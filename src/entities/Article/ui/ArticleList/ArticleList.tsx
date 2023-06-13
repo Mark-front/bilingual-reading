@@ -64,7 +64,6 @@ export const ArticleList = memo((props: IArticleListProps) => {
     }
 
     if (withoutVirtual) {
-        console.log(articles)
         return (
             <div className={classNames(cls.ArticleList, {}, [ className, cls[view] ])}>
                 {
@@ -84,7 +83,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
                 view === 'BIG' ?
                     <Virtuoso
                         className={cls.list}
-                        style={{ height: '100%' }}
+                        style={{ height: 'calc(100vh - 50px)' }}
                         data={articles}
                         itemContent={renderArticle}
                         endReached={onLoadNextPart}
@@ -96,7 +95,7 @@ export const ArticleList = memo((props: IArticleListProps) => {
                     </Virtuoso>
                     :
                     <VirtuosoGrid
-                        style={{ height: '100%' }}
+                        style={{ height: 'calc(100vh - 50px)' }}
                         data={articles}
                         totalCount={articles.length}
                         itemContent={renderArticle}
